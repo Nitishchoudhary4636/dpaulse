@@ -649,6 +649,7 @@ function initModals() {
         }
 
         window.showToast(`Welcome back, ${matched.name}! Logged in successfully.`, 'success');
+        if (typeof window.mcpTrackLogin === 'function') window.mcpTrackLogin(matched);
         window.closeAuth();
         window.updateGlobalAuthUI();
       } else {
@@ -740,6 +741,7 @@ function initModals() {
     }
 
     window.showToast(`Verified! Welcome to DPauls, ${user.name}!`, 'success');
+    if (typeof window.mcpTrackLogin === 'function') window.mcpTrackLogin(user);
     window.closeAuth();
     window.updateGlobalAuthUI();
   };
@@ -814,6 +816,7 @@ function initModals() {
     localStorage.setItem(AUTH_STORAGE.SESSION_KEY, JSON.stringify(sessionData));
 
     window.showToast(`Account created successfully! Welcome to DPauls, ${name}!`, 'success');
+    if (typeof window.mcpTrackLogin === 'function') window.mcpTrackLogin(newUser);
     window.closeAuth();
     window.updateGlobalAuthUI();
   };
@@ -823,6 +826,7 @@ function initModals() {
     sessionStorage.removeItem(AUTH_STORAGE.SESSION_KEY);
     localStorage.removeItem(AUTH_STORAGE.SESSION_KEY);
     window.showToast('You have been logged out successfully.', 'info');
+    if (typeof window.mcpTrackLogout === 'function') window.mcpTrackLogout();
     window.updateGlobalAuthUI();
   };
 
@@ -946,7 +950,8 @@ window.handleSignup = function() {
    ========================================================================== */
 window.confirmBooking = function(item, price, extra = {}) {
   const cleanPrice = (price + '').replace(/[^\d]/g, '') || '6530';
-  const query = new URLSearchParams({
+  const bookingData = {
+    id: extra.code || 'DP_BOOK_' + Date.now().toString(36),
     type: extra.type || 'flight',
     title: item || 'DEL ➔ BOM',
     price: cleanPrice,
@@ -957,12 +962,48 @@ window.confirmBooking = function(item, price, extra = {}) {
     depart: extra.depart || '23:30',
     arrive: extra.arrive || '01:45',
     duration: extra.duration || '2hr 15mins'
-  });
+  };
+
+  try {
+    localStorage.setItem('dpauls_active_booking', JSON.stringify(bookingData));
+  } catch(e) {}
+
+  if (typeof window.mcpTrackAddToCart === 'function') {
+    window.mcpTrackAddToCart({
+      id: bookingData.id,
+      sku: bookingData.code,
+      name: bookingData.title,
+      price: parseFloat(cleanPrice),
+      quantity: 1
+    });
+  }
+
+  const query = new URLSearchParams(bookingData);
   window.location.href = `booking.html?${query.toString()}`;
 };
 
 window.bookHotel = function(name, price) {
   const cleanPrice = (price + '').replace(/[^\d]/g, '') || '3499';
+  const bookingData = {
+    id: 'HOTEL_' + Date.now().toString(36),
+    type: 'hotel',
+    title: name,
+    price: cleanPrice
+  };
+  try {
+    localStorage.setItem('dpauls_active_booking', JSON.stringify(bookingData));
+  } catch(e) {}
+
+  if (typeof window.mcpTrackAddToCart === 'function') {
+    window.mcpTrackAddToCart({
+      id: bookingData.id,
+      sku: bookingData.id,
+      name: bookingData.title,
+      price: parseFloat(cleanPrice),
+      quantity: 1
+    });
+  }
+
   window.location.href = `booking.html?type=hotel&title=${encodeURIComponent(name)}&price=${cleanPrice}`;
 };
 
