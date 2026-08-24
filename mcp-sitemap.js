@@ -130,6 +130,18 @@ if (typeof SalesforceInteractions !== 'undefined') {
           }).filter(function (item) {
             return !!item.catalogObjectId;
           });
+        } else if (parsed && parsed.title) {
+          return [{
+            catalogObjectType: "Product",
+            catalogObjectId: parsed.id || parsed.code || "DP_BOOK_1",
+            price: parsePrice(parsed.price),
+            quantity: 1,
+            attributes: {
+              sku: parsed.id || parsed.code || "DP_BOOK_1",
+              name: parsed.title,
+              currency: currency
+            }
+          }];
         }
       } catch (e) {}
 
@@ -140,8 +152,8 @@ if (typeof SalesforceInteractions !== 'undefined') {
       global: {
         user: getUserResolver,
         contentZones: [
-          { name: "global_header", selector: "header.site-header" },
-          { name: "global_footer", selector: "footer.site-footer" },
+          { name: "global_header", selector: "header.site-header, nav.topnav" },
+          { name: "global_footer", selector: "footer.site-footer, footer.footer" },
           { name: "global_exit_intent" },
           { name: "global_survey_feedback" }
         ],
@@ -193,7 +205,15 @@ if (typeof SalesforceInteractions !== 'undefined') {
             var pageType = getDataLayerValue(["MCP", "pageType"]);
             if (pageType === "Home") return true;
             var path = (window.location.pathname || "").toLowerCase();
-            return path === "/" || path === "" || path.endsWith("/index.html") || path.endsWith("/index");
+            return (
+              path === "/" ||
+              path === "" ||
+              path.endsWith("/index.html") ||
+              path.endsWith("/index") ||
+              path === "index.html" ||
+              path === "/index" ||
+              !!document.getElementById("search-tabs-container")
+            );
           },
           interaction: {
             name: "Home Page"
@@ -213,13 +233,20 @@ if (typeof SalesforceInteractions !== 'undefined') {
             if (pageType === "Category") return true;
             var path = (window.location.pathname || "").toLowerCase();
             return (
-              path.indexOf("packages.html") !== -1 ||
-              path.indexOf("disney.html") !== -1 ||
-              path.indexOf("flights.html") !== -1 ||
-              path.indexOf("hotels.html") !== -1 ||
-              path.indexOf("bus.html") !== -1 ||
-              path.indexOf("cruise.html") !== -1 ||
+              path.indexOf("packages") !== -1 ||
+              path.indexOf("disney") !== -1 ||
+              path.indexOf("flights") !== -1 ||
+              path.indexOf("hotels") !== -1 ||
+              path.indexOf("bus") !== -1 ||
+              path.indexOf("cruise") !== -1 ||
+              path.indexOf("women") !== -1 ||
+              path.indexOf("men") !== -1 ||
+              path.indexOf("curve") !== -1 ||
+              path.indexOf("bestsellers") !== -1 ||
+              (document.body && document.body.hasAttribute("data-page-gender")) ||
               !!document.getElementById("plp-packages-grid") ||
+              !!document.getElementById("flight-results-list") ||
+              !!document.getElementById("dest-plp-hero-container") ||
               !!document.getElementById("shop-all-grid")
             );
           },
@@ -247,8 +274,8 @@ if (typeof SalesforceInteractions !== 'undefined') {
             }
           },
           contentZones: [
-            { name: "category_hero_banner", selector: ".dest-plp-hero-box, .category-hero-banner" },
-            { name: "plp_recommendations", selector: "#plp-packages-grid, #shop-all-grid" }
+            { name: "category_hero_banner", selector: ".dest-plp-hero-box, .category-hero-banner, .flight-breadcrumb-bar" },
+            { name: "plp_recommendations", selector: "#plp-packages-grid, #flight-results-list, #shop-all-grid" }
           ]
         },
 
@@ -259,7 +286,12 @@ if (typeof SalesforceInteractions !== 'undefined') {
             var pageType = getDataLayerValue(["MCP", "pageType"]);
             if (pageType === "Product") return true;
             var path = (window.location.pathname || "").toLowerCase();
-            return path.indexOf("package-detail.html") !== -1 || path.indexOf("product.html") !== -1 || !!document.getElementById("pdp-hero-title") || !!document.getElementById("pdp-title");
+            return (
+              path.indexOf("package-detail") !== -1 ||
+              path.indexOf("product") !== -1 ||
+              !!document.getElementById("pdp-hero-title") ||
+              !!document.getElementById("pdp-title")
+            );
           },
           interaction: {
             name: SalesforceInteractions.CatalogObjectInteractionName.ViewCatalogObject,
@@ -369,7 +401,13 @@ if (typeof SalesforceInteractions !== 'undefined') {
             var pageType = getDataLayerValue(["MCP", "pageType"]);
             if (pageType === "Cart") return true;
             var path = (window.location.pathname || "").toLowerCase();
-            return path.indexOf("booking.html") !== -1 || path.indexOf("cart.html") !== -1 || !!document.getElementById("booking-main-form");
+            return (
+              path.indexOf("booking") !== -1 ||
+              path.indexOf("cart") !== -1 ||
+              path.indexOf("checkout") !== -1 ||
+              !!document.getElementById("booking-main-form") ||
+              !!document.getElementById("full-cart-layout")
+            );
           },
           interaction: {
             name: SalesforceInteractions.CartInteractionName.ReplaceCart,
@@ -387,7 +425,7 @@ if (typeof SalesforceInteractions !== 'undefined') {
             var pageType = getDataLayerValue(["MCP", "pageType"]);
             if (pageType === "Wishlist") return true;
             var path = (window.location.pathname || "").toLowerCase();
-            return path.indexOf("wishlist.html") !== -1 || !!document.getElementById("page-wishlist-grid");
+            return path.indexOf("wishlist") !== -1 || !!document.getElementById("page-wishlist-grid");
           },
           interaction: {
             name: "Viewed Wishlist Page"
@@ -404,7 +442,7 @@ if (typeof SalesforceInteractions !== 'undefined') {
             var pageType = getDataLayerValue(["MCP", "pageType"]);
             if (pageType === "Contact") return true;
             var path = (window.location.pathname || "").toLowerCase();
-            return path.indexOf("contact.html") !== -1 || !!document.getElementById("contact-form");
+            return path.indexOf("contact") !== -1 || !!document.getElementById("contact-form");
           },
           interaction: {
             name: "Viewed Contact Us Page"
@@ -430,7 +468,7 @@ if (typeof SalesforceInteractions !== 'undefined') {
             var pageType = getDataLayerValue(["MCP", "pageType"]);
             if (pageType === "TrackOrder") return true;
             var path = (window.location.pathname || "").toLowerCase();
-            return path.indexOf("track-order.html") !== -1 || !!document.getElementById("track-form");
+            return path.indexOf("track-order") !== -1 || path.indexOf("track") !== -1 || !!document.getElementById("track-form");
           },
           interaction: {
             name: "Viewed Track Order Page"
@@ -445,10 +483,13 @@ if (typeof SalesforceInteractions !== 'undefined') {
             if (pageType === "Content") return true;
             var path = (window.location.pathname || "").toLowerCase();
             return (
-              path.indexOf("about.html") !== -1 ||
-              path.indexOf("returns.html") !== -1 ||
-              path.indexOf("shipping-policy.html") !== -1 ||
-              path.indexOf("faqs.html") !== -1
+              path.indexOf("about") !== -1 ||
+              path.indexOf("returns") !== -1 ||
+              path.indexOf("shipping-policy") !== -1 ||
+              path.indexOf("faqs") !== -1 ||
+              path.indexOf("terms") !== -1 ||
+              path.indexOf("privacy") !== -1 ||
+              path.indexOf("cancellation") !== -1
             );
           },
           interaction: {

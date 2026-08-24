@@ -49,23 +49,15 @@
   // Determine Page Type & Build Initial Payload
   function buildPageDataLayer() {
     const path = (window.location.pathname || '').toLowerCase();
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window.location.search || '');
     const userPayload = getMcpUser();
 
-    // 1. HOME PAGE
-    if (path === '/' || path === '' || path === 'index.html' || path.endsWith('/index.html') || path.endsWith('/index')) {
-      return {
-        event: 'mcp_pageview',
-        MCP: {
-          pageType: 'Home',
-          currency: 'INR',
-          user: userPayload
-        }
-      };
-    }
-
-    // 2. PRODUCT DETAIL PAGE (PDP)
-    if (path.includes('package-detail.html') || path.includes('product.html')) {
+    // 1. PRODUCT DETAIL PAGE (PDP) - matches /package-detail, /package-detail.html, /product
+    if (
+      path.indexOf('package-detail') !== -1 ||
+      path.indexOf('product') !== -1 ||
+      (typeof document !== 'undefined' && (document.getElementById('pdp-hero-title') || document.getElementById('pdp-title')))
+    ) {
       const packageId = urlParams.get('id') || 'himachal';
       let pkg = null;
       if (typeof window !== 'undefined' && window.PDP_PACKAGES_DB && window.PDP_PACKAGES_DB[packageId]) {
@@ -73,7 +65,7 @@
       }
 
       const id = (pkg && (pkg.code || pkg.id)) || packageId.toUpperCase();
-      const domTitleEl = (typeof document !== 'undefined' && document.getElementById) ? document.getElementById('pdp-hero-title') : null;
+      const domTitleEl = (typeof document !== 'undefined' && document.getElementById) ? (document.getElementById('pdp-hero-title') || document.getElementById('pdp-title')) : null;
       const title = (pkg && pkg.title) || (domTitleEl ? domTitleEl.textContent.trim() : 'DPauls Tour Package');
       const rawPrice = (pkg && pkg.price) || 8499;
       const priceNum = typeof rawPrice === 'string' ? parseFloat(rawPrice.replace(/[^0-9.]/g, '')) : Number(rawPrice);
@@ -101,8 +93,13 @@
       };
     }
 
-    // 3. CART & BOOKING PAGE
-    if (path.includes('booking.html') || path.includes('cart.html')) {
+    // 2. CART & BOOKING PAGE - matches /booking, /booking.html, /cart, /checkout
+    if (
+      path.indexOf('booking') !== -1 ||
+      path.indexOf('cart') !== -1 ||
+      path.indexOf('checkout') !== -1 ||
+      (typeof document !== 'undefined' && (document.getElementById('booking-main-form') || document.getElementById('full-cart-layout')))
+    ) {
       let activeBooking = null;
       try {
         const storage = typeof window !== 'undefined' && window.localStorage ? window.localStorage : null;
@@ -132,22 +129,23 @@
       };
     }
 
-    // 4. CATEGORY (PLP) PAGES
+    // 3. CATEGORY (PLP) PAGES - matches /packages, /disney, /flights, /hotels, /bus, /cruise
     if (
-      path.includes('packages.html') ||
-      path.includes('disney.html') ||
-      path.includes('flights.html') ||
-      path.includes('hotels.html') ||
-      path.includes('bus.html') ||
-      path.includes('cruise.html')
+      path.indexOf('packages') !== -1 ||
+      path.indexOf('disney') !== -1 ||
+      path.indexOf('flights') !== -1 ||
+      path.indexOf('hotels') !== -1 ||
+      path.indexOf('bus') !== -1 ||
+      path.indexOf('cruise') !== -1 ||
+      (typeof document !== 'undefined' && (document.getElementById('plp-packages-grid') || document.getElementById('flight-results-list') || document.getElementById('shop-all-grid')))
     ) {
       let catId = urlParams.get('dest') || urlParams.get('cat');
       if (!catId) {
-        if (path.includes('disney.html')) catId = 'Disney Packages';
-        else if (path.includes('flights.html')) catId = 'Flights';
-        else if (path.includes('hotels.html')) catId = 'Hotels';
-        else if (path.includes('bus.html')) catId = 'Bus Booking';
-        else if (path.includes('cruise.html')) catId = 'Cruise Packages';
+        if (path.indexOf('disney') !== -1) catId = 'Disney Packages';
+        else if (path.indexOf('flights') !== -1) catId = 'Flights';
+        else if (path.indexOf('hotels') !== -1) catId = 'Hotels';
+        else if (path.indexOf('bus') !== -1) catId = 'Bus Booking';
+        else if (path.indexOf('cruise') !== -1) catId = 'Cruise Packages';
         else catId = 'All Holiday Packages';
       }
 
@@ -163,8 +161,8 @@
       };
     }
 
-    // 5. CONTACT US PAGE
-    if (path.includes('contact.html')) {
+    // 4. CONTACT US PAGE - matches /contact, /contact.html
+    if (path.indexOf('contact') !== -1 || (typeof document !== 'undefined' && document.getElementById('contact-form'))) {
       return {
         event: 'mcp_pageview',
         MCP: {
@@ -175,8 +173,15 @@
       };
     }
 
-    // 6. CONTENT & ABOUT PAGE
-    if (path.includes('about.html') || path.includes('terms.html') || path.includes('privacy.html')) {
+    // 5. CONTENT & ABOUT PAGE - matches /about, /about.html, /terms, /privacy, /faqs
+    if (
+      path.indexOf('about') !== -1 ||
+      path.indexOf('terms') !== -1 ||
+      path.indexOf('privacy') !== -1 ||
+      path.indexOf('faqs') !== -1 ||
+      path.indexOf('shipping') !== -1 ||
+      path.indexOf('returns') !== -1
+    ) {
       return {
         event: 'mcp_pageview',
         MCP: {
@@ -187,11 +192,11 @@
       };
     }
 
-    // Default Fallback
+    // 6. HOME PAGE (Default for root / or index)
     return {
       event: 'mcp_pageview',
       MCP: {
-        pageType: 'Default',
+        pageType: 'Home',
         currency: 'INR',
         user: userPayload
       }
