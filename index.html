@@ -1226,7 +1226,7 @@
        ========================================================================= -->
   <div class="modal-backdrop-custom" id="auth-modal">
     <div class="modal-card-dialog">
-      <button class="modal-close-btn" id="close-auth-modal-btn">
+      <button type="button" class="modal-close-btn" id="close-auth-modal-btn" onclick="window.closeAuth()" aria-label="Close modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
@@ -1235,8 +1235,8 @@
       </div>
 
       <div class="auth-tabs-bar">
-        <div class="auth-tab active" id="auth-tab-login">Log In</div>
-        <div class="auth-tab" id="auth-tab-signup">Sign Up</div>
+        <div class="auth-tab active" id="auth-tab-login" onclick="window.openAuth('login')">Log In</div>
+        <div class="auth-tab" id="auth-tab-signup" onclick="window.openAuth('signup')">Sign Up</div>
       </div>
 
       <!-- Login Form Body -->

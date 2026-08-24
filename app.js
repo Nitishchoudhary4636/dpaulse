@@ -554,7 +554,7 @@ function initModals() {
       modal.id = 'auth-modal';
       modal.innerHTML = `
         <div class="modal-card-dialog">
-          <button class="modal-close-btn" id="close-auth-modal-btn" onclick="window.closeAuth()">
+          <button type="button" class="modal-close-btn" id="close-auth-modal-btn" onclick="window.closeAuth()" aria-label="Close modal">
             <i class="fa-solid fa-xmark"></i>
           </button>
 
@@ -655,6 +655,22 @@ function initModals() {
       `;
       document.body.appendChild(modal);
     }
+
+    const closeBtn = modal.querySelector('#close-auth-modal-btn') || document.getElementById('close-auth-modal-btn');
+    if (closeBtn) {
+      closeBtn.onclick = function(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        window.closeAuth();
+      };
+    }
+    modal.onclick = function(e) {
+      if (e.target === modal) {
+        window.closeAuth();
+      }
+    };
     return modal;
   }
 
@@ -958,6 +974,56 @@ function initModals() {
   const resultsModal = document.getElementById('results-modal');
   const closeResultsBtn = document.getElementById('close-results-modal-btn');
   if (closeResultsBtn && resultsModal) closeResultsBtn.addEventListener('click', () => resultsModal.classList.remove('active'));
+
+  // Auth Modal Close Button & Backdrop Listeners
+  const authModal = document.getElementById('auth-modal');
+  const closeAuthBtn = document.getElementById('close-auth-modal-btn');
+  if (closeAuthBtn) {
+    closeAuthBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      window.closeAuth();
+    });
+  }
+  if (authModal) {
+    authModal.addEventListener('click', (e) => {
+      if (e.target === authModal) window.closeAuth();
+    });
+  }
+
+  // Global delegation for all modal close buttons and backdrops
+  document.addEventListener('click', (e) => {
+    const closeBtn = e.target.closest('.modal-close-btn');
+    if (closeBtn) {
+      if (closeBtn.id === 'close-auth-modal-btn' || closeBtn.closest('#auth-modal')) {
+        e.preventDefault();
+        window.closeAuth();
+      } else if (closeBtn.id === 'close-drawer-btn' || closeBtn.closest('#side-drawer')) {
+        e.preventDefault();
+        closeDrawer();
+      } else {
+        const parentModal = closeBtn.closest('.modal-backdrop-custom');
+        if (parentModal) {
+          e.preventDefault();
+          parentModal.classList.remove('active');
+        }
+      }
+    } else if (e.target.classList && e.target.classList.contains('modal-backdrop-custom')) {
+      e.target.classList.remove('active');
+      if (e.target.id === 'drawer-backdrop') {
+        if (sideDrawer) sideDrawer.classList.remove('active');
+      }
+    }
+  });
+
+  // ESC key listener to close modals
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+      window.closeAuth();
+      closeDrawer();
+      document.querySelectorAll('.modal-backdrop-custom.active').forEach(m => m.classList.remove('active'));
+    }
+  });
 }
 
 /* ==========================================================================
@@ -1001,24 +1067,6 @@ window.handleBusSearch = function() {
 
 window.handleCruiseSearch = function() {
   window.location.href = 'cruise.html';
-};
-
-window.handleEmailLogin = function() {
-  const email = document.getElementById('login-email') ? document.getElementById('login-email').value : '';
-  if (!email) {
-    alert('Please enter your email address.');
-    return;
-  }
-  alert(`Welcome back! Successfully logged in as ${email}.`);
-  const modal = document.getElementById('auth-modal');
-  if (modal) modal.classList.remove('active');
-};
-
-window.handleSignup = function() {
-  const name = document.getElementById('signup-name') ? document.getElementById('signup-name').value : '';
-  alert(`Thank you, ${name}! Your DPauls account has been created successfully.`);
-  const modal = document.getElementById('auth-modal');
-  if (modal) modal.classList.remove('active');
 };
 
 /* ==========================================================================
