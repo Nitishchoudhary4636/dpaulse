@@ -47,14 +47,41 @@ function initTopnavScroll() {
 }
 
 /* ==========================================================================
-   2. Search Engine Tabs Switching
+   2. Search Engine Tabs Switching & Page Navigation
    ========================================================================== */
 function initSearchTabs() {
   const tabItems = document.querySelectorAll('.search-tab-item');
 
   tabItems.forEach(tab => {
-    tab.addEventListener('click', () => {
+    tab.addEventListener('click', (e) => {
       const tabName = tab.getAttribute('data-tab');
+
+      // If user clicks direct dedicated service tabs on home
+      if (tabName === 'forex') {
+        window.location.href = 'forex.html';
+        return;
+      }
+      if (tabName === 'esim') {
+        window.location.href = 'esim.html';
+        return;
+      }
+      if (tabName === 'deals') {
+        window.location.href = 'deals.html';
+        return;
+      }
+      if (tabName === 'hotels') {
+        window.location.href = 'hotels.html';
+        return;
+      }
+      if (tabName === 'bus') {
+        window.location.href = 'bus.html';
+        return;
+      }
+      if (tabName === 'cruise') {
+        window.location.href = 'cruise.html';
+        return;
+      }
+
       window.switchTab(tabName);
     });
   });
@@ -79,6 +106,55 @@ window.switchTab = function(tabName) {
       body.classList.remove('active');
     }
   });
+};
+
+/* Universal Search Redirect Handlers */
+window.handleFlightSearch = function() {
+  const origin = document.getElementById('flight-origin') ? document.getElementById('flight-origin').value : 'DEL';
+  const dest = document.getElementById('flight-dest') ? document.getElementById('flight-dest').value : 'BOM';
+  const depart = document.getElementById('flight-depart-date') ? document.getElementById('flight-depart-date').value : '2026-08-30';
+  const cabinClass = document.querySelector('input[name="cabin_class"]:checked') ? document.querySelector('input[name="cabin_class"]:checked').value : 'Economy';
+  const paxSummary = document.getElementById('pax-summary-display') ? document.getElementById('pax-summary-display').textContent : '1 Traveller';
+
+  const query = new URLSearchParams({
+    from: origin,
+    to: dest,
+    depart: depart,
+    cabin: cabinClass,
+    pax: paxSummary
+  });
+
+  window.location.href = `flights.html?${query.toString()}`;
+};
+
+window.handlePackageSearch = function() {
+  const destInput = document.getElementById('package-dest');
+  const originInput = document.getElementById('package-origin');
+  const monthInput = document.getElementById('package-month');
+
+  const dest = destInput ? destInput.value.trim() : 'Himachal';
+  const origin = originInput ? originInput.value.trim() : 'New Delhi';
+  const month = monthInput ? monthInput.value : '';
+
+  const query = new URLSearchParams({
+    dest: dest || 'Himachal',
+    origin: origin,
+    month: month
+  });
+
+  window.location.href = `packages.html?${query.toString()}`;
+};
+
+window.handleHotelSearch = function() {
+  window.location.href = 'hotels.html';
+};
+
+window.handleBusSearch = function() {
+  window.location.href = 'bus.html';
+};
+
+window.handleCruiseSearch = function() {
+  window.location.href = 'cruise.html';
 };
 
 /* ==========================================================================

@@ -2,6 +2,17 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/holiday-packages", "destination": "/packages.html" },
+    { "source": "/holiday-packages/", "destination": "/packages.html" },
+    { "source": "/holidays/:match*", "destination": "/packages.html?dest=:match*" },
+    { "source": "/forex", "destination": "/forex.html" },
+    { "source": "/forex/", "destination": "/forex.html" },
+    { "source": "/esim", "destination": "/esim.html" },
+    { "source": "/esim/", "destination": "/esim.html" },
+    { "source": "/deals", "destination": "/deals.html" },
+    { "source": "/deals/", "destination": "/deals.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

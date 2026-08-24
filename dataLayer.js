@@ -129,14 +129,18 @@
       };
     }
 
-    // 3. CATEGORY (PLP) PAGES - matches /packages, /disney, /flights, /hotels, /bus, /cruise
+    // 3. CATEGORY (PLP) PAGES - matches /packages, /disney, /flights, /hotels, /bus, /cruise, /forex, /esim, /deals
     if (
       path.indexOf('packages') !== -1 ||
+      path.indexOf('holiday-packages') !== -1 ||
       path.indexOf('disney') !== -1 ||
       path.indexOf('flights') !== -1 ||
       path.indexOf('hotels') !== -1 ||
       path.indexOf('bus') !== -1 ||
       path.indexOf('cruise') !== -1 ||
+      path.indexOf('forex') !== -1 ||
+      path.indexOf('esim') !== -1 ||
+      path.indexOf('deals') !== -1 ||
       (typeof document !== 'undefined' && (document.getElementById('plp-packages-grid') || document.getElementById('flight-results-list') || document.getElementById('shop-all-grid')))
     ) {
       let catId = urlParams.get('dest') || urlParams.get('cat');
@@ -146,6 +150,9 @@
         else if (path.indexOf('hotels') !== -1) catId = 'Hotels';
         else if (path.indexOf('bus') !== -1) catId = 'Bus Booking';
         else if (path.indexOf('cruise') !== -1) catId = 'Cruise Packages';
+        else if (path.indexOf('forex') !== -1) catId = 'Foreign Exchange (Forex)';
+        else if (path.indexOf('esim') !== -1) catId = 'International eSIM';
+        else if (path.indexOf('deals') !== -1) catId = 'Travel Deals';
         else catId = 'All Holiday Packages';
       }
 

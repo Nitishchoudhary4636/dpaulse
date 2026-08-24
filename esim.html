@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International eSIM - Instant QR Data Plans for 150+ Countries | DPauls Holidays</title>
+  <meta name="description" content="Stay connected worldwide with instant digital eSIMs for Europe, Dubai, Thailand, USA, Singapore & more. Zero roaming charges, instant QR email delivery.">
+  <meta name="theme-color" content="#199c90">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flight-results.css">
+
+  <!-- Salesforce Marketing Cloud Personalization (MCP) DataLayer & Sitemap -->
+  <!-- Salesforce Marketing Cloud Personalization (Evergage) Beacon -->
+  <script type="text/javascript" src="//cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/dpaulse/scripts/evergage.min.js"></script>
+  <script src="dataLayer.js"></script>
+  <script src="mcp-sitemap.js"></script>
+
+  <style>
+    .esim-hero {
+      background: linear-gradient(135deg, #0b1f3a 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 3rem 0 3.5rem;
+      position: relative;
+    }
+    .esim-plan-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      border: 1.5px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .esim-plan-card:hover {
+      transform: translateY(-4px);
+      border-color: #199c90;
+      box-shadow: 0 15px 35px rgba(25, 156, 144, 0.2);
+    }
+    .esim-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: #f0fdfa;
+      color: #0f766e;
+      font-size: 11px;
+      font-weight: 800;
+      border: 1px solid #ccfbf1;
+    }
+    .step-box {
+      text-align: center;
+      padding: 24px;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body style="background: #f8fafc;">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <a href="packages.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-suitcase-rolling clr-primary mr-1"></i> Holiday Packages</a>
+        <a href="flights.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-plane-departure clr-primary mr-1"></i> Flights</a>
+        <a href="forex.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-money-bill-transfer clr-primary mr-1"></i> Forex</a>
+        <button class="btn btn-primary fnt-12" onclick="window.openAuth ? window.openAuth('login') : null"><i class="fa-regular fa-user mr-1"></i> Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="flight-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">Home</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;">International eSIM Data Plans</span>
+    </div>
+  </div>
+
+  <!-- 3. Hero Banner -->
+  <section class="esim-hero">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem; text-align: center;">
+      <span class="badge-tag" style="background: #199c90; color: #fff; margin-bottom: 12px; display: inline-block;">NEW DIGITAL SERVICE</span>
+      <h1 style="font-size: 34px; font-weight: 900; line-height: 1.2; margin-bottom: 12px;">
+        Instant High-Speed eSIM for 150+ Countries
+      </h1>
+      <p style="font-size: 16px; color: #e2e8f0; max-width: 680px; margin: 0 auto 24px; line-height: 1.6;">
+        No physical SIM card needed. Scan a QR code, keep your existing WhatsApp number, and enjoy high-speed 4G/5G data wherever you travel.
+      </p>
+
+      <!-- Search Destination Bar -->
+      <div style="max-width: 540px; margin: 0 auto; display: flex; background: #ffffff; padding: 6px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+        <input type="text" id="esim-search-input" placeholder="Search destination (e.g. Europe, Dubai, Thailand, USA)..." style="flex: 1; border: none; outline: none; padding: 10px 16px; font-size: 15px; font-weight: 600; color: #1e293b;" oninput="filterEsimPlans()">
+        <button class="btn btn-search" style="padding: 10px 24px; font-weight: 800;"><i class="fa-solid fa-magnifying-glass mr-1"></i> Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Popular eSIM Plans -->
+  <section style="padding: 3.5rem 0;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+        <div>
+          <h2 class="fnt-24 font-bold clr-3c">Popular Travel eSIM Bundles</h2>
+          <div class="fnt-13 clr-8f">Instant QR activation sent immediately to your email</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;" id="esim-plans-grid">
+        
+        <!-- Plan 1: Europe 33 Countries -->
+        <div class="esim-plan-card" data-country="europe">
+          <div>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="fnt-24">🇪🇺</span>
+              <span class="esim-badge">33 COUNTRIES</span>
+            </div>
+            <h3 class="fnt-18 font-bold clr-3c mb-1">Europe Regional Pass</h3>
+            <div class="fnt-12 clr-8f mb-3">France, Switzerland, Italy, Germany & 29 more</div>
+            <div class="fnt-14 font-bold clr-primary mb-1">10 GB High-Speed 5G Data</div>
+            <div class="fnt-12 clr-8f mb-3">Validity: 30 Days • Hotspot Enabled</div>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+              <span class="fnt-12 clr-8f">All-inclusive Price</span>
+              <span class="fnt-22 font-bold clr-3c">₹ 1,499</span>
+            </div>
+            <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="buyEsim('Europe 33 Countries (10GB)', '1499')">Get Instant QR Code</button>
+          </div>
+        </div>
+
+        <!-- Plan 2: Dubai / UAE -->
+        <div class="esim-plan-card" data-country="dubai uae">
+          <div>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="fnt-24">🇦🇪</span>
+              <span class="esim-badge">BESTSELLER</span>
+            </div>
+            <h3 class="fnt-18 font-bold clr-3c mb-1">United Arab Emirates (Dubai)</h3>
+            <div class="fnt-12 clr-8f mb-3">Instant connection on du / Etisalat 5G network</div>
+            <div class="fnt-14 font-bold clr-primary mb-1">5 GB High-Speed Data</div>
+            <div class="fnt-12 clr-8f mb-3">Validity: 10 Days • Keep WhatsApp active</div>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+              <span class="fnt-12 clr-8f">All-inclusive Price</span>
+              <span class="fnt-22 font-bold clr-3c">₹ 999</span>
+            </div>
+            <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="buyEsim('Dubai 5GB eSIM', '999')">Get Instant QR Code</button>
+          </div>
+        </div>
+
+        <!-- Plan 3: Thailand Unlimited -->
+        <div class="esim-plan-card" data-country="thailand bangkok phuket">
+          <div>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="fnt-24">🇹🇭</span>
+              <span class="esim-badge" style="background: #fff5f5; color: #e11d48; border-color: #fecdd3;">UNLIMITED</span>
+            </div>
+            <h3 class="fnt-18 font-bold clr-3c mb-1">Thailand Unlimited 5G</h3>
+            <div class="fnt-12 clr-8f mb-3">Bangkok, Phuket, Pattaya on AIS 5G network</div>
+            <div class="fnt-14 font-bold clr-red mb-1">Unlimited Data + 15 Mins Local Calls</div>
+            <div class="fnt-12 clr-8f mb-3">Validity: 10 Days • Zero roaming bill</div>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+              <span class="fnt-12 clr-8f">All-inclusive Price</span>
+              <span class="fnt-22 font-bold clr-3c">₹ 799</span>
+            </div>
+            <button class="btn btn-search w-100 fnt-13 font-bold" onclick="buyEsim('Thailand Unlimited eSIM', '799')">Get Instant QR Code</button>
+          </div>
+        </div>
+
+        <!-- Plan 4: Singapore & Malaysia -->
+        <div class="esim-plan-card" data-country="singapore malaysia">
+          <div>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="fnt-24">🇸🇬 🇲🇾</span>
+              <span class="esim-badge">COMBO PASS</span>
+            </div>
+            <h3 class="fnt-18 font-bold clr-3c mb-1">Singapore & Malaysia Dual Pass</h3>
+            <div class="fnt-12 clr-8f mb-3">Seamless auto-switch between Singtel & Celcom</div>
+            <div class="fnt-14 font-bold clr-primary mb-1">8 GB High-Speed Data</div>
+            <div class="fnt-12 clr-8f mb-3">Validity: 15 Days • Dual country roaming</div>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+              <span class="fnt-12 clr-8f">All-inclusive Price</span>
+              <span class="fnt-22 font-bold clr-3c">₹ 1,199</span>
+            </div>
+            <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="buyEsim('Singapore & Malaysia 8GB', '1199')">Get Instant QR Code</button>
+          </div>
+        </div>
+
+        <!-- Plan 5: USA & Canada -->
+        <div class="esim-plan-card" data-country="usa united states canada">
+          <div>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="fnt-24">🇺🇸 🇨🇦</span>
+              <span class="esim-badge">NORTH AMERICA</span>
+            </div>
+            <h3 class="fnt-18 font-bold clr-3c mb-1">USA & Canada Express</h3>
+            <div class="fnt-12 clr-8f mb-3">T-Mobile & AT&T 5G premium coverage</div>
+            <div class="fnt-14 font-bold clr-primary mb-1">15 GB High-Speed Data</div>
+            <div class="fnt-12 clr-8f mb-3">Validity: 30 Days • Fast activation</div>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+              <span class="fnt-12 clr-8f">All-inclusive Price</span>
+              <span class="fnt-22 font-bold clr-3c">₹ 1,899</span>
+            </div>
+            <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="buyEsim('USA & Canada 15GB', '1899')">Get Instant QR Code</button>
+          </div>
+        </div>
+
+        <!-- Plan 6: Bali / Indonesia -->
+        <div class="esim-plan-card" data-country="bali indonesia">
+          <div>
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="fnt-24">🇮🇩</span>
+              <span class="esim-badge">BEACH SPECIAL</span>
+            </div>
+            <h3 class="fnt-18 font-bold clr-3c mb-1">Bali & Indonesia Island Pass</h3>
+            <div class="fnt-12 clr-8f mb-3">Telkomsel 4G/5G island-wide network</div>
+            <div class="fnt-14 font-bold clr-primary mb-1">10 GB High-Speed Data</div>
+            <div class="fnt-12 clr-8f mb-3">Validity: 15 Days • Instant QR scan</div>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-baseline mb-3">
+              <span class="fnt-12 clr-8f">All-inclusive Price</span>
+              <span class="fnt-22 font-bold clr-3c">₹ 899</span>
+            </div>
+            <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="buyEsim('Bali 10GB eSIM', '899')">Get Instant QR Code</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. How It Works -->
+  <section style="background: #ffffff; padding: 3.5rem 0; border-top: 1px solid #e2e8f0;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <div class="text-center mb-4">
+        <h2 class="fnt-24 font-bold clr-3c">How International eSIM Works in 3 Steps</h2>
+        <div class="fnt-13 clr-8f">Zero physical SIM swapping • Takes less than 2 minutes</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div class="step-box">
+          <div style="font-size: 32px; margin-bottom: 12px;">📱</div>
+          <div class="fnt-16 font-bold clr-3c mb-1">1. Choose Your Plan</div>
+          <div class="fnt-13 clr-8f">Select your destination and preferred data bundle.</div>
+        </div>
+        <div class="step-box">
+          <div style="font-size: 32px; margin-bottom: 12px;">✉️</div>
+          <div class="fnt-16 font-bold clr-3c mb-1">2. Receive QR Instantly</div>
+          <div class="fnt-13 clr-8f">Get your digital eSIM QR code on email & WhatsApp in seconds.</div>
+        </div>
+        <div class="step-box">
+          <div style="font-size: 32px; margin-bottom: 12px;">🚀</div>
+          <div class="fnt-16 font-bold clr-3c mb-1">3. Scan & Connect</div>
+          <div class="fnt-13 clr-8f">Scan QR in Phone Settings > Cellular and connect as soon as you land!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="background: var(--navy); color: var(--white); padding: 3rem 0 2rem;">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 pb-3">
+        <img src="assets/images/logo.0066e88.png" alt="DPauls Holidays" style="height: 38px;">
+        <div class="fnt-13 clr-8f">© 2026 DPauls Travel & Tours. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    function filterEsimPlans() {
+      const q = document.getElementById('esim-search-input').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.esim-plan-card');
+      cards.forEach(card => {
+        const country = (card.getAttribute('data-country') || '').toLowerCase();
+        const text = card.textContent.toLowerCase();
+        if (country.includes(q) || text.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function buyEsim(title, price) {
+      if (typeof window.confirmBooking === 'function') {
+        window.confirmBooking(title, price, { type: 'esim', code: 'ESIM_' + Date.now().toString(36) });
+      } else {
+        alert(`eSIM Plan Selected: ${title} (₹${price})\n\nProceeding to instant checkout...`);
+        window.location.href = `booking.html?type=esim&title=${encodeURIComponent(title)}&price=${price}`;
+      }
+    }
+  </script>
+</body>
+</html>

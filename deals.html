@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Deals & Offers - Exclusive Holiday Discounts & Promo Codes | DPauls Holidays</title>
+  <meta name="description" content="Discover mega holiday discounts, flight offers, and coupon codes on domestic & international tour packages. Save up to ₹5,000 instantly with DPauls Travel Deals.">
+  <meta name="theme-color" content="#199c90">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flight-results.css">
+
+  <!-- Salesforce Marketing Cloud Personalization (MCP) DataLayer & Sitemap -->
+  <!-- Salesforce Marketing Cloud Personalization (Evergage) Beacon -->
+  <script type="text/javascript" src="//cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/dpaulse/scripts/evergage.min.js"></script>
+  <script src="dataLayer.js"></script>
+  <script src="mcp-sitemap.js"></script>
+
+  <style>
+    .deals-hero {
+      background: linear-gradient(135deg, #0b1f3a 0%, #1e1b4b 50%, #134e4a 100%);
+      color: #ffffff;
+      padding: 3rem 0 3.5rem;
+      text-align: center;
+    }
+    .deal-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .deal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(25, 156, 144, 0.2);
+    }
+    .deal-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .deal-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .coupon-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: #f0fdfa;
+      border: 1.5px dashed #199c90;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-weight: 800;
+      color: #0f766e;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body style="background: #f8fafc;">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <a href="packages.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-suitcase-rolling clr-primary mr-1"></i> Holiday Packages</a>
+        <a href="flights.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-plane-departure clr-primary mr-1"></i> Flights</a>
+        <a href="forex.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-money-bill-transfer clr-primary mr-1"></i> Forex</a>
+        <a href="esim.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-sim-card clr-primary mr-1"></i> eSIM</a>
+        <button class="btn btn-primary fnt-12" onclick="window.openAuth ? window.openAuth('login') : null"><i class="fa-regular fa-user mr-1"></i> Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="flight-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">Home</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;">Exclusive Travel Deals &amp; Promo Offers</span>
+    </div>
+  </div>
+
+  <!-- 3. Hero Section -->
+  <section class="deals-hero">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <span class="badge-tag" style="background: #ea580c; color: #fff; margin-bottom: 12px; display: inline-block;">LIMITED TIME OFFERS</span>
+      <h1 style="font-size: 34px; font-weight: 900; line-height: 1.25; margin-bottom: 12px;">
+        Unbeatable Holiday Deals &amp; Travel Coupons ✈️🌴
+      </h1>
+      <p style="font-size: 15px; color: #cbd5e1; max-width: 650px; margin: 0 auto; line-height: 1.6;">
+        Apply verified promo codes on checkout to unlock instant discounts on flights, domestic holiday getaways, Europe grand tours, and luxury beach resorts.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. Active Deals Grid -->
+  <section style="padding: 3.5rem 0;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px;">
+
+        <!-- Deal 1: Europe -->
+        <div class="deal-card">
+          <img src="assets/images/switzerland.jpg" alt="Europe Holidays Deal" class="deal-img" onerror="this.src='assets/images/shimla__2_.jpg'">
+          <div class="deal-body">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-tag" style="background: #199c90; color: #fff;">INTERNATIONAL</span>
+                <span class="fnt-12 clr-8f">Valid till 31 Oct</span>
+              </div>
+              <h3 class="fnt-18 font-bold clr-3c mb-1">Grand Europe &amp; Switzerland Explorer</h3>
+              <p class="fnt-13 clr-8f mb-3">Flat ₹5,000 OFF on 8N/9D all-inclusive Europe group departures including flights, visa &amp; 4-star hotels.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="coupon-tag">
+                  <span>EUROPE5000</span>
+                  <button type="button" onclick="navigator.clipboard.writeText('EUROPE5000'); alert('Coupon EUROPE5000 copied!');" style="background:none; border:none; color:#199c90; cursor:pointer;"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <span class="fnt-18 font-bold clr-primary">₹ 1,59,999</span>
+              </div>
+              <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="window.location.href='package-detail.html?id=europe'">Claim Europe Deal</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal 2: Himachal -->
+        <div class="deal-card">
+          <img src="assets/images/shimla__2_.jpg" alt="Himachal Tour Deal" class="deal-img">
+          <div class="deal-body">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-tag" style="background: #0284c7; color: #fff;">DOMESTIC ESCAPE</span>
+                <span class="fnt-12 clr-8f">Valid till 30 Sep</span>
+              </div>
+              <h3 class="fnt-18 font-bold clr-3c mb-1">Shimla &amp; Manali Hills Special</h3>
+              <p class="fnt-13 clr-8f mb-3">Get FLAT ₹2,000 OFF on 5N/6D Himachal tours with private cab transfers and daily breakfast &amp; dinner.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="coupon-tag">
+                  <span>HIMALAYA2000</span>
+                  <button type="button" onclick="navigator.clipboard.writeText('HIMALAYA2000'); alert('Coupon HIMALAYA2000 copied!');" style="background:none; border:none; color:#199c90; cursor:pointer;"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <span class="fnt-18 font-bold clr-primary">₹ 13,999</span>
+              </div>
+              <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="window.location.href='package-detail.html?id=himachal'">Claim Himachal Deal</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal 3: Goa Beach -->
+        <div class="deal-card">
+          <img src="assets/images/rajasthan.jpg" alt="Goa Beach Deal" class="deal-img" onerror="this.src='assets/images/shimla__2_.jpg'">
+          <div class="deal-body">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-tag" style="background: #ea580c; color: #fff;">BEACH RESORT</span>
+                <span class="fnt-12 clr-8f">Flash Sale</span>
+              </div>
+              <h3 class="fnt-18 font-bold clr-3c mb-1">Goa 4-Star Beach Holiday &amp; Flights</h3>
+              <p class="fnt-13 clr-8f mb-3">Return flights included + 3 Nights luxury pool resort stay with complimentary airport pickup.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="coupon-tag">
+                  <span>GOABEACH15</span>
+                  <button type="button" onclick="navigator.clipboard.writeText('GOABEACH15'); alert('Coupon GOABEACH15 copied!');" style="background:none; border:none; color:#199c90; cursor:pointer;"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <span class="fnt-18 font-bold clr-primary">₹ 12,499</span>
+              </div>
+              <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="window.location.href='package-detail.html?id=goa'">Claim Goa Deal</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal 4: Dubai Extravaganza -->
+        <div class="deal-card">
+          <img src="assets/images/dubai.jpg" alt="Dubai Deal" class="deal-img" onerror="this.src='assets/images/shimla__2_.jpg'">
+          <div class="deal-body">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-tag" style="background: #199c90; color: #fff;">VISA FREE BUNDLE</span>
+                <span class="fnt-12 clr-8f">Best Value</span>
+              </div>
+              <h3 class="fnt-18 font-bold clr-3c mb-1">5N Dubai Mega Holiday + Desert Safari</h3>
+              <p class="fnt-13 clr-8f mb-3">Includes Burj Khalifa Level 124 ticket, Marina Dhow Cruise dinner, and Desert Safari BBQ.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="coupon-tag">
+                  <span>DUBAI3000</span>
+                  <button type="button" onclick="navigator.clipboard.writeText('DUBAI3000'); alert('Coupon DUBAI3000 copied!');" style="background:none; border:none; color:#199c90; cursor:pointer;"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <span class="fnt-18 font-bold clr-primary">₹ 46,999</span>
+              </div>
+              <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="window.location.href='package-detail.html?id=dubai'">Claim Dubai Deal</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal 5: Thailand Special -->
+        <div class="deal-card">
+          <img src="assets/images/thailand.jpg" alt="Thailand Deal" class="deal-img" onerror="this.src='assets/images/shimla__2_.jpg'">
+          <div class="deal-body">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-tag" style="background: #e11d48; color: #fff;">VISA FREE</span>
+                <span class="fnt-12 clr-8f">Top Seller</span>
+              </div>
+              <h3 class="fnt-18 font-bold clr-3c mb-1">Bangkok &amp; Pattaya Dual Combo</h3>
+              <p class="fnt-13 clr-8f mb-3">4N/5D complete package with Coral Island speedboat tour, Alcazar Show, and Bangkok temples.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="coupon-tag">
+                  <span>THAI2000</span>
+                  <button type="button" onclick="navigator.clipboard.writeText('THAI2000'); alert('Coupon THAI2000 copied!');" style="background:none; border:none; color:#199c90; cursor:pointer;"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <span class="fnt-18 font-bold clr-primary">₹ 26,999</span>
+              </div>
+              <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="window.location.href='package-detail.html?id=thailand'">Claim Thailand Deal</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal 6: First Booking Voucher -->
+        <div class="deal-card" style="border: 2px dashed #199c90; background: #f0fdfa;">
+          <div class="deal-body">
+            <div>
+              <div class="badge-tag" style="background: #199c90; color: #fff; margin-bottom: 12px;">WELCOME VOUCHER</div>
+              <h3 class="fnt-20 font-bold clr-3c mb-2">FLAT ₹2,000 OFF on Any Booking</h3>
+              <p class="fnt-13 clr-8f mb-4">First time booking with DPauls? Use our exclusive welcome promo code on any flight or holiday tour.</p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="coupon-tag" style="background: #ffffff;">
+                  <span>DPAULS2000</span>
+                  <button type="button" onclick="navigator.clipboard.writeText('DPAULS2000'); alert('Coupon DPAULS2000 copied!');" style="background:none; border:none; color:#199c90; cursor:pointer;"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <span class="fnt-14 font-bold clr-primary">Save ₹2,000</span>
+              </div>
+              <button class="btn btn-search w-100 fnt-13 font-bold" onclick="window.location.href='packages.html'">Explore All Packages</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="background: var(--navy); color: var(--white); padding: 3rem 0 2rem;">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 pb-3">
+        <img src="assets/images/logo.0066e88.png" alt="DPauls Holidays" style="height: 38px;">
+        <div class="fnt-13 clr-8f">© 2026 DPauls Travel & Tours. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

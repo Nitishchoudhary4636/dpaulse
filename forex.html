@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foreign Exchange Services - Buy & Sell Forex Online at Best Rates | DPauls.com</title>
+  <meta name="description" content="Buy and sell foreign currency, multi-currency Forex travel cards, and outward remittances at live exchange rates. RBI authorized with 100% genuine currency guarantee and doorstep delivery.">
+  <meta name="theme-color" content="#199c90">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+
+  <!-- CSS & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flight-results.css">
+
+  <!-- Salesforce Marketing Cloud Personalization (MCP) DataLayer & Sitemap -->
+  <!-- Salesforce Marketing Cloud Personalization (Evergage) Beacon -->
+  <script type="text/javascript" src="//cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/dpaulse/scripts/evergage.min.js"></script>
+  <script src="dataLayer.js"></script>
+  <script src="mcp-sitemap.js"></script>
+
+  <style>
+    .forex-hero {
+      background: linear-gradient(135deg, #0b1f3a 0%, #134e4a 100%);
+      color: #ffffff;
+      padding: 3rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .forex-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(25, 156, 144, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .forex-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .forex-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(25, 156, 144, 0.15);
+    }
+    .rate-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #f0fdfa;
+      border: 1px solid #ccfbf1;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f766e;
+    }
+    .calc-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border: 2px solid #199c90;
+    }
+    .table-forex {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    .table-forex th {
+      background: #f8fafc;
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #334155;
+      text-align: left;
+      border-bottom: 2px solid #cbd5e1;
+    }
+    .table-forex td {
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #1e293b;
+      border-bottom: 1px solid #f1f5f9;
+      background: #ffffff;
+    }
+    .table-forex tr:hover td {
+      background: #f0fdfa;
+    }
+    .currency-flag {
+      width: 26px;
+      height: 18px;
+      border-radius: 3px;
+      object-fit: cover;
+      vertical-align: middle;
+      margin-right: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body style="background: #f8fafc;">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <a href="packages.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-suitcase-rolling clr-primary mr-1"></i> Holiday Packages</a>
+        <a href="flights.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-plane-departure clr-primary mr-1"></i> Flights</a>
+        <a href="hotels.html" class="fnt-13 font-bold clr-3c" style="text-decoration: none;"><i class="fa-solid fa-hotel clr-primary mr-1"></i> Hotels</a>
+        <a href="esim.html" class="fnt-13 font-bold clr-primary" style="text-decoration: none;"><i class="fa-solid fa-sim-card mr-1"></i> International eSIM</a>
+        <button class="btn btn-primary fnt-12" onclick="window.openAuth ? window.openAuth('login') : null"><i class="fa-regular fa-user mr-1"></i> Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="flight-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">Home</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;">Foreign Exchange Services (Forex)</span>
+    </div>
+  </div>
+
+  <!-- 3. Forex Hero Section with Calculator -->
+  <section class="forex-hero">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <div class="row align-items-center" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+        
+        <div style="flex: 1 1 500px;">
+          <div class="rate-pill" style="margin-bottom: 12px;">
+            <i class="fa-solid fa-shield-halved"></i> RBI AUTHORIZED DEALER • BEST RATE GUARANTEE
+          </div>
+          <h1 style="font-size: 32px; font-weight: 900; line-height: 1.25; margin-bottom: 14px;">
+            Buy & Sell Foreign Currency Online at Live Interbank Rates
+          </h1>
+          <p style="font-size: 15px; color: #cbd5e1; line-height: 1.6; margin-bottom: 24px;">
+            Order foreign currency cash notes, contactless multi-currency travel cards, or send university fees abroad with zero hidden markup and doorstep delivery across India.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-truck-fast clr-primary fnt-18"></i>
+              <span class="fnt-13 font-bold">Doorstep Delivery</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-credit-card clr-primary fnt-18"></i>
+              <span class="fnt-13 font-bold">Multi-Currency Card</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-hand-holding-dollar clr-primary fnt-18"></i>
+              <span class="fnt-13 font-bold">100% Genuine Notes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Calculator Card -->
+        <div style="flex: 1 1 420px;">
+          <div class="calc-box">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="fnt-16 font-bold clr-3c"><i class="fa-solid fa-calculator clr-primary mr-1"></i> Live Forex Calculator</span>
+              <span class="badge-tag" style="background: #199c90; color: #fff;">LIVE RATES</span>
+            </div>
+
+            <div class="d-flex gap-2 mb-3">
+              <button type="button" class="btn btn-primary w-50 fnt-13 font-bold" id="btn-mode-buy" onclick="setForexMode('buy')">Buy Forex</button>
+              <button type="button" class="btn w-50 fnt-13 font-bold" id="btn-mode-sell" style="background: #f1f5f9; color: #334155;" onclick="setForexMode('sell')">Sell Forex</button>
+            </div>
+
+            <!-- Currency Select -->
+            <div class="mb-3">
+              <label class="fnt-12 font-bold clr-8f">Select Foreign Currency</label>
+              <select id="calc-currency" class="w-100" style="padding: 10px 14px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-weight: 700; font-size: 14px;" onchange="updateForexCalc()">
+                <option value="USD" data-rate="84.20" data-flag="🇺🇸">USD - US Dollar (₹84.20)</option>
+                <option value="EUR" data-rate="91.50" data-flag="🇪🇺">EUR - Euro (₹91.50)</option>
+                <option value="GBP" data-rate="108.20" data-flag="🇬🇧">GBP - British Pound (₹108.20)</option>
+                <option value="AED" data-rate="22.95" data-flag="🇦🇪">AED - UAE Dirham (₹22.95)</option>
+                <option value="THB" data-rate="2.45" data-flag="🇹🇭">THB - Thai Baht (₹2.45)</option>
+                <option value="SGD" data-rate="63.80" data-flag="🇸🇬">SGD - Singapore Dollar (₹63.80)</option>
+                <option value="CAD" data-rate="62.10" data-flag="🇨🇦">CAD - Canadian Dollar (₹62.10)</option>
+                <option value="AUD" data-rate="55.80" data-flag="🇦🇺">AUD - Australian Dollar (₹55.80)</option>
+              </select>
+            </div>
+
+            <!-- Foreign Currency Amount Input -->
+            <div class="mb-3">
+              <label class="fnt-12 font-bold clr-8f">Foreign Currency Amount</label>
+              <input type="number" id="calc-amount" value="1000" class="w-100" style="padding: 10px 14px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-weight: 800; font-size: 16px;" oninput="updateForexCalc()">
+            </div>
+
+            <!-- Product Type -->
+            <div class="mb-3">
+              <label class="fnt-12 font-bold clr-8f">Forex Product</label>
+              <div class="d-flex gap-2">
+                <label class="radio-pill-label" style="flex: 1; text-align: center; background: #f8fafc; padding: 8px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 13px; font-weight: 700; cursor: pointer;">
+                  <input type="radio" name="forex_prod" value="card" checked> Travel Card
+                </label>
+                <label class="radio-pill-label" style="flex: 1; text-align: center; background: #f8fafc; padding: 8px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 13px; font-weight: 700; cursor: pointer;">
+                  <input type="radio" name="forex_prod" value="cash"> Cash Currency
+                </label>
+              </div>
+            </div>
+
+            <!-- Total Output Box -->
+            <div style="background: #f0fdfa; border: 1.5px dashed #199c90; border-radius: 10px; padding: 14px; margin-bottom: 18px;">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fnt-13 font-bold clr-3c">Total Payable Amount:</span>
+                <span class="fnt-20 font-bold clr-primary" id="calc-total-inr">₹ 84,200</span>
+              </div>
+              <div class="fnt-11 clr-8f mt-1">Zero commission markup guarantee. Rates valid for today.</div>
+            </div>
+
+            <button type="button" class="btn btn-search w-100" style="padding: 12px; font-size: 15px; font-weight: 800;" onclick="submitForexOrder()">
+              <i class="fa-solid fa-cart-shopping mr-1"></i> BOOK THIS RATE NOW
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Forex Products & Services Grid -->
+  <section style="padding: 3.5rem 0;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <div class="text-center mb-4">
+        <div class="fnt-12 font-bold clr-primary text-uppercase" style="letter-spacing: 1px;">OUR CURRENCY SOLUTIONS</div>
+        <h2 class="fnt-26 font-bold clr-3c">Everything you need for seamless foreign travel</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        
+        <!-- Card 1: Multi Currency Card -->
+        <div class="forex-card">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0fdfa; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <i class="fa-solid fa-credit-card clr-primary fnt-22"></i>
+          </div>
+          <h3 class="fnt-18 font-bold clr-3c mb-2">Multi-Currency Forex Card</h3>
+          <p class="fnt-13 clr-8f mb-3">Load up to 16 currencies in a single chip-protected Visa/Mastercard. Enjoy zero cross-currency conversion markups and worldwide contactless POS acceptance.</p>
+          <ul class="fnt-13 clr-3c mb-3" style="padding-left: 20px; line-height: 1.8;">
+            <li>Lock exchange rates instantly before you fly</li>
+            <li>Free emergency replacement card included</li>
+            <li>Zero ATM withdrawal fees across partner banks</li>
+          </ul>
+          <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="alert('Multi-Currency Card Request Initiated! Our team will call you to confirm KYC.')">Apply for Forex Card</button>
+        </div>
+
+        <!-- Card 2: Cash Currency Notes -->
+        <div class="forex-card">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff5f5; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <i class="fa-solid fa-money-bill-wave clr-red fnt-22"></i>
+          </div>
+          <h3 class="fnt-18 font-bold clr-3c mb-2">Foreign Currency Cash Notes</h3>
+          <p class="fnt-13 clr-8f mb-3">Get genuine, crisp banknotes in 30+ major world currencies for taxis, street food, and local tips. Delivered directly to your home or office.</p>
+          <ul class="fnt-13 clr-3c mb-3" style="padding-left: 20px; line-height: 1.8;">
+            <li>100% authentic, verified notes</li>
+            <li>Small denomination mix available on request</li>
+            <li>Same-day doorstep delivery in metro cities</li>
+          </ul>
+          <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="alert('Currency Notes Request Initiated! Doorstep delivery team assigned.')">Order Cash Notes</button>
+        </div>
+
+        <!-- Card 3: Outward Remittance -->
+        <div class="forex-card">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #eff6ff; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <i class="fa-solid fa-paper-plane clr-blue fnt-22"></i>
+          </div>
+          <h3 class="fnt-18 font-bold clr-3c mb-2">Send Money Abroad (Remittance)</h3>
+          <p class="fnt-13 clr-8f mb-3">Transfer funds internationally for University Tuition Fees, Living Expenses, Medical Treatments, or Family Maintenance via RBI-compliant SWIFT networks.</p>
+          <ul class="fnt-13 clr-3c mb-3" style="padding-left: 20px; line-height: 1.8;">
+            <li>Fast wire transfers credited within 24–48 hrs</li>
+            <li>Lowest processing charges in the market</li>
+            <li>Form A2 and documentation assistance provided</li>
+          </ul>
+          <button class="btn btn-primary w-100 fnt-13 font-bold" onclick="alert('Remittance Specialist Assigned! Check your email for A2 documentation.')">Transfer Money Abroad</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Live Exchange Rate Table -->
+  <section style="background: #ffffff; padding: 3.5rem 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 1rem;">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+        <div>
+          <h2 class="fnt-22 font-bold clr-3c">Today's Live Exchange Rates (INR)</h2>
+          <div class="fnt-13 clr-8f">Updated every 15 minutes • No hidden commissions</div>
+        </div>
+        <div class="fnt-12 font-bold clr-primary">
+          <i class="fa-solid fa-clock-rotate-left mr-1"></i> Live Interbank Rates
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="table-forex">
+          <thead>
+            <tr>
+              <th>Currency</th>
+              <th>Currency Code</th>
+              <th>We Buy (INR)</th>
+              <th>We Sell (INR)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>🇺🇸 US Dollar</b></td>
+              <td>USD</td>
+              <td class="font-bold">₹ 83.70</td>
+              <td class="font-bold clr-primary">₹ 84.20</td>
+              <td><button class="btn btn-primary fnt-12 py-1 px-3" onclick="quickSelectCurrency('USD')">Buy USD</button></td>
+            </tr>
+            <tr>
+              <td><b>🇪🇺 Euro</b></td>
+              <td>EUR</td>
+              <td class="font-bold">₹ 90.80</td>
+              <td class="font-bold clr-primary">₹ 91.50</td>
+              <td><button class="btn btn-primary fnt-12 py-1 px-3" onclick="quickSelectCurrency('EUR')">Buy EUR</button></td>
+            </tr>
+            <tr>
+              <td><b>🇬🇧 British Pound</b></td>
+              <td>GBP</td>
+              <td class="font-bold">₹ 107.30</td>
+              <td class="font-bold clr-primary">₹ 108.20</td>
+              <td><button class="btn btn-primary fnt-12 py-1 px-3" onclick="quickSelectCurrency('GBP')">Buy GBP</button></td>
+            </tr>
+            <tr>
+              <td><b>🇦🇪 UAE Dirham</b></td>
+              <td>AED</td>
+              <td class="font-bold">₹ 22.65</td>
+              <td class="font-bold clr-primary">₹ 22.95</td>
+              <td><button class="btn btn-primary fnt-12 py-1 px-3" onclick="quickSelectCurrency('AED')">Buy AED</button></td>
+            </tr>
+            <tr>
+              <td><b>🇹🇭 Thai Baht</b></td>
+              <td>THB</td>
+              <td class="font-bold">₹ 2.38</td>
+              <td class="font-bold clr-primary">₹ 2.45</td>
+              <td><button class="btn btn-primary fnt-12 py-1 px-3" onclick="quickSelectCurrency('THB')">Buy THB</button></td>
+            </tr>
+            <tr>
+              <td><b>🇸🇬 Singapore Dollar</b></td>
+              <td>SGD</td>
+              <td class="font-bold">₹ 63.10</td>
+              <td class="font-bold clr-primary">₹ 63.80</td>
+              <td><button class="btn btn-primary fnt-12 py-1 px-3" onclick="quickSelectCurrency('SGD')">Buy SGD</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Footer -->
+  <footer class="footer" style="background: var(--navy); color: var(--white); padding: 3rem 0 2rem; margin-top: 2rem;">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 pb-3" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <img src="assets/images/logo.0066e88.png" alt="DPauls Holidays" style="height: 38px;">
+        <div class="fnt-13 clr-8f">© 2026 DPauls Travel & Tours. All Rights Reserved. RBI Authorized Dealer.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    let currentMode = 'buy';
+
+    function setForexMode(mode) {
+      currentMode = mode;
+      const buyBtn = document.getElementById('btn-mode-buy');
+      const sellBtn = document.getElementById('btn-mode-sell');
+      if (mode === 'buy') {
+        buyBtn.className = 'btn btn-primary w-50 fnt-13 font-bold';
+        buyBtn.style.background = '';
+        sellBtn.className = 'btn w-50 fnt-13 font-bold';
+        sellBtn.style.background = '#f1f5f9';
+        sellBtn.style.color = '#334155';
+      } else {
+        sellBtn.className = 'btn btn-primary w-50 fnt-13 font-bold';
+        sellBtn.style.background = '';
+        buyBtn.className = 'btn w-50 fnt-13 font-bold';
+        buyBtn.style.background = '#f1f5f9';
+        buyBtn.style.color = '#334155';
+      }
+      updateForexCalc();
+    }
+
+    function updateForexCalc() {
+      const select = document.getElementById('calc-currency');
+      const amountInput = document.getElementById('calc-amount');
+      const totalDisplay = document.getElementById('calc-total-inr');
+
+      const opt = select.options[select.selectedIndex];
+      const rate = parseFloat(opt.getAttribute('data-rate')) || 84.20;
+      const amount = parseFloat(amountInput.value) || 0;
+
+      const multiplier = currentMode === 'sell' ? (rate * 0.985) : rate;
+      const total = Math.round(amount * multiplier);
+
+      totalDisplay.textContent = '₹ ' + total.toLocaleString('en-IN');
+    }
+
+    function quickSelectCurrency(code) {
+      const select = document.getElementById('calc-currency');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === code) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      updateForexCalc();
+    }
+
+    function submitForexOrder() {
+      const select = document.getElementById('calc-currency');
+      const amount = document.getElementById('calc-amount').value;
+      const total = document.getElementById('calc-total-inr').textContent;
+
+      alert(`Forex Order Placed Successfully!\n\nCurrency: ${select.value} ${amount}\nTotal: ${total}\n\nOur currency desk specialist will contact you to verify delivery address and passport/PAN KYC.`);
+    }
+  </script>
+</body>
+</html>

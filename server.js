@@ -19,8 +19,21 @@ function handler(req, res) {
   let reqPath = (req.url || '/').split('?')[0];
   if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
 
-  const filePath = path.join(__dirname, reqPath);
-  const ext = path.extname(filePath).toLowerCase();
+  if (reqPath === '/holiday-packages' || reqPath === '/holiday-packages/' || reqPath === '/holidays' || reqPath === '/holidays/') {
+    reqPath = '/packages.html';
+  }
+
+  let filePath = path.join(__dirname, reqPath);
+  let ext = path.extname(filePath).toLowerCase();
+
+  // Support clean URLs like /forex, /esim, /deals, /packages, /flights
+  if (!ext) {
+    if (fs.existsSync(filePath + '.html')) {
+      filePath = filePath + '.html';
+      ext = '.html';
+    }
+  }
+
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
   fs.readFile(filePath, (err, content) => {
