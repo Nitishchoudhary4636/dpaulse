@@ -1238,16 +1238,29 @@
       <div class="auth-form-body" id="auth-body-login">
         <!-- OTP Login Section -->
         <div class="form-group-field">
-          <label for="login-mobile">Login using Mobile No.</label>
+          <label for="login-mobile">Login using Mobile No. (Instant OTP)</label>
           <div class="pos-r">
-            <input type="tel" id="login-mobile" class="form-input-styled" placeholder="Enter 10-digit mobile number" maxlength="10">
+            <input type="tel" id="login-mobile" class="form-input-styled" placeholder="e.g. 9876543210" maxlength="10">
           </div>
-          <button type="button" class="btn btn-primary w-100 mt-2" id="send-otp-btn">
-            Send OTP
+          <button type="button" class="btn btn-primary w-100 mt-2" id="send-otp-btn" onclick="window.handleSendOtp()">
+            <i class="fa-solid fa-paper-plane mr-1"></i> Send Verification OTP
           </button>
         </div>
 
-        <div style="display: flex; align-items: center; margin: 1.5rem 0;">
+        <!-- OTP Input Box (Hidden initially) -->
+        <div class="auth-otp-step" id="auth-otp-step-box">
+          <label for="login-otp-code" class="font-bold fnt-13 clr-3c">Enter 6-Digit OTP Code</label>
+          <input type="text" id="login-otp-code" class="form-input-styled mt-1 mb-2 text-center font-bold" placeholder="• • • • • •" maxlength="6" style="letter-spacing: 4px; font-size: 1.2rem;">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="fnt-12 clr-8f" id="otp-timer-text">Code valid for 5:00 min</span>
+            <button type="button" class="btn-clear-filters fnt-12 font-bold" onclick="window.handleSendOtp()">Resend OTP</button>
+          </div>
+          <button type="button" class="btn btn-search w-100" id="verify-otp-btn" onclick="window.handleVerifyOtp()">
+            Verify OTP &amp; Log In
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: center; margin: 1.25rem 0;">
           <div style="flex: 1; height: 1px; background: var(--border-color);"></div>
           <span class="fnt-12 clr-8f px-3 font-bold">OR LOGIN USING EMAIL</span>
           <div style="flex: 1; height: 1px; background: var(--border-color);"></div>
@@ -1256,16 +1269,23 @@
         <!-- Email Password Login -->
         <form onsubmit="event.preventDefault(); window.handleEmailLogin();">
           <div class="form-group-field">
-            <label for="login-email">Email ID</label>
-            <input type="email" id="login-email" class="form-input-styled" placeholder="name@example.com">
+            <label for="login-email">Email ID / Username</label>
+            <input type="email" id="login-email" class="form-input-styled" placeholder="user@dpauls.com" value="user@dpauls.com" required>
           </div>
           <div class="form-group-field">
             <label for="login-password">Password</label>
-            <input type="password" id="login-password" class="form-input-styled" placeholder="Enter your password">
+            <input type="password" id="login-password" class="form-input-styled" placeholder="Enter your password" value="password123" required>
           </div>
-          <button type="submit" class="btn btn-search w-100 mt-2">
-            Log In
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <label class="d-flex align-items-center gap-1 fnt-12 clr-66 cursor-pointer">
+              <input type="checkbox" id="login-remember-me" checked> Remember me (Stay logged in)
+            </label>
+            <a href="javascript:void(0)" class="fnt-12 clr-primary" onclick="alert('Password reset link sent to demo registered email.')">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn btn-search w-100" id="email-login-submit-btn">
+            Log In to DPauls
           </button>
+          <div class="fnt-11 clr-8f text-center mt-2">Demo account pre-filled: user@dpauls.com / password123</div>
         </form>
       </div>
 
@@ -1273,24 +1293,29 @@
       <div class="auth-form-body" id="auth-body-signup" style="display: none;">
         <form onsubmit="event.preventDefault(); window.handleSignup();">
           <div class="form-group-field">
-            <label for="signup-name">Full Name</label>
-            <input type="text" id="signup-name" class="form-input-styled" placeholder="Enter your full name" required>
+            <label for="signup-name">Full Name *</label>
+            <input type="text" id="signup-name" class="form-input-styled" placeholder="e.g. Rahul Sharma" required>
           </div>
           <div class="form-group-field">
-            <label for="signup-email">Email Address</label>
-            <input type="email" id="signup-email" class="form-input-styled" placeholder="name@example.com" required>
+            <label for="signup-email">Email Address *</label>
+            <input type="email" id="signup-email" class="form-input-styled" placeholder="rahul@example.com" required>
           </div>
           <div class="form-group-field">
-            <label for="signup-mobile">Mobile Number</label>
-            <input type="tel" id="signup-mobile" class="form-input-styled" placeholder="10-digit mobile number" maxlength="10" required>
+            <label for="signup-mobile">Mobile Number (10 Digits) *</label>
+            <input type="tel" id="signup-mobile" class="form-input-styled" placeholder="9876543210" maxlength="10" required>
           </div>
           <div class="form-group-field">
-            <label for="signup-password">Create Password</label>
-            <input type="password" id="signup-password" class="form-input-styled" placeholder="Create strong password" required>
+            <label for="signup-password">Create Password (min 6 characters) *</label>
+            <input type="password" id="signup-password" class="form-input-styled" placeholder="Enter strong password" required minlength="6">
           </div>
-          <button type="submit" class="btn btn-primary w-100 mt-2">
+          <div class="form-group-field">
+            <label for="signup-confirm-password">Confirm Password *</label>
+            <input type="password" id="signup-confirm-password" class="form-input-styled" placeholder="Confirm your password" required minlength="6">
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mt-2" id="signup-submit-btn">
             Create DPauls Account
           </button>
+          <div class="fnt-11 clr-8f text-center mt-2">By signing up, you agree to DPauls Terms &amp; Privacy Policy</div>
         </form>
       </div>
     </div>

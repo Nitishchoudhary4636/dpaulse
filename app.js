@@ -305,21 +305,293 @@ function initModals() {
     });
   }
 
-  // Auth Modal
-  const authModal = document.getElementById('auth-modal');
-  const closeAuthBtn = document.getElementById('close-auth-modal-btn');
-  const loginTriggers = document.querySelectorAll('.modal-trigger-login');
-  const signupTriggers = document.querySelectorAll('.modal-trigger-signup');
+  // ==========================================================================
+  // AUTHENTICATION & SESSION ENGINE (localStorage & sessionStorage)
+  // ==========================================================================
+  const AUTH_STORAGE = {
+    USERS_KEY: 'dpauls_registered_users',
+    SESSION_KEY: 'dpauls_logged_user'
+  };
 
-  const authTabLogin = document.getElementById('auth-tab-login');
-  const authTabSignup = document.getElementById('auth-tab-signup');
-  const authBodyLogin = document.getElementById('auth-body-login');
-  const authBodySignup = document.getElementById('auth-body-signup');
+  // 1. Toast Notification Helper
+  window.showToast = function(message, type = 'success') {
+    let container = document.getElementById('dpauls-toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'dpauls-toast-container';
+      container.className = 'dpauls-toast-container';
+      document.body.appendChild(container);
+    }
 
-  function openAuth(mode = 'login') {
+    const toast = document.createElement('div');
+    toast.className = `dpauls-toast ${type}`;
+    const icon = type === 'success' ? 'fa-circle-check' : (type === 'error' ? 'fa-triangle-exclamation' : 'fa-circle-info');
+    toast.innerHTML = `
+      <i class="fa-solid ${icon}"></i>
+      <div style="flex: 1; font-weight: 600;">${message}</div>
+    `;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(120%)';
+      setTimeout(() => toast.remove(), 300);
+    }, 4000);
+  };
+
+  // 2. Initialize Seed Users in localStorage
+  function initUsersDatabase() {
+    if (!localStorage.getItem(AUTH_STORAGE.USERS_KEY)) {
+      const defaultUsers = [
+        {
+          name: 'Shubham Sharma',
+          email: 'user@dpauls.com',
+          mobile: '9876543210',
+          password: 'password123',
+          createdAt: new Date().toISOString()
+        },
+        {
+          name: 'Pooja Verma',
+          email: 'pooja@example.com',
+          mobile: '9812345678',
+          password: 'password123',
+          createdAt: new Date().toISOString()
+        }
+      ];
+      localStorage.setItem(AUTH_STORAGE.USERS_KEY, JSON.stringify(defaultUsers));
+    }
+  }
+  initUsersDatabase();
+
+  // 3. Get Active Logged-in User (Checks sessionStorage first, fallback to localStorage)
+  window.getActiveUser = function() {
+    try {
+      const sessionUser = sessionStorage.getItem(AUTH_STORAGE.SESSION_KEY);
+      if (sessionUser) return JSON.parse(sessionUser);
+
+      const localUser = localStorage.getItem(AUTH_STORAGE.SESSION_KEY);
+      if (localUser) {
+        // Restore into sessionStorage
+        sessionStorage.setItem(AUTH_STORAGE.SESSION_KEY, localUser);
+        return JSON.parse(localUser);
+      }
+    } catch(e) {}
+    return null;
+  };
+
+  // 4. Update UI across all pages when logged in/out
+  window.updateGlobalAuthUI = function() {
+    const user = window.getActiveUser();
+
+    // Index / Header Account dropdown
+    const accountDropdownWrapper = document.getElementById('account-dropdown-wrapper');
+    if (accountDropdownWrapper) {
+      const headerUser = accountDropdownWrapper.querySelector('.user-account-header');
+      const btnGroup = accountDropdownWrapper.querySelector('.dropdown-btn-group');
+      if (user) {
+        if (headerUser) {
+          headerUser.innerHTML = `
+            <div class="user-avatar-circle" style="background: #10b981; color: white;">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div>
+              <div class="font-bold fnt-14 clr-3c" id="user-display-name">${user.name}</div>
+              <div class="user-logged-badge"><i class="fa-solid fa-circle fnt-8" style="color: #10b981;"></i> Active Member</div>
+              <div class="fnt-11 clr-8f">${user.email}</div>
+            </div>
+          `;
+        }
+        if (btnGroup) {
+          btnGroup.innerHTML = `
+            <button type="button" class="btn-logout-custom" onclick="window.handleLogout()">
+              <i class="fa-solid fa-arrow-right-from-bracket mr-1"></i> LOG OUT
+            </button>
+          `;
+        }
+      } else {
+        if (headerUser) {
+          headerUser.innerHTML = `
+            <div class="user-avatar-circle">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div>
+              <div class="font-bold fnt-14 clr-3c">Hello Guest!</div>
+              <a href="javascript:void(0)" class="fnt-12 clr-primary modal-trigger-login" onclick="window.openAuth('login')">Login / Sign Up</a>
+            </div>
+          `;
+        }
+        if (btnGroup) {
+          btnGroup.innerHTML = `
+            <button class="btn-dropdown-login modal-trigger-login" onclick="window.openAuth('login')">LOG IN</button>
+            <button class="btn-dropdown-signup modal-trigger-signup" onclick="window.openAuth('signup')">SIGN UP</button>
+          `;
+        }
+      }
+    }
+
+    // Side Drawer user card
+    const drawerHeader = document.querySelector('.drawer-header');
+    if (drawerHeader) {
+      if (user) {
+        drawerHeader.innerHTML = `
+          <div class="user-avatar-circle" style="background: #10b981; color: white;"><i class="fa-solid fa-user-check"></i></div>
+          <div>
+            <div class="font-bold fnt-16">${user.name}</div>
+            <div class="fnt-12" style="color: #10b981; font-weight: 700;">Logged In</div>
+            <a href="javascript:void(0)" class="fnt-12 clr-primary" onclick="window.handleLogout()">Log Out</a>
+          </div>
+          <button class="modal-close-btn" style="top: 14px; right: 14px;" id="close-drawer-btn" onclick="document.getElementById('drawer-backdrop').classList.remove('active'); document.getElementById('side-drawer').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+        `;
+      } else {
+        drawerHeader.innerHTML = `
+          <div class="user-avatar-circle"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="font-bold fnt-16">Hello Guest!</div>
+            <a href="javascript:void(0)" class="fnt-13 clr-teal modal-trigger-login" style="color: var(--teal);" onclick="window.openAuth('login')">Login / Sign Up</a>
+          </div>
+          <button class="modal-close-btn" style="top: 14px; right: 14px;" id="close-drawer-btn" onclick="document.getElementById('drawer-backdrop').classList.remove('active'); document.getElementById('side-drawer').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+        `;
+      }
+    }
+
+    // Booking Page Auto Pre-fill
+    if (user && window.location.pathname.includes('booking.html')) {
+      const nameParts = user.name.split(' ');
+      const fnameInput = document.getElementById('traveller-first-name');
+      const lnameInput = document.getElementById('traveller-last-name');
+      const emailInput = document.getElementById('contact-email');
+      const mobileInput = document.getElementById('contact-mobile');
+
+      if (fnameInput && !fnameInput.value) fnameInput.value = nameParts[0] || '';
+      if (lnameInput && !lnameInput.value) lnameInput.value = nameParts.slice(1).join(' ') || '';
+      if (emailInput && !emailInput.value) emailInput.value = user.email || '';
+      if (mobileInput && !mobileInput.value) mobileInput.value = user.mobile || '';
+    }
+  };
+
+  // 5. Auth Modal Dialog Controller & Dynamic Injection
+  function ensureAuthModal() {
+    let modal = document.getElementById('auth-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.className = 'modal-backdrop-custom';
+      modal.id = 'auth-modal';
+      modal.innerHTML = `
+        <div class="modal-card-dialog">
+          <button class="modal-close-btn" id="close-auth-modal-btn" onclick="window.closeAuth()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+
+          <div class="text-center pt-4 pb-2">
+            <img src="assets/images/logo.0066e88.png" alt="DPauls Logo" style="height: 38px; margin: 0 auto;">
+          </div>
+
+          <div class="auth-tabs-bar">
+            <div class="auth-tab active" id="auth-tab-login" onclick="window.openAuth('login')">Log In</div>
+            <div class="auth-tab" id="auth-tab-signup" onclick="window.openAuth('signup')">Sign Up</div>
+          </div>
+
+          <!-- Login Form Body -->
+          <div class="auth-form-body" id="auth-body-login">
+            <!-- OTP Login Section -->
+            <div class="form-group-field">
+              <label for="login-mobile">Login using Mobile No. (Instant OTP)</label>
+              <div class="pos-r">
+                <input type="tel" id="login-mobile" class="form-input-styled" placeholder="e.g. 9876543210" maxlength="10">
+              </div>
+              <button type="button" class="btn btn-primary w-100 mt-2" id="send-otp-btn" onclick="window.handleSendOtp()">
+                <i class="fa-solid fa-paper-plane mr-1"></i> Send Verification OTP
+              </button>
+            </div>
+
+            <!-- OTP Input Box -->
+            <div class="auth-otp-step" id="auth-otp-step-box">
+              <label for="login-otp-code" class="font-bold fnt-13 clr-3c">Enter 6-Digit OTP Code</label>
+              <input type="text" id="login-otp-code" class="form-input-styled mt-1 mb-2 text-center font-bold" placeholder="• • • • • •" maxlength="6" style="letter-spacing: 4px; font-size: 1.2rem;">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="fnt-12 clr-8f" id="otp-timer-text">Code valid for 5:00 min</span>
+                <button type="button" class="btn-clear-filters fnt-12 font-bold" onclick="window.handleSendOtp()">Resend OTP</button>
+              </div>
+              <button type="button" class="btn btn-search w-100" id="verify-otp-btn" onclick="window.handleVerifyOtp()">
+                Verify OTP &amp; Log In
+              </button>
+            </div>
+
+            <div style="display: flex; align-items: center; margin: 1.25rem 0;">
+              <div style="flex: 1; height: 1px; background: var(--border-color);"></div>
+              <span class="fnt-12 clr-8f px-3 font-bold">OR LOGIN USING EMAIL</span>
+              <div style="flex: 1; height: 1px; background: var(--border-color);"></div>
+            </div>
+
+            <!-- Email Password Login -->
+            <form onsubmit="event.preventDefault(); window.handleEmailLogin();">
+              <div class="form-group-field">
+                <label for="login-email">Email ID / Username</label>
+                <input type="email" id="login-email" class="form-input-styled" placeholder="user@dpauls.com" value="user@dpauls.com" required>
+              </div>
+              <div class="form-group-field">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" class="form-input-styled" placeholder="Enter your password" value="password123" required>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <label class="d-flex align-items-center gap-1 fnt-12 clr-66 cursor-pointer">
+                  <input type="checkbox" id="login-remember-me" checked> Remember me (Stay logged in)
+                </label>
+                <a href="javascript:void(0)" class="fnt-12 clr-primary" onclick="alert('Password reset link sent to demo registered email.')">Forgot Password?</a>
+              </div>
+              <button type="submit" class="btn btn-search w-100" id="email-login-submit-btn">
+                Log In to DPauls
+              </button>
+              <div class="fnt-11 clr-8f text-center mt-2">Demo account pre-filled: user@dpauls.com / password123</div>
+            </form>
+          </div>
+
+          <!-- Signup Form Body -->
+          <div class="auth-form-body" id="auth-body-signup" style="display: none;">
+            <form onsubmit="event.preventDefault(); window.handleSignup();">
+              <div class="form-group-field">
+                <label for="signup-name">Full Name *</label>
+                <input type="text" id="signup-name" class="form-input-styled" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="form-group-field">
+                <label for="signup-email">Email Address *</label>
+                <input type="email" id="signup-email" class="form-input-styled" placeholder="rahul@example.com" required>
+              </div>
+              <div class="form-group-field">
+                <label for="signup-mobile">Mobile Number (10 Digits) *</label>
+                <input type="tel" id="signup-mobile" class="form-input-styled" placeholder="9876543210" maxlength="10" required>
+              </div>
+              <div class="form-group-field">
+                <label for="signup-password">Create Password (min 6 characters) *</label>
+                <input type="password" id="signup-password" class="form-input-styled" placeholder="Enter strong password" required minlength="6">
+              </div>
+              <div class="form-group-field">
+                <label for="signup-confirm-password">Confirm Password *</label>
+                <input type="password" id="signup-confirm-password" class="form-input-styled" placeholder="Confirm your password" required minlength="6">
+              </div>
+              <button type="submit" class="btn btn-primary w-100 mt-2" id="signup-submit-btn">
+                Create DPauls Account
+              </button>
+              <div class="fnt-11 clr-8f text-center mt-2">By signing up, you agree to DPauls Terms &amp; Privacy Policy</div>
+            </form>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+    return modal;
+  }
+
+  window.openAuth = function(mode = 'login') {
     closeDrawer();
-    if (authModal) {
-      authModal.classList.add('active');
+    const modal = ensureAuthModal();
+    if (modal) {
+      modal.classList.add('active');
+      const authTabLogin = document.getElementById('auth-tab-login');
+      const authTabSignup = document.getElementById('auth-tab-signup');
+      const authBodyLogin = document.getElementById('auth-body-login');
+      const authBodySignup = document.getElementById('auth-body-signup');
+
       if (mode === 'signup') {
         if (authTabSignup) authTabSignup.classList.add('active');
         if (authTabLogin) authTabLogin.classList.remove('active');
@@ -332,35 +604,230 @@ function initModals() {
         if (authBodySignup) authBodySignup.style.display = 'none';
       }
     }
-  }
+  };
 
-  loginTriggers.forEach(btn => btn.addEventListener('click', () => openAuth('login')));
-  signupTriggers.forEach(btn => btn.addEventListener('click', () => openAuth('signup')));
-  if (closeAuthBtn && authModal) closeAuthBtn.addEventListener('click', () => authModal.classList.remove('active'));
+  window.closeAuth = function() {
+    const modal = document.getElementById('auth-modal');
+    if (modal) modal.classList.remove('active');
+  };
 
-  if (authTabLogin) authTabLogin.addEventListener('click', () => openAuth('login'));
-  if (authTabSignup) authTabSignup.addEventListener('click', () => openAuth('signup'));
+  document.querySelectorAll('.modal-trigger-login').forEach(b => b.addEventListener('click', () => window.openAuth('login')));
+  document.querySelectorAll('.modal-trigger-signup').forEach(b => b.addEventListener('click', () => window.openAuth('signup')));
 
-  // OTP
-  const sendOtpBtn = document.getElementById('send-otp-btn');
-  const mobileInput = document.getElementById('login-mobile');
-  if (sendOtpBtn && mobileInput) {
-    sendOtpBtn.addEventListener('click', () => {
-      const val = mobileInput.value.trim();
-      if (val.length < 10) {
-        alert('Please enter a valid 10-digit mobile number.');
-        return;
+  // 6. Handle Email + Password Login
+  window.handleEmailLogin = function() {
+    const emailInput = document.getElementById('login-email');
+    const passwordInput = document.getElementById('login-password');
+    const rememberMe = document.getElementById('login-remember-me') ? document.getElementById('login-remember-me').checked : true;
+
+    if (!emailInput || !passwordInput) return;
+
+    const emailVal = emailInput.value.trim().toLowerCase();
+    const passVal = passwordInput.value.trim();
+
+    if (!emailVal || !passVal) {
+      window.showToast('Please enter both email and password.', 'error');
+      return;
+    }
+
+    const users = JSON.parse(localStorage.getItem(AUTH_STORAGE.USERS_KEY) || '[]');
+    const matched = users.find(u => u.email.toLowerCase() === emailVal || u.mobile === emailVal);
+
+    if (matched) {
+      if (matched.password === passVal) {
+        // Save session in sessionStorage and localStorage
+        const sessionData = {
+          name: matched.name,
+          email: matched.email,
+          mobile: matched.mobile,
+          token: 'dp_tok_' + Math.random().toString(36).substr(2, 9),
+          loggedInAt: new Date().toISOString()
+        };
+        sessionStorage.setItem(AUTH_STORAGE.SESSION_KEY, JSON.stringify(sessionData));
+        if (rememberMe) {
+          localStorage.setItem(AUTH_STORAGE.SESSION_KEY, JSON.stringify(sessionData));
+        }
+
+        window.showToast(`Welcome back, ${matched.name}! Logged in successfully.`, 'success');
+        window.closeAuth();
+        window.updateGlobalAuthUI();
+      } else {
+        window.showToast('Incorrect password. Please try again.', 'error');
       }
+    } else {
+      window.showToast('Account not found with this email. You can create a new account via Sign Up.', 'error');
+    }
+  };
+
+  // 7. Handle OTP Generation
+  let currentGeneratedOtp = null;
+  window.handleSendOtp = function() {
+    const mobileInput = document.getElementById('login-mobile');
+    const sendOtpBtn = document.getElementById('send-otp-btn');
+    const otpBox = document.getElementById('auth-otp-step-box');
+
+    if (!mobileInput) return;
+    const mobile = mobileInput.value.trim();
+
+    if (mobile.length !== 10 || !/^\d{10}$/.test(mobile)) {
+      window.showToast('Please enter a valid 10-digit mobile number.', 'error');
+      return;
+    }
+
+    if (sendOtpBtn) {
       sendOtpBtn.disabled = true;
-      sendOtpBtn.textContent = 'Sending OTP...';
-      setTimeout(() => {
-        const otp = Math.floor(100000 + Math.random() * 900000);
-        alert(`OTP sent successfully to +91 ${val}!\nYour verification code is: ${otp}`);
-        sendOtpBtn.textContent = 'Resend OTP';
-        sendOtpBtn.disabled = false;
-      }, 1000);
-    });
-  }
+      sendOtpBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Sending OTP...';
+    }
+
+    setTimeout(() => {
+      currentGeneratedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+      if (otpBox) otpBox.style.display = 'block';
+      if (sendOtpBtn) {
+        sendOtpBtn.innerHTML = '<i class="fa-solid fa-check mr-1"></i> OTP Sent to +91 ' + mobile;
+        sendOtpBtn.disabled = true;
+      }
+      const otpCodeInput = document.getElementById('login-otp-code');
+      if (otpCodeInput) {
+        otpCodeInput.value = currentGeneratedOtp; // Pre-fill for instant seamless test
+        otpCodeInput.focus();
+      }
+      window.showToast(`OTP Code generated: ${currentGeneratedOtp}`, 'info');
+      alert(`DPauls Verification Code\n\nYour 6-digit OTP is: ${currentGeneratedOtp}\n(Sent to +91 ${mobile})`);
+    }, 600);
+  };
+
+  // 8. Handle OTP Verification & Login
+  window.handleVerifyOtp = function() {
+    const otpCodeInput = document.getElementById('login-otp-code');
+    const mobileInput = document.getElementById('login-mobile');
+    const rememberMe = document.getElementById('login-remember-me') ? document.getElementById('login-remember-me').checked : true;
+
+    if (!otpCodeInput || !mobileInput) return;
+    const enteredOtp = otpCodeInput.value.trim();
+    const mobile = mobileInput.value.trim();
+
+    if (enteredOtp !== currentGeneratedOtp) {
+      window.showToast('Invalid OTP entered. Please check and try again.', 'error');
+      return;
+    }
+
+    const users = JSON.parse(localStorage.getItem(AUTH_STORAGE.USERS_KEY) || '[]');
+    let user = users.find(u => u.mobile === mobile);
+
+    if (!user) {
+      // Auto register user by mobile
+      user = {
+        name: 'DPauls Traveller',
+        email: `user${mobile.substr(6)}@dpauls.com`,
+        mobile: mobile,
+        password: 'password123',
+        createdAt: new Date().toISOString()
+      };
+      users.push(user);
+      localStorage.setItem(AUTH_STORAGE.USERS_KEY, JSON.stringify(users));
+    }
+
+    const sessionData = {
+      name: user.name,
+      email: user.email,
+      mobile: user.mobile,
+      token: 'dp_tok_' + Math.random().toString(36).substr(2, 9),
+      loggedInAt: new Date().toISOString()
+    };
+    sessionStorage.setItem(AUTH_STORAGE.SESSION_KEY, JSON.stringify(sessionData));
+    if (rememberMe) {
+      localStorage.setItem(AUTH_STORAGE.SESSION_KEY, JSON.stringify(sessionData));
+    }
+
+    window.showToast(`Verified! Welcome to DPauls, ${user.name}!`, 'success');
+    window.closeAuth();
+    window.updateGlobalAuthUI();
+  };
+
+  // 9. Handle New User Registration (Sign Up)
+  window.handleSignup = function() {
+    const nameInput = document.getElementById('signup-name');
+    const emailInput = document.getElementById('signup-email');
+    const mobileInput = document.getElementById('signup-mobile');
+    const passInput = document.getElementById('signup-password');
+    const confirmPassInput = document.getElementById('signup-confirm-password');
+
+    if (!nameInput || !emailInput || !mobileInput || !passInput) return;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim().toLowerCase();
+    const mobile = mobileInput.value.trim();
+    const password = passInput.value;
+    const confirmPassword = confirmPassInput ? confirmPassInput.value : password;
+
+    if (name.length < 2) {
+      window.showToast('Please enter your full name.', 'error');
+      return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      window.showToast('Please enter a valid email address.', 'error');
+      return;
+    }
+    if (mobile.length !== 10 || !/^\d{10}$/.test(mobile)) {
+      window.showToast('Please enter a valid 10-digit mobile number.', 'error');
+      return;
+    }
+    if (password.length < 6) {
+      window.showToast('Password must be at least 6 characters long.', 'error');
+      return;
+    }
+    if (password !== confirmPassword) {
+      window.showToast('Passwords do not match.', 'error');
+      return;
+    }
+
+    const users = JSON.parse(localStorage.getItem(AUTH_STORAGE.USERS_KEY) || '[]');
+    const existing = users.find(u => u.email.toLowerCase() === email || u.mobile === mobile);
+
+    if (existing) {
+      window.showToast('An account with this email or mobile already exists. Please Log In.', 'error');
+      window.openAuth('login');
+      return;
+    }
+
+    const newUser = {
+      name,
+      email,
+      mobile,
+      password,
+      createdAt: new Date().toISOString()
+    };
+
+    // Save in localStorage accounts list
+    users.push(newUser);
+    localStorage.setItem(AUTH_STORAGE.USERS_KEY, JSON.stringify(users));
+
+    // Save active session in sessionStorage & localStorage
+    const sessionData = {
+      name: newUser.name,
+      email: newUser.email,
+      mobile: newUser.mobile,
+      token: 'dp_tok_' + Math.random().toString(36).substr(2, 9),
+      loggedInAt: new Date().toISOString()
+    };
+    sessionStorage.setItem(AUTH_STORAGE.SESSION_KEY, JSON.stringify(sessionData));
+    localStorage.setItem(AUTH_STORAGE.SESSION_KEY, JSON.stringify(sessionData));
+
+    window.showToast(`Account created successfully! Welcome to DPauls, ${name}!`, 'success');
+    window.closeAuth();
+    window.updateGlobalAuthUI();
+  };
+
+  // 10. Handle Logout
+  window.handleLogout = function() {
+    sessionStorage.removeItem(AUTH_STORAGE.SESSION_KEY);
+    localStorage.removeItem(AUTH_STORAGE.SESSION_KEY);
+    window.showToast('You have been logged out successfully.', 'info');
+    window.updateGlobalAuthUI();
+  };
+
+  // Trigger UI update immediately
+  window.updateGlobalAuthUI();
 
   // Gift Card Modal
   const gcModal = document.getElementById('giftcard-modal');
