@@ -1,0 +1,584 @@
+/* ==========================================================================
+   DPauls Review Your Booking & Checkout Page (Pixel-Perfect Replica)
+   ========================================================================== */
+
+.booking-page-body {
+  background: #f1f5f9;
+  font-family: 'Josefin Sans', 'Roboto', sans-serif;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumbs */
+.booking-breadcrumb-bar {
+  background: #3c4858;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  padding: 0.5rem 0;
+}
+
+.booking-breadcrumb-bar a {
+  color: #e2e8f0;
+}
+
+/* Two Column Layout */
+.booking-main-layout {
+  max-width: 1240px;
+  margin: 1.5rem auto 5rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Left Column Cards */
+.booking-card {
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.booking-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.booking-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.session-timer-badge {
+  font-size: 0.82rem;
+  color: #475569;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.session-timer-badge b {
+  color: #0284c7;
+}
+
+/* Route & Summary Header */
+.booking-route-subrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1rem;
+}
+
+.booking-route-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.onward-pill {
+  background: #0d9488;
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.fare-rules-link {
+  color: #0284c7;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Flight Details Box (Timeline & Airline) */
+.booking-flight-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 140px 180px;
+  align-items: center;
+  gap: 1rem;
+  background: #fafbfc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+
+.flight-timeline-col {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.flight-timeline-col::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 5px;
+  width: 2px;
+  background: #2dd4bf;
+}
+
+.timeline-point {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.timeline-point:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid #2dd4bf;
+}
+
+.timeline-point-city {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.timeline-point-airport {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.flight-duration-center-col {
+  text-align: center;
+}
+
+.flight-time-bold {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.flight-duration-cyan-pill {
+  background: #2dd4bf;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin: 0.35rem 0;
+}
+
+.airline-summary-col {
+  border-left: 1px dashed #cbd5e1;
+  padding-left: 1rem;
+  text-align: center;
+}
+
+.airline-summary-logo {
+  background: #1e3a8a;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 900;
+  padding: 2px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.airline-summary-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.airline-summary-class {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+}
+
+.airline-baggage-note {
+  font-size: 0.72rem;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+/* Contact Info Inputs */
+.contact-inputs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.icon-input-box {
+  display: flex;
+  align-items: center;
+  background: #fafbfc;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-icon-prefix {
+  background: #f1f5f9;
+  padding: 0.55rem 0.75rem;
+  color: #64748b;
+  border-right: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+}
+
+.icon-input-box input, .icon-input-box select {
+  border: none;
+  background: transparent;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 100%;
+  outline: none;
+  color: #1e293b;
+}
+
+/* Traveller Details Row */
+.traveller-input-row {
+  display: grid;
+  grid-template-columns: 100px 90px 1fr 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.85rem;
+}
+
+.traveller-input-box {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 100%;
+  outline: none;
+  color: #1e293b;
+}
+
+/* Add-ons List */
+.addon-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafbfc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.addon-item-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.addon-icon {
+  font-size: 1.6rem;
+  color: #0d9488;
+}
+
+.addon-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.addon-sub {
+  font-size: 0.75rem;
+  color: #0284c7;
+}
+
+.btn-addon-red {
+  background: #ef4444;
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-addon-red:hover {
+  background: #dc2626;
+}
+
+.btn-addon-red.added {
+  background: #0d9488;
+}
+
+/* GST & Terms */
+.gst-accordion-title {
+  color: #0284c7;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.gst-note-text {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.terms-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #e11d48;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.terms-checkbox-label input {
+  accent-color: #0d9488;
+}
+
+/* Proceed to Payment Main Button */
+.proceed-payment-bar {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.btn-proceed-payment-blue {
+  background: #0284c7;
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem 3.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  transition: var(--transition);
+}
+
+.btn-proceed-payment-blue:hover {
+  background: #0369a1;
+  transform: translateY(-1px);
+}
+
+/* Right Sidebar Widgets */
+.booking-sidebar-widget {
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.widget-heading-divider {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.widget-heading-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #cbd5e1;
+  margin-left: 0.75rem;
+}
+
+/* Cyan Fare Total Box */
+.fare-cyan-highlight-box {
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.fare-box-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #0369a1;
+  text-transform: uppercase;
+}
+
+.fare-box-amount {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0284c7;
+}
+
+.fare-box-amount small {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.fare-row-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.fare-row-item b {
+  color: #0f172a;
+}
+
+/* Gift Card Box */
+.giftcard-input-box {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  width: 100%;
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+
+.btn-giftcard-apply {
+  background: #fca5a5;
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  float: right;
+}
+
+.btn-giftcard-apply:hover {
+  background: #ef4444;
+}
+
+/* Promo Code Box */
+.promo-input-action-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.promo-input-styled {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1e293b;
+  flex: 1;
+}
+
+.btn-promo-clear {
+  background: #ef4444;
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.promo-success-text {
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.promo-radio-card {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.75rem;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.promo-radio-card input {
+  accent-color: #0d9488;
+  margin-right: 0.35rem;
+}
+
+/* Modal Payment Simulation */
+.payment-gateway-modal {
+  max-width: 550px;
+}
+
+.payment-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.payment-option-btn {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  background: var(--white);
+  transition: var(--transition);
+}
+
+.payment-option-btn:hover, .payment-option-btn.active {
+  border-color: #0284c7;
+  background: #f0f9ff;
+}
+
+.payment-option-btn i {
+  font-size: 1.5rem;
+  color: #0284c7;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .booking-main-layout {
+    grid-template-columns: 1fr;
+  }
+  .booking-flight-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-inputs-row, .traveller-input-row {
+    grid-template-columns: 1fr;
+  }
+}

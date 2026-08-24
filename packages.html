@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Tour Packages - Book India & International Packages | DPauls Holidays</title>
+  <meta name="description" content="Holiday Tour Packages - Book Online India & International Holiday Packages at Best Price. Get Exciting Deals on Honeymoon & Family Packages at DPauls.com.">
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flight-results.css">
+  <link rel="stylesheet" href="packages.css">
+</head>
+<body class="booking-page-body">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="flight-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;" id="plp-breadcrumb-display">
+      <a href="index.html">DPauls Holidays</a>
+      <span class="mx-2">/</span>
+      <a href="packages.html">Holiday Packages</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;" id="plp-active-breadcrumb-text">All Holiday Tour Packages</span>
+    </div>
+  </div>
+
+  <!-- 3. Quick Destination Chips Bar -->
+  <div class="plp-destination-chips-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <div class="destination-chips-scroll">
+        <button type="button" class="dest-chip-btn active" onclick="window.filterByDestChip(this, '')">All Packages</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Europe')">Europe (Switzerland/Paris)</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Thailand')">Thailand</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Dubai')">Dubai</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Goa')">Goa</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Himachal')">Himachal</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Kashmir')">Kashmir</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Bali')">Bali</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Singapore')">Singapore</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Japan')">Japan & Korea</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Vietnam')">Vietnam</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Andaman')">Andaman</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PLP Main Two-Column Layout -->
+  <main class="plp-main-layout">
+    
+    <!-- Left Filter Sidebar -->
+    <aside class="filter-sidebar">
+      <div class="filter-sidebar-header">
+        <span class="filter-sidebar-title"><i class="fa-solid fa-filter clr-primary"></i> Filter Packages</span>
+        <button type="button" class="btn-clear-filters" id="btn-reset-filters">Reset All</button>
+      </div>
+
+      <!-- 1. Search by Keyword -->
+      <div class="filter-group-block">
+        <div class="filter-group-title">Search Destination / Code</div>
+        <input type="text" class="filter-search-input" id="plp-keyword-filter" placeholder="e.g. Europe, Goa, DP205">
+      </div>
+
+      <!-- 2. Package Category -->
+      <div class="filter-group-block">
+        <div class="filter-group-title">Category</div>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="cat_filter" value="all" checked> All Categories</span>
+          <span class="filter-badge-count">12</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="cat_filter" value="international"> International Tours</span>
+          <span class="filter-badge-count">8</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="cat_filter" value="domestic"> Dekho My India (Domestic)</span>
+          <span class="filter-badge-count">4</span>
+        </label>
+      </div>
+
+      <!-- 3. Duration Filter -->
+      <div class="filter-group-block">
+        <div class="filter-group-title">Duration (Nights)</div>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="duration_filter" value="1-3"> 1 to 3 Nights</span>
+          <span class="filter-badge-count">2</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="duration_filter" value="4-6"> 4 to 6 Nights</span>
+          <span class="filter-badge-count">7</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="duration_filter" value="7-9"> 7 to 9 Nights</span>
+          <span class="filter-badge-count">2</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="duration_filter" value="10+"> 10+ Nights</span>
+          <span class="filter-badge-count">1</span>
+        </label>
+      </div>
+
+      <!-- 4. Budget Filter -->
+      <div class="filter-group-block">
+        <div class="filter-group-title">Budget (Per Person)</div>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="budget_filter" value="0-25000"> Under ₹25,000</span>
+          <span class="filter-badge-count">3</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="budget_filter" value="25000-50000"> ₹25,000 - ₹50,000</span>
+          <span class="filter-badge-count">4</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="budget_filter" value="50000-150000"> ₹50,000 - ₹1,50,000</span>
+          <span class="filter-badge-count">2</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="budget_filter" value="150000+"> Above ₹1,50,000</span>
+          <span class="filter-badge-count">3</span>
+        </label>
+      </div>
+
+      <!-- Promo Badge in Sidebar -->
+      <div class="flight-sidebar-promo-card mt-3">
+        <i class="fa-solid fa-plane-circle-check fnt-24 mb-1"></i>
+        <h3>Zero Convenience Fee on Bookings</h3>
+        <div class="promo-code-pill">CODE: NOFEES</div>
+        <div class="fnt-11">Valid till 30 Sep 2026</div>
+      </div>
+    </aside>
+
+    <!-- Right Results Column -->
+    <div class="plp-results-column">
+      
+      <!-- Destination Category PLP Hero Box (Dynamically Populated) -->
+      <div id="dest-plp-hero-container"></div>
+
+      <!-- Results Header Bar -->
+      <div class="plp-results-header-bar">
+        <div class="plp-count-display" id="plp-results-count">
+          Showing 16 Holiday Packages
+        </div>
+        <div class="plp-sort-wrapper">
+          <span>Sort by:</span>
+          <select class="plp-sort-select" id="plp-sort-select">
+            <option value="popularity">Popularity (Recommended)</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="duration_desc">Duration: Longest First</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Package Cards Grid -->
+      <div id="plp-packages-grid">
+
+        <!-- 1. Himachal: Queen of Hills - Shimla -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="himachal shimla kufri hills" data-duration="2" data-price="8499" data-title="Queen of Hills - Shimla Tour Package">
+          <div class="plp-card-media">
+            <img src="assets/images/shimla__2_.jpg" alt="Queen of Hills - Shimla Tour Package">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 2N / 3D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP477 • SCENIC HILLS</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=himachal">Queen of Hills - Shimla Tour Package</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Shimla (Kufri, Mall Road & Christ Church)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 3★ Hotel Stay</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Breakfast & Dinner</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-car"></i> Private Cab Sightseeing</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-bus"></i> Volvo Transfers</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 12,999</div>
+              <div class="plp-final-price">₹ 8,499</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+              <div class="plp-emi-pill">EMI from ₹799/mo</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=himachal" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Queen of Hills - Shimla Tour Package', '8499', { type: 'package', title: 'Queen of Hills - Shimla Tour Package (2N/3D)', price: '8499', duration: '2N/3D' })">Book Online</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Himachal: Mesmerizing Shimla & Manali -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="himachal shimla manali solang rohtang" data-duration="5" data-price="16999" data-title="Mesmerizing Shimla & Manali">
+          <div class="plp-card-media">
+            <img src="assets/images/Manali_Travel_Guide_.jpg" alt="Mesmerizing Shimla & Manali">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 5N / 6D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP371 • BESTSELLER</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=himachal">Mesmerizing Shimla &amp; Manali</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Shimla • 3N Manali (Solang Valley, Rohtang Pass, Hadimba Temple)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotels</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> All Meals</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-car"></i> Solang Cab</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-bus"></i> AC Luxury Volvo</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 22,500</div>
+              <div class="plp-final-price">₹ 16,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=himachal" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Mesmerizing Shimla & Manali', '16999', { type: 'package', title: 'Mesmerizing Shimla & Manali (5N/6D)', price: '16999', duration: '5N/6D' })">Book Online</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Himachal: Classic Hill Top Resort Chamba -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="himachal chamba resort khajjiar" data-duration="2" data-price="12499" data-title="Classic Hill Top Resort Package, Chamba">
+          <div class="plp-card-media">
+            <img src="assets/images/shimla__2_.jpg" alt="Classic Hill Top Resort Package, Chamba">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 2N / 3D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP488 • NATURE RETREAT</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=himachal">Classic Hill Top Resort Package, Chamba</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Chamba Valley • Khajjiar Mini Switzerland Day Trip</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> Luxury Hill Resort</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Breakfast & Dinner</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-mountain"></i> Bonfire & Music</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 16,000</div>
+              <div class="plp-final-price">₹ 12,499</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=himachal" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Classic Hill Top Resort Package, Chamba', '12499', { type: 'package', title: 'Classic Hill Top Resort Package Chamba (2N/3D)', price: '12499', duration: '2N/3D' })">Book Online</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Rajasthan: Royal Heritage Jaipur & Udaipur -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="rajasthan jaipur udaipur jodhpur palace heritage" data-duration="4" data-price="14499" data-title="Royal Heritage Jaipur & Udaipur Tour">
+          <div class="plp-card-media">
+            <img src="assets/images/rajasthan-jaipur-deal.jpg" alt="Royal Heritage Jaipur & Udaipur Tour">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 4N / 5D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP310 • ROYAL HERITAGE</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=rajasthan">Royal Heritage Jaipur &amp; Udaipur Tour</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Jaipur (Amber Fort, Hawa Mahal) • 2N Udaipur (City Palace, Lake Pichola)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> Heritage 4★ Hotels</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Rajasthani Breakfast</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-car"></i> AC Sedan Transfers</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-landmark"></i> Fort Monuments Pass</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 19,500</div>
+              <div class="plp-final-price">₹ 14,499</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=rajasthan" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Royal Heritage Jaipur & Udaipur Tour', '14499', { type: 'package', title: 'Royal Heritage Jaipur & Udaipur Tour (4N/5D)', price: '14499', duration: '4N/5D' })">Book Online</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Kashmir: Srinagar Dal Lake & Gulmarg Snow -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="kashmir srinagar gulmarg pahalgam dal lake snow" data-duration="4" data-price="21999" data-title="Srinagar Dal Lake & Gulmarg Snow Magic">
+          <div class="plp-card-media">
+            <img src="assets/images/kashmir-package-srinagar.jpg" alt="Srinagar Dal Lake & Gulmarg Snow Magic">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 4N / 5D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP405 • HEAVEN ON EARTH</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=kashmir">Srinagar Dal Lake &amp; Gulmarg Snow Magic</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Srinagar Deluxe Houseboat • 2N Gulmarg Snow Resort (Gondola Ride)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-house"></i> Dal Lake Houseboat</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ship"></i> Shikara Ride Included</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-cable-car"></i> Gulmarg Gondola</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Kashmiri Meals</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 28,000</div>
+              <div class="plp-final-price">₹ 21,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=kashmir" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Srinagar Dal Lake & Gulmarg Snow Magic', '21999', { type: 'package', title: 'Srinagar Dal Lake & Gulmarg Snow Magic (4N/5D)', price: '21999', duration: '4N/5D' })">Book Online</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Kerala: Munnar Tea Hills & Alleppey Houseboat -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="kerala munnar alleppey thekkady cochin houseboat" data-duration="4" data-price="19499" data-title="Munnar Tea Hills & Alleppey Houseboat">
+          <div class="plp-card-media">
+            <img src="assets/images/kerala-package-alleppey.jpg" alt="Munnar Tea Hills & Alleppey Houseboat">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 4N / 5D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP510 • GODS OWN COUNTRY</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=kerala">Munnar Tea Hills &amp; Alleppey Houseboat</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Munnar Tea Gardens • 1N Thekkady • 1N Alleppey Backwaters Houseboat</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ship"></i> Deluxe Houseboat Stay</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-leaf"></i> Tea Plantation Tour</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Traditional Kerala Meals</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-car"></i> Private Cab Transfers</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 26,500</div>
+              <div class="plp-final-price">₹ 19,499</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=kerala" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Munnar Tea Hills & Alleppey Houseboat', '19499', { type: 'package', title: 'Munnar Tea Hills & Alleppey Houseboat (4N/5D)', price: '19499', duration: '4N/5D' })">Book Online</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Switzerland with France -->
+        <article class="plp-package-item-card" data-category="international" data-dest="europe switzerland france paris zurich" data-duration="6" data-price="164999" data-title="Best of Switzerland with France">
+          <div class="plp-card-media">
+            <img src="assets/images/eiffel-tower.jpg" alt="Best of Switzerland with France">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 6N / 7D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP205 • GROUP DEPARTURE</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=europe">Best of Switzerland with France</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Paris • 4N Zurich (Mt Titlis, Lucerne, Rhine Falls)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotels</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Daily Meals</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-van-shuttle"></i> Coach & Transfers</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-passport"></i> Visa Assistance</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 1,99,999</div>
+              <div class="plp-final-price">₹ 1,64,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+              <div class="plp-emi-pill">EMI from ₹7,999/mo</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=europe" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Best of Switzerland with France', '164999', { type: 'package', title: 'Best of Switzerland with France', price: '164999', duration: '6N/7D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Thailand Family Holiday -->
+        <article class="plp-package-item-card" data-category="international" data-dest="thailand bangkok pattaya phuket" data-duration="5" data-price="45999" data-title="Thailand Family Holiday Spectacular">
+          <div class="plp-card-media">
+            <img src="assets/images/thailand-holiday-package.jpg" alt="Thailand Family Holiday Spectacular">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 5N / 6D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP316 • BESTSELLER</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=thailand">Thailand Family Holiday Spectacular</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Pattaya • 3N Bangkok (Coral Island & Safari World)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotels</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Breakfast</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-water"></i> Speedboat Tour</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 58,999</div>
+              <div class="plp-final-price">₹ 45,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+              <div class="plp-emi-pill">EMI from ₹2,499/mo</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=thailand" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Thailand Family Holiday Spectacular', '45999', { type: 'package', title: 'Thailand Family Holiday Spectacular', price: '45999', duration: '5N/6D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Goa Resort Beach Holiday -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="goa calangute baga candolim beach" data-duration="3" data-price="15999" data-title="Aastha Escape Resort Goa Beach Holiday">
+          <div class="plp-card-media">
+            <img src="assets/images/goa1.jpg" alt="Aastha Escape Resort Goa Beach Holiday">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 3N / 4D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP189 • RESORT GETAWAY</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=goa">Aastha Escape Resort Goa Beach Holiday</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>3N Calangute, North Goa (Beach Cottage Stay)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Beach Resort</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Daily Breakfast</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-car"></i> Airport Cab</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-water"></i> Swimming Pool</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 22,000</div>
+              <div class="plp-final-price">₹ 15,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=goa" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Aastha Escape Resort Goa Beach Holiday', '15999', { type: 'package', title: 'Aastha Escape Resort Goa Beach Holiday', price: '15999', duration: '3N/4D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Himachal Scenic Wonder -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="himachal shimla manali solang rohtang" data-duration="5" data-price="8499" data-title="Himachal Scenic Wonder (Shimla & Manali)">
+          <div class="plp-card-media">
+            <img src="assets/images/shimla__2_.jpg" alt="Himachal Scenic Wonder (Shimla & Manali)">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 5N / 6D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP477 • SCENIC HILLS</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=himachal">Himachal Scenic Wonder (Shimla & Manali)</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Shimla • 3N Manali (Solang Valley & Rohtang Pass)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-bus"></i> Volvo AC Bus</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> Deluxe Hotel</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Breakfast & Dinner</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-mountain"></i> Sightseeing Cab</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 12,999</div>
+              <div class="plp-final-price">₹ 8,499</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=himachal" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Himachal Scenic Wonder (Shimla & Manali)', '8499', { type: 'package', title: 'Himachal Scenic Wonder (Shimla & Manali)', price: '8499', duration: '5N/6D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. South Korea & Japan Combo -->
+        <article class="plp-package-item-card" data-category="international" data-dest="japan korea tokyo seoul osaka kyoto asia" data-duration="10" data-price="253999" data-title="Discover South Korea & Japan Luxury Tour">
+          <div class="plp-card-media">
+            <img src="assets/images/japan-holiday-deal-package.jpg" alt="Discover South Korea & Japan Luxury Tour">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 10N / 11D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP581 • GRAND ASIA COMBO</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=japan">Discover South Korea & Japan Luxury Tour</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>4N Seoul • 3N Tokyo • 3N Osaka/Kyoto</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-train"></i> Bullet Train Shinkansen</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotels</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-passport"></i> Dual Visa</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 2,99,999</div>
+              <div class="plp-final-price">₹ 2,53,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=japan" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Discover South Korea & Japan Luxury Tour', '253999', { type: 'package', title: 'Discover South Korea & Japan Luxury Tour', price: '253999', duration: '10N/11D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Singapore with Sentosa -->
+        <article class="plp-package-item-card" data-category="international" data-dest="singapore sentosa universal marina bay" data-duration="4" data-price="63999" data-title="Dazzling Singapore with Sentosa & Universal">
+          <div class="plp-card-media">
+            <img src="assets/images/singapore.jpg" alt="Dazzling Singapore with Sentosa & Universal">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 4N / 5D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP612 • TOP RATED INTL</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=singapore">Dazzling Singapore with Sentosa & Universal Studios</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>4N Singapore (Universal Studios, Sentosa Cable Car, Marina Bay)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotel</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ticket"></i> Universal Pass</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-passport"></i> E-Visa</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 78,000</div>
+              <div class="plp-final-price">₹ 63,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=singapore" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Dazzling Singapore with Sentosa & Universal', '63999', { type: 'package', title: 'Dazzling Singapore with Sentosa & Universal', price: '63999', duration: '4N/5D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. South Africa Safari -->
+        <article class="plp-package-item-card" data-category="international" data-dest="south africa cape town kruger safari" data-duration="8" data-price="244999" data-title="South Africa Safari & Cape Town Escape">
+          <div class="plp-card-media">
+            <img src="assets/images/south-africa-cape-town.jpg" alt="South Africa Safari & Cape Town Escape">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 8N / 9D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP793 • WILDLIFE & SAFARI</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=south-africa">South Africa Safari & Cape Town Escape</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>4N Cape Town • 2N Kruger Park • 2N Johannesburg</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-mountain"></i> Table Mountain Cable</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-paw"></i> Big 5 Game Drives</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 2,85,000</div>
+              <div class="plp-final-price">₹ 2,44,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=south-africa" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('South Africa Safari & Cape Town Escape', '244999', { type: 'package', title: 'South Africa Safari & Cape Town Escape', price: '244999', duration: '8N/9D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Andaman Islands -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="andaman port blair havelock neil island radhanagar" data-duration="5" data-price="45999" data-title="Andaman Emerald Islands & Radhanagar Beach">
+          <div class="plp-card-media">
+            <img src="assets/images/andaman.jpg" alt="Andaman Emerald Islands & Radhanagar Beach">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 5N / 6D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP150 • ISLAND PARADISE</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=andaman">Andaman Emerald Islands & Radhanagar Beach</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Port Blair • 2N Havelock Island • 1N Neil Island</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ship"></i> Makruzz Cruise</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Beach Resorts</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 56,000</div>
+              <div class="plp-final-price">₹ 45,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=andaman" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Andaman Emerald Islands & Radhanagar Beach', '45999', { type: 'package', title: 'Andaman Emerald Islands & Radhanagar Beach', price: '45999', duration: '5N/6D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Dubai Extravaganza -->
+        <article class="plp-package-item-card" data-category="international" data-dest="dubai burj khalifa desert safari dhow cruise uae" data-duration="4" data-price="49999" data-title="Dubai Extravaganza with Desert Safari & Burj Khalifa">
+          <div class="plp-card-media">
+            <img src="assets/images/dubai-mall.jpg" alt="Dubai Extravaganza with Desert Safari & Burj Khalifa">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 4N / 5D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP104 • BESTSELLER INTL</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=dubai">Dubai Extravaganza with Desert Safari & Burj Khalifa</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>4N Dubai City (Burj Khalifa 124th Fl, Desert Safari with BBQ Dinner)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotel</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Dhow Dinner Cruise</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-passport"></i> Dubai Visa</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 62,000</div>
+              <div class="plp-final-price">₹ 49,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=dubai" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Dubai Extravaganza with Desert Safari', '49999', { type: 'package', title: 'Dubai Extravaganza with Desert Safari & Burj Khalifa', price: '49999', duration: '4N/5D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Kashmir Paradise -->
+        <article class="plp-package-item-card" data-category="domestic" data-dest="kashmir srinagar gulmarg pahalgam dal lake houseboat" data-duration="5" data-price="24999" data-title="Kashmir Paradise on Earth (Srinagar, Gulmarg, Pahalgam)">
+          <div class="plp-card-media">
+            <img src="assets/images/kashmir-package.jpg" alt="Kashmir Paradise on Earth">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 5N / 6D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP802 • HONEYMOON SPECIAL</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=kashmir">Kashmir Paradise on Earth (Srinagar, Gulmarg, Pahalgam)</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Srinagar • 1N Gulmarg • 2N Pahalgam • 1N Luxury Houseboat Stay</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotels & Houseboat</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ship"></i> Shikara Ride</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Breakfast & Dinner</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 32,000</div>
+              <div class="plp-final-price">₹ 24,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=kashmir" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Kashmir Paradise on Earth', '24999', { type: 'package', title: 'Kashmir Paradise on Earth (Srinagar, Gulmarg, Pahalgam)', price: '24999', duration: '5N/6D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Bali Villa Special -->
+        <article class="plp-package-item-card" data-category="international" data-dest="bali indonesia ubud seminyak nusa penida beach villa" data-duration="6" data-price="58999" data-title="Exotic Bali with Nusa Penida & Private Pool Villa">
+          <div class="plp-card-media">
+            <img src="assets/images/bali-holiday-package.jpg" alt="Exotic Bali with Nusa Penida">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 6N / 7D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP390 • LUXURY VILLA</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=bali">Exotic Bali with Nusa Penida & Private Pool Villa</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>3N Ubud Nature Resort • 3N Seminyak Private Pool Villa</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 5★ Pool Villa</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-water"></i> Nusa Penida Tour</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-spa"></i> Balinese Spa</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 74,000</div>
+              <div class="plp-final-price">₹ 58,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=bali" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Exotic Bali with Nusa Penida', '58999', { type: 'package', title: 'Exotic Bali with Nusa Penida & Private Pool Villa', price: '58999', duration: '6N/7D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Vietnam Highlights -->
+        <article class="plp-package-item-card" data-category="international" data-dest="vietnam hanoi halong bay da nang ba na hills asia" data-duration="6" data-price="68999" data-title="Vietnam Highlights (Hanoi, Halong Bay Cruise, Da Nang)">
+          <div class="plp-card-media">
+            <img src="assets/images/vietnam-deal-package.jpg" alt="Vietnam Highlights">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 6N / 7D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP914 • EXOTIC ASIA</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=vietnam">Vietnam Highlights (Hanoi, Halong Bay Cruise, Da Nang)</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Hanoi • 1N Overnight Halong Bay 5★ Cruise • 3N Da Nang</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ship"></i> 5★ Halong Cruise</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-bridge"></i> Golden Bridge Pass</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-passport"></i> E-Visa</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 85,000</div>
+              <div class="plp-final-price">₹ 68,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=vietnam" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Vietnam Highlights', '68999', { type: 'package', title: 'Vietnam Highlights (Hanoi, Halong Bay Cruise, Da Nang)', price: '68999', duration: '6N/7D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Slide-out Side Navigation Drawer -->
+  <div class="modal-backdrop-custom" id="drawer-backdrop">
+    <div class="drawer-nav-menu" id="side-drawer">
+      <div class="drawer-header">
+        <div class="user-avatar-circle"><i class="fa-solid fa-user"></i></div>
+        <div>
+          <div class="font-bold fnt-16">Hello Guest!</div>
+          <a href="javascript:void(0)" class="fnt-13 clr-teal modal-trigger-login" style="color: var(--teal);">Login / Sign Up</a>
+        </div>
+        <button class="modal-close-btn" style="top: 14px; right: 14px;" id="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-content-list">
+        <a href="index.html" class="drawer-link-item"><i class="fa-solid fa-house clr-primary"></i> Home</a>
+        <a href="flights.html" class="drawer-link-item"><i class="fa-solid fa-plane-departure clr-primary"></i> Flights</a>
+        <a href="packages.html" class="drawer-link-item"><i class="fa-solid fa-suitcase-rolling clr-primary"></i> Holiday Packages</a>
+        <a href="hotels.html" class="drawer-link-item"><i class="fa-solid fa-hotel clr-primary"></i> Hotels</a>
+        <a href="about.html" class="drawer-link-item"><i class="fa-solid fa-circle-info clr-primary"></i> About Us</a>
+        <a href="contact.html" class="drawer-link-item"><i class="fa-solid fa-phone clr-primary"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Scroll To Top Button -->
+  <button class="scroll-top-btn visible" id="scroll-to-top-btn" aria-label="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="app.js"></script>
+  <script>
+    // Destination quick chip filter
+    window.filterByDestChip = function(btnEl, destKeyword) {
+      document.querySelectorAll('.dest-chip-btn').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+
+      const keywordInput = document.getElementById('plp-keyword-filter');
+      if (keywordInput) {
+        keywordInput.value = destKeyword;
+        keywordInput.dispatchEvent(new Event('input'));
+      }
+      if (typeof renderDestinationPlpHeader === 'function') {
+        renderDestinationPlpHeader(destKeyword);
+      }
+    };
+  </script>
+</body>
+</html>

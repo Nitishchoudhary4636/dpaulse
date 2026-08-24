@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disney Holidays & Disneyland Tour Packages | DPauls Holidays</title>
+  <meta name="description" content="Book Disney Holiday Packages - Hong Kong Disneyland, Disney Adventure Cruise Line Singapore, and Disneyland Paris with DPauls Holidays. Best family vacation deals.">
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flight-results.css">
+  <link rel="stylesheet" href="packages.css">
+</head>
+<body class="booking-page-body">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="flight-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">DPauls Holidays</a>
+      <span class="mx-2">/</span>
+      <a href="packages.html">Holiday Packages</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;">Disney & Disneyland Holiday Tour Packages</span>
+    </div>
+  </div>
+
+  <!-- 3. Quick Disney Category Chips Bar -->
+  <div class="plp-destination-chips-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <div class="destination-chips-scroll">
+        <button type="button" class="dest-chip-btn active" onclick="window.filterByDestChip(this, '')">All Disney Packages</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Hong Kong')">Hong Kong Disneyland</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Cruise')">Disney Adventure Cruise (Singapore)</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Paris')">Disneyland Paris</button>
+        <button type="button" class="dest-chip-btn" onclick="window.filterByDestChip(this, 'Tokyo')">Tokyo Disney Resort</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Main Two-Column Layout -->
+  <main class="plp-main-layout">
+    
+    <!-- Filter Sidebar -->
+    <aside class="filter-sidebar">
+      <div class="filter-sidebar-header">
+        <span class="filter-sidebar-title"><i class="fa-solid fa-wand-magic-sparkles clr-primary"></i> Filter Disney</span>
+        <button type="button" class="btn-clear-filters" id="btn-reset-filters">Reset All</button>
+      </div>
+
+      <!-- Keyword Search -->
+      <div class="filter-group-block">
+        <div class="filter-group-title">Search Disney Attraction</div>
+        <input type="text" class="filter-search-input" id="plp-keyword-filter" placeholder="e.g. Hong Kong, Cruise, Paris">
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-group-block">
+        <div class="filter-group-title">Disney Theme</div>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="cat_filter" value="all" checked> All Disney Holidays</span>
+          <span class="filter-badge-count">4</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="cat_filter" value="cruise"> Disney Cruise Line</span>
+          <span class="filter-badge-count">1</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="cat_filter" value="themepark"> Disneyland Theme Parks</span>
+          <span class="filter-badge-count">3</span>
+        </label>
+      </div>
+
+      <!-- Duration Filter -->
+      <div class="filter-group-block">
+        <div class="filter-group-title">Duration (Nights)</div>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="duration_filter" value="1-3"> 3 Nights Cruise</span>
+          <span class="filter-badge-count">1</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="duration_filter" value="4-6"> 5 to 6 Nights</span>
+          <span class="filter-badge-count">2</span>
+        </label>
+        <label class="filter-checkbox-label">
+          <span><input type="checkbox" name="duration_filter" value="7-9"> 7+ Nights Combo</span>
+          <span class="filter-badge-count">1</span>
+        </label>
+      </div>
+
+      <!-- Promo Badge in Sidebar -->
+      <div class="flight-sidebar-promo-card mt-3">
+        <i class="fa-solid fa-wand-magic-sparkles fnt-24 mb-1" style="color: #fde047;"></i>
+        <h3>Official Disney Travel Partner</h3>
+        <div class="promo-code-pill">CODE: NOFEES</div>
+        <div class="fnt-11">Guaranteed Park Tickets & Instant Vouchers</div>
+      </div>
+    </aside>
+
+    <!-- Right Results Column -->
+    <div class="plp-results-column">
+      
+      <!-- Results Header Bar -->
+      <div class="plp-results-header-bar">
+        <div class="plp-count-display" id="plp-results-count">
+          Showing 4 Disney Holiday Packages
+        </div>
+        <div class="plp-sort-wrapper">
+          <span>Sort by:</span>
+          <select class="plp-sort-select" id="plp-sort-select">
+            <option value="popularity">Popularity (Recommended)</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="duration_desc">Duration: Longest First</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Disney Packages Grid -->
+      <div id="plp-packages-grid">
+
+        <!-- 1. Hong Kong Disneyland & Macau -->
+        <article class="plp-package-item-card" data-category="themepark" data-dest="hong kong disneyland macau resort hollywood hotel" data-duration="5" data-price="78999" data-title="Hong Kong Disneyland & Macau Magic Tour">
+          <div class="plp-card-media">
+            <img src="assets/images/disney-adventure-cruise-web-banner.jpg" alt="Hong Kong Disneyland & Macau Magic Tour">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 5N / 6D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP880 • OFFICIAL DISNEY PARTNER</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=disney">Hong Kong Disneyland & Macau Magic Tour</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>2N Hong Kong City • 2N Disney's Hollywood Hotel (Disneyland Resort) • 1N Macau</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> Disney Resort Stay</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ticket"></i> Disneyland 1-Day Pass</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ship"></i> TurboJET Ferry to Macau</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> Buffet Breakfast</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 95,000</div>
+              <div class="plp-final-price">₹ 78,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+              <div class="plp-emi-pill">EMI from ₹3,999/mo</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=disney" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Hong Kong Disneyland & Macau Magic Tour', '78999', { type: 'package', title: 'Hong Kong Disneyland & Macau Magic Tour (5N/6D)', price: '78999', duration: '5N/6D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Disney Adventure Cruise Line Singapore -->
+        <article class="plp-package-item-card" data-category="cruise" data-dest="disney adventure cruise singapore ocean liner marina bay" data-duration="3" data-price="89999" data-title="Disney Adventure Cruise Line Singapore">
+          <div class="plp-card-media">
+            <img src="assets/images/disney-adventure-cruise-web-banner.jpg" alt="Disney Adventure Cruise Line Singapore">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 3N / 4D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP990 • MAIDEN VOYAGE SPECIAL</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=disney">Disney Adventure Cruise Line (Singapore Sailing)</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-ship"></i>
+                <span>3N Luxury Sailing from Marina Bay Cruise Centre Singapore</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-utensils"></i> All Meals & Disney Dinners</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-masks-theater"></i> Broadway Disney Musicals</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> 7 Immersive Disney Zones</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-water"></i> Marvel Landing Rollercoaster</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 1,15,000</div>
+              <div class="plp-final-price">₹ 89,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+              <div class="plp-emi-pill">EMI from ₹4,499/mo</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=disney" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Disney Adventure Cruise Line (Singapore)', '89999', { type: 'cruise', title: 'Disney Adventure Cruise Line Singapore (3N/4D)', price: '89999', duration: '3N/4D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Disneyland Paris & Swiss Alps Combo -->
+        <article class="plp-package-item-card" data-category="themepark" data-dest="disneyland paris france switzerland zurich europe" data-duration="7" data-price="174999" data-title="Disneyland Paris & Swiss Alps Magical Combo">
+          <div class="plp-card-media">
+            <img src="assets/images/eiffel-tower.jpg" alt="Disneyland Paris & Swiss Alps Magical Combo">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 7N / 8D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP209 • EUROPE DISNEY SPECIAL</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=europe">Disneyland Paris & Swiss Alps Magical Combo</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>3N Paris (1-Day 2-Parks Disneyland Pass) • 4N Switzerland (Mt. Titlis & Lucerne)</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ticket"></i> 2-Parks Disney Passes</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-hotel"></i> 4★ Hotels</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-passport"></i> Schengen Visa</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 2,10,000</div>
+              <div class="plp-final-price">₹ 1,74,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=europe" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Disneyland Paris & Swiss Alps Combo', '174999', { type: 'package', title: 'Disneyland Paris & Swiss Alps Combo (7N/8D)', price: '174999', duration: '7N/8D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Tokyo Disney Resort & Mount Fuji -->
+        <article class="plp-package-item-card" data-category="themepark" data-dest="tokyo disney resort disneyland disneysea japan fuji" data-duration="6" data-price="189999" data-title="Tokyo Disney Resort & Mount Fuji Fantasy">
+          <div class="plp-card-media">
+            <img src="assets/images/japan-holiday-deal-package.jpg" alt="Tokyo Disney Resort & Mount Fuji Fantasy">
+            <span class="plp-card-duration-badge"><i class="fa-regular fa-clock"></i> 6N / 7D</span>
+          </div>
+          <div class="plp-card-info-col">
+            <div>
+              <div class="plp-card-code-tag">CODE: DP520 • ASIA THEME PARK</div>
+              <h2 class="plp-card-title">
+                <a href="package-detail.html?id=japan">Tokyo Disney Resort (Disneyland & DisneySea) with Mt. Fuji</a>
+              </h2>
+              <div class="plp-card-destinations">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>4N Tokyo (Tokyo Disneyland + Tokyo DisneySea) • 2N Mount Fuji Hakone</span>
+              </div>
+            </div>
+            <div class="plp-card-inclusions-row">
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-plane"></i> Return Flights</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-ticket"></i> Tokyo Disney Passes</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-train"></i> Bullet Train Pass</span>
+              <span class="plp-inclusion-chip"><i class="fa-solid fa-passport"></i> Japan Visa</span>
+            </div>
+          </div>
+          <div class="plp-card-pricing-col">
+            <div>
+              <div class="plp-price-label">Starting From</div>
+              <div class="plp-original-price">₹ 2,25,000</div>
+              <div class="plp-final-price">₹ 1,89,999</div>
+              <div class="plp-price-subtext">per person on twin sharing</div>
+            </div>
+            <div class="plp-card-actions-group">
+              <a href="package-detail.html?id=japan" class="btn-plp-view">View Details</a>
+              <button type="button" class="btn-plp-book" onclick="window.confirmBooking('Tokyo Disney Resort & Mount Fuji Fantasy', '189999', { type: 'package', title: 'Tokyo Disney Resort & Mount Fuji Fantasy (6N/7D)', price: '189999', duration: '6N/7D' })">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Slide-out Side Navigation Drawer -->
+  <div class="modal-backdrop-custom" id="drawer-backdrop">
+    <div class="drawer-nav-menu" id="side-drawer">
+      <div class="drawer-header">
+        <div class="user-avatar-circle"><i class="fa-solid fa-user"></i></div>
+        <div>
+          <div class="font-bold fnt-16">Hello Guest!</div>
+          <a href="javascript:void(0)" class="fnt-13 clr-teal modal-trigger-login" style="color: var(--teal);">Login / Sign Up</a>
+        </div>
+        <button class="modal-close-btn" style="top: 14px; right: 14px;" id="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-content-list">
+        <a href="index.html" class="drawer-link-item"><i class="fa-solid fa-house clr-primary"></i> Home</a>
+        <a href="flights.html" class="drawer-link-item"><i class="fa-solid fa-plane-departure clr-primary"></i> Flights</a>
+        <a href="packages.html" class="drawer-link-item"><i class="fa-solid fa-suitcase-rolling clr-primary"></i> Holiday Packages</a>
+        <a href="disney.html" class="drawer-link-item"><i class="fa-solid fa-wand-magic-sparkles clr-primary"></i> Disney Holidays</a>
+        <a href="hotels.html" class="drawer-link-item"><i class="fa-solid fa-hotel clr-primary"></i> Hotels</a>
+        <a href="about.html" class="drawer-link-item"><i class="fa-solid fa-circle-info clr-primary"></i> About Us</a>
+        <a href="contact.html" class="drawer-link-item"><i class="fa-solid fa-phone clr-primary"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Scroll To Top Button -->
+  <button class="scroll-top-btn visible" id="scroll-to-top-btn" aria-label="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="app.js"></script>
+  <script>
+    window.filterByDestChip = function(btnEl, destKeyword) {
+      document.querySelectorAll('.dest-chip-btn').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+
+      const keywordInput = document.getElementById('plp-keyword-filter');
+      if (keywordInput) {
+        keywordInput.value = destKeyword;
+        keywordInput.dispatchEvent(new Event('input'));
+      }
+    };
+  </script>
+</body>
+</html>

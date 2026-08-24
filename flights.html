@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Search Results - New Delhi to Mumbai | DPauls Holidays</title>
+  <meta name="description" content="Book cheap flights from New Delhi to Mumbai on DPauls.com. Instant discounts on IndiGo, Air India, SpiceJet with Zero Convenience Fee.">
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flight-results.css">
+</head>
+<body style="background: #f1f5f9;">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="flight-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">DPauls Holidays</a>
+      <span class="mx-2">/</span>
+      <a href="flights.html">Flights</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;" id="flight-breadcrumb-text">New Delhi - Mumbai</span>
+    </div>
+  </div>
+
+  <!-- 3. Modify Search Bar -->
+  <div class="flight-search-modify-bar">
+    <form class="modify-search-container" onsubmit="event.preventDefault(); window.applyFlightModify();">
+      <div class="modify-search-box">
+        <input type="text" id="modify-from" value="DEL - New Delhi" placeholder="Origin">
+      </div>
+      <button type="button" class="modify-search-swap-btn" id="modify-swap-btn">
+        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+      </button>
+      <div class="modify-search-box">
+        <input type="text" id="modify-to" value="BOM - Mumbai" placeholder="Destination">
+      </div>
+      <div class="modify-search-box" style="max-width: 150px;">
+        <input type="text" id="modify-date" value="24/08/2026">
+        <i class="fa-regular fa-calendar-days clr-8f"></i>
+      </div>
+      <div class="modify-search-box" style="max-width: 130px;">
+        <input type="text" placeholder="Return" readonly>
+        <i class="fa-regular fa-calendar-days clr-8f"></i>
+      </div>
+      <div class="modify-search-box" style="max-width: 170px;">
+        <input type="text" value="1 Traveller(s)" readonly>
+        <i class="fa-regular fa-user clr-8f"></i>
+      </div>
+      <button type="submit" class="modify-search-submit-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- 4. Group Booking Banner -->
+  <div class="group-booking-cyan-banner">
+    <div style="max-width: 1240px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 0.6rem;">
+      <span class="banner-new-badge">NEW</span>
+      <i class="fa-solid fa-plane"></i>
+      <span>Group Booking is available for <b>9+ Passengers</b>.</span>
+    </div>
+  </div>
+
+  <!-- 5. Sticky Horizontal Filter Bar -->
+  <nav class="flight-horizontal-filters-bar">
+    <div class="filters-bar-container">
+      <div class="filter-chip-group">
+        <div style="display: flex; align-items: center; gap: 0.3rem; color: #1e293b;">
+          <i class="fa-solid fa-filter"></i> Filter
+        </div>
+        <div class="filter-dropdown-chip" onclick="window.toggleFilterDropdown('stops')">
+          STOPS <i class="fa-solid fa-chevron-down fnt-11"></i>
+        </div>
+        <div class="filter-dropdown-chip" onclick="window.toggleFilterDropdown('price')">
+          PRICE <i class="fa-solid fa-chevron-down fnt-11"></i>
+        </div>
+        <div class="filter-dropdown-chip" onclick="window.toggleFilterDropdown('airline')">
+          AIRLINE <i class="fa-solid fa-chevron-down fnt-11"></i>
+        </div>
+        <div class="filter-dropdown-chip" onclick="window.toggleFilterDropdown('time')">
+          DEPARTURE TIME <i class="fa-solid fa-chevron-down fnt-11"></i>
+        </div>
+      </div>
+      <div class="filter-reset-link" onclick="window.resetFlightFilters()">
+        Reset All
+      </div>
+    </div>
+  </nav>
+
+  <!-- 6. Main Flight Results Layout -->
+  <main class="flight-results-layout">
+    
+    <!-- Left Sidebar Column -->
+    <aside class="flight-sidebar-column">
+      <!-- Promo Banner Card -->
+      <div class="flight-sidebar-promo-card">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-plane-up"></i></div>
+        <h3>Convenience Fee on Flight Bookings <span style="color: #fde047;">ZERO</span></h3>
+        <div class="promo-code-pill">USE CODE: NOFEES</div>
+        <div class="fnt-11" style="opacity: 0.9;">Validity: 30 September 2026</div>
+      </div>
+
+      <!-- Trust Badges Block -->
+      <div class="flight-trust-block">
+        <div class="trust-item">
+          <i class="fa-solid fa-headset"></i>
+          <span>24X7<br>Support</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-plane-circle-check"></i>
+          <span>Lowest Price<br>Guaranteed</span>
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Safe & Secure<br>Payment</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Main Column: Flight Cards List -->
+    <section class="flight-list-column">
+      
+      <!-- Table Header Row -->
+      <div class="flight-list-header">
+        <div><i class="fa-solid fa-bars-staggered mr-1"></i> SORT BY</div>
+        <div>DEPART</div>
+        <div class="text-center">DURATION</div>
+        <div>ARRIVAL</div>
+        <div class="text-right">PRICE <span style="font-size: 0.65rem; font-weight: normal;">(Per Adult)</span></div>
+      </div>
+
+      <!-- Flight Cards Container -->
+      <div id="flight-cards-container">
+
+        <!-- Card 1: IndiGo 6E-6114 -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="6530" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-6114</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">22:45</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 20 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">01:05</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 6530</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-6114', '₹ 6530')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-6114:</b> Non-stop flight departing New Delhi Terminal 1 at 22:45 and arriving at Mumbai Terminal 2 at 01:05. Check-in baggage: 15 Kg, Cabin baggage: 7 Kg.
+          </div>
+        </article>
+
+        <!-- Card 2: IndiGo 6E-322 -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="6530" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-322</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">23:30</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 15 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">01:45</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 6530</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-322', '₹ 6530')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-322:</b> Direct flight departing New Delhi Terminal 1 at 23:30 and arriving at Mumbai Terminal 2 at 01:45. Check-in baggage: 15 Kg, Cabin baggage: 7 Kg.
+          </div>
+        </article>
+
+        <!-- Card 3: SpiceJet SG-802 -->
+        <article class="flight-result-item-card" data-airline="spicejet" data-price="6594" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo spicejet">SG</div>
+              <div>
+                <div class="airline-name-text">SpiceJet</div>
+                <div class="airline-code-text">SG-802</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">22:30</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 20 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">00:50</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 6594</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('SpiceJet SG-802', '₹ 6594')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>SpiceJet Flight SG-802:</b> Boeing 737 aircraft departing New Delhi Terminal 1 at 22:30, arriving Mumbai Terminal 2 at 00:50.
+          </div>
+        </article>
+
+        <!-- Card 4: IndiGo 6E-295 -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="6688" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-295</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">21:45</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 20 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">00:05</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 6688</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-295', '₹ 6688')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-295:</b> Non-stop flight from New Delhi to Mumbai. 15kg check-in + 7kg cabin baggage.
+          </div>
+        </article>
+
+        <!-- Card 5: IndiGo 6E-955 -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="6739" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-955</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">20:20</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">NMI</div>
+              <div class="flight-time-val">22:20</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 6739</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-955', '₹ 6739')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-NMI</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-955:</b> Direct flight to Navi Mumbai International Airport.
+          </div>
+        </article>
+
+        <!-- Card 6: Air India AI-2999 -->
+        <article class="flight-result-item-card" data-airline="airindia" data-price="7000" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo airindia">AI</div>
+              <div>
+                <div class="airline-name-text">Air India</div>
+                <div class="airline-code-text">AI-2999</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">22:00</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 25 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">00:25</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7000</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('Air India AI-2999', '₹ 7000')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-free-meals-tag">
+              <i class="fa-solid fa-utensils clr-primary"></i> Free Meals
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>Air India Flight AI-2999:</b> Airbus A321 departing Terminal 3 Delhi. Complimentary hot gourmet meal included + 20 Kg Check-in baggage.
+          </div>
+        </article>
+
+        <!-- Card 7: Air India AI-2437 -->
+        <article class="flight-result-item-card" data-airline="airindia" data-price="7000" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo airindia">AI</div>
+              <div>
+                <div class="airline-name-text">Air India</div>
+                <div class="airline-code-text">AI-2437</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">22:30</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 25 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">00:55</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7000</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('Air India AI-2437', '₹ 7000')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-free-meals-tag">
+              <i class="fa-solid fa-utensils clr-primary"></i> Free Meals
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>Air India Flight AI-2437:</b> Non-stop service from Delhi T3 to Mumbai T2. Complimentary meal included.
+          </div>
+        </article>
+
+        <!-- Card 8: Air India AI-2439 -->
+        <article class="flight-result-item-card" data-airline="airindia" data-price="7000" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo airindia">AI</div>
+              <div>
+                <div class="airline-name-text">Air India</div>
+                <div class="airline-code-text">AI-2439</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">23:00</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 25 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">01:25</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7000</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('Air India AI-2439', '₹ 7000')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-free-meals-tag">
+              <i class="fa-solid fa-utensils clr-primary"></i> Free Meals
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>Air India Flight AI-2439:</b> Boeing 787 Dreamliner departing at 23:00. Full service with meal.
+          </div>
+        </article>
+
+        <!-- Card 9: Air India AI-2433 -->
+        <article class="flight-result-item-card" data-airline="airindia" data-price="7159" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo airindia">AI</div>
+              <div>
+                <div class="airline-name-text">Air India</div>
+                <div class="airline-code-text">AI-2433</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">21:30</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 25 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">23:55</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7159</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('Air India AI-2433', '₹ 7159')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-free-meals-tag">
+              <i class="fa-solid fa-utensils clr-primary"></i> Free Meals
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>Air India Flight AI-2433:</b> Full-service flight with dinner and baggage included.
+          </div>
+        </article>
+
+        <!-- Card 10: Air India AI-2805 -->
+        <article class="flight-result-item-card" data-airline="airindia" data-price="7159" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo airindia">AI</div>
+              <div>
+                <div class="airline-name-text">Air India</div>
+                <div class="airline-code-text">AI-2805</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">20:00</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 30 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">22:30</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7159</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('Air India AI-2805', '₹ 7159')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-free-meals-tag">
+              <i class="fa-solid fa-utensils clr-primary"></i> Free Meals
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>Air India Flight AI-2805:</b> Delhi T3 to Mumbai T2. 20 Kg Check-in baggage included.
+          </div>
+        </article>
+
+        <!-- Card 11: IndiGo 6E-853 -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="7160" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-853</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">20:45</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 15 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">23:00</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7160</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-853', '₹ 7160')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-853:</b> Direct flight. 15kg baggage included.
+          </div>
+        </article>
+
+        <!-- Card 12: IndiGo 6E-6479 (One Stop) -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="7482" data-stops="1">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-6479</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">21:25</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">4 hr 50 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">One Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">02:15</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7482</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-6479 (via LKO)', '₹ 7482')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-LKO-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-6479:</b> 1 Stop via Lucknow (LKO) with 1h 30m layover.
+          </div>
+        </article>
+
+        <!-- Card 13: IndiGo 6E-882 (One Stop) -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="7613" data-stops="1">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-882</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">23:15</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">5 hr 15 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">One Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">04:30</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7613</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-882 (via HYD)', '₹ 7613')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-HYD-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-882:</b> 1 Stop via Hyderabad (HYD).
+          </div>
+        </article>
+
+        <!-- Card 14: Air India AI-2981 -->
+        <article class="flight-result-item-card" data-airline="airindia" data-price="7630" data-stops="0">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo airindia">AI</div>
+              <div>
+                <div class="airline-name-text">Air India</div>
+                <div class="airline-code-text">AI-2981</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">21:00</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">2 hr 20 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">Non Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">23:20</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 7630</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('Air India AI-2981', '₹ 7630')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-BOM</span>
+            </div>
+            <div class="flight-free-meals-tag">
+              <i class="fa-solid fa-utensils clr-primary"></i> Free Meals
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>Air India Flight AI-2981:</b> Non-stop Delhi T3 to Mumbai T2. Complimentary Meal Included.
+          </div>
+        </article>
+
+        <!-- Card 15: AirIndia Express IX-2820 -->
+        <article class="flight-result-item-card" data-airline="airindia-express" data-price="9814" data-stops="1">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo airindia-express">IX</div>
+              <div>
+                <div class="airline-name-text">AirIndia Express</div>
+                <div class="airline-code-text">IX-2820</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">21:00</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">13 hr 35 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">One Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">10:35</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 9814</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('AirIndia Express IX-2820', '₹ 9814')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-GOX-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>AirIndia Express IX-2820:</b> Overnight stopover via Goa Mopa (GOX).
+          </div>
+        </article>
+
+        <!-- Card 16: IndiGo 6E-2013 -->
+        <article class="flight-result-item-card" data-airline="indigo" data-price="10001" data-stops="1">
+          <div class="flight-card-main-row">
+            <div class="flight-airline-col">
+              <div class="airline-badge-logo indigo">6E</div>
+              <div>
+                <div class="airline-name-text">IndiGo</div>
+                <div class="airline-code-text">6E-2013</div>
+              </div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">DEL</div>
+              <div class="flight-time-val">21:50</div>
+            </div>
+            <div class="flight-duration-col">
+              <div class="duration-text">5 hr 5 mins</div>
+              <div class="duration-line-wrapper">
+                <span class="duration-circle"></span>
+                <span class="duration-line"></span>
+                <span class="duration-circle"></span>
+              </div>
+              <div class="duration-stop-type">One Stop</div>
+            </div>
+            <div class="flight-time-col">
+              <div class="flight-time-city">BOM</div>
+              <div class="flight-time-val">02:55</div>
+            </div>
+            <div class="flight-price-action-col">
+              <div class="flight-price-text">₹ 10001</div>
+              <button type="button" class="btn-book-flight-teal" onclick="window.confirmBooking('IndiGo 6E-2013 (via AMD)', '₹ 10001')">Book Now</button>
+            </div>
+          </div>
+          <div class="flight-card-sub-row">
+            <div>
+              <span class="fnt-11 clr-8f font-bold mr-1">ROUTES:</span>
+              <span class="flight-route-pill">DEL-AMD-BOM</span>
+            </div>
+            <div class="flight-details-toggle" onclick="window.toggleFlightDetails(this)">
+              FLIGHT DETAILS <i class="fa-solid fa-chevron-down fnt-10"></i>
+            </div>
+          </div>
+          <div class="flight-expandable-panel">
+            <b>IndiGo Flight 6E-2013:</b> 1 Stop via Ahmedabad (AMD).
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Scroll To Top Button -->
+  <button class="scroll-top-btn visible" id="scroll-to-top-btn" aria-label="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Slide-out Side Navigation Drawer -->
+  <div class="modal-backdrop-custom" id="drawer-backdrop">
+    <div class="drawer-nav-menu" id="side-drawer">
+      <div class="drawer-header">
+        <div class="user-avatar-circle"><i class="fa-solid fa-user"></i></div>
+        <div>
+          <div class="font-bold fnt-16">Hello Guest!</div>
+          <a href="javascript:void(0)" class="fnt-13 clr-teal modal-trigger-login" style="color: var(--teal);">Login / Sign Up</a>
+        </div>
+        <button class="modal-close-btn" style="top: 14px; right: 14px;" id="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-content-list">
+        <a href="index.html" class="drawer-link-item"><i class="fa-solid fa-house clr-primary"></i> Home</a>
+        <a href="flights.html" class="drawer-link-item"><i class="fa-solid fa-plane-departure clr-primary"></i> Flights</a>
+        <a href="packages.html" class="drawer-link-item"><i class="fa-solid fa-suitcase-rolling clr-primary"></i> Holiday Packages</a>
+        <a href="hotels.html" class="drawer-link-item"><i class="fa-solid fa-hotel clr-primary"></i> Hotels</a>
+        <a href="about.html" class="drawer-link-item"><i class="fa-solid fa-circle-info clr-primary"></i> About Us</a>
+        <a href="contact.html" class="drawer-link-item"><i class="fa-solid fa-phone clr-primary"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Details Modal -->
+  <div class="modal-backdrop-custom" id="results-modal">
+    <div class="modal-card-dialog results-modal-dialog">
+      <button class="modal-close-btn" id="close-results-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="call-modal-body">
+        <h3 class="fnt-22 font-bold clr-3c" id="results-modal-title">Flight Booking</h3>
+        <div class="fnt-13 clr-8f mb-3" id="results-modal-sub">Confirm your flight selection</div>
+        <div id="results-cards-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call Us Modal -->
+  <div class="modal-backdrop-custom" id="call-modal">
+    <div class="modal-card-dialog" style="max-width: 650px;">
+      <button class="modal-close-btn" id="close-call-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="call-modal-body">
+        <h3 class="fnt-22 font-bold clr-3c">DPauls Air Ticketing Helpline</h3>
+        <p class="fnt-14 clr-8f">Call our flight ticketing desk:</p>
+        <div class="my-3 font-bold fnt-22 clr-primary text-center">
+          <a href="tel:01166777150" class="clr-primary">011 66777150</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+  <script>
+    // Specific handlers for flight result interactions
+    window.toggleFlightDetails = function(el) {
+      const card = el.closest('.flight-result-item-card');
+      const panel = card.querySelector('.flight-expandable-panel');
+      if (panel) {
+        panel.classList.toggle('active');
+        const icon = el.querySelector('i');
+        if (panel.classList.contains('active')) {
+          icon.className = 'fa-solid fa-chevron-up fnt-10';
+        } else {
+          icon.className = 'fa-solid fa-chevron-down fnt-10';
+        }
+      }
+    };
+
+    window.toggleFilterDropdown = function(filterType) {
+      alert(`Filtering by ${filterType.toUpperCase()}: Showing lowest available fares.`);
+    };
+
+    window.resetFlightFilters = function() {
+      const cards = document.querySelectorAll('.flight-result-item-card');
+      cards.forEach(c => c.style.display = 'block');
+      alert('All flight filters have been reset.');
+    };
+
+    window.applyFlightModify = function() {
+      const from = document.getElementById('modify-from').value;
+      const to = document.getElementById('modify-to').value;
+      const date = document.getElementById('modify-date').value;
+      const breadcrumb = document.getElementById('flight-breadcrumb-text');
+      if (breadcrumb) breadcrumb.textContent = `${from} - ${to}`;
+      alert(`Updated flight search for ${from} to ${to} on ${date}.`);
+    };
+
+    const swapBtn = document.getElementById('modify-swap-btn');
+    if (swapBtn) {
+      swapBtn.addEventListener('click', () => {
+        const from = document.getElementById('modify-from');
+        const to = document.getElementById('modify-to');
+        if (from && to) {
+          const tmp = from.value;
+          from.value = to.value;
+          to.value = tmp;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

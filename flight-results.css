@@ -1,0 +1,520 @@
+/* ==========================================================================
+   DPauls Flights Search Results Page (Exact Replica)
+   ========================================================================== */
+
+/* Top Header Bar */
+.flight-top-header {
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.flight-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flight-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.flight-menu-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.flight-brand-logo img {
+  height: 36px;
+}
+
+.flight-header-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.flight-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+}
+
+.pill-my-account {
+  background: #39c9bb;
+}
+
+.pill-gift-card {
+  background: #f59e0b;
+}
+
+.pill-call-us {
+  background: #39c9bb;
+}
+
+/* Breadcrumbs Bar */
+.flight-breadcrumb-bar {
+  background: #3c4858;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  padding: 0.45rem 0;
+}
+
+.flight-breadcrumb-bar a {
+  color: #e2e8f0;
+}
+
+/* Modify Search Bar */
+.flight-search-modify-bar {
+  background: #f1f5f9;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modify-search-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modify-search-box {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.modify-search-box input {
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  width: 100%;
+  color: #1e293b;
+}
+
+.modify-search-swap-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0 0.3rem;
+  font-size: 0.95rem;
+}
+
+.modify-search-submit-btn {
+  background: #2dd4bf;
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Group Booking Banner */
+.group-booking-cyan-banner {
+  background: linear-gradient(90deg, #0284c7 0%, #06b6d4 100%);
+  color: var(--white);
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.banner-new-badge {
+  background: #ef4444;
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+/* Sticky Filters Horizontal Bar */
+.flight-horizontal-filters-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.6rem 0;
+  position: sticky;
+  top: 54px;
+  z-index: 90;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.filters-bar-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.filter-chip-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.filter-dropdown-chip {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.filter-dropdown-chip:hover {
+  color: var(--primary);
+}
+
+.filter-reset-link {
+  color: #0284c7;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Flight Results Main Body */
+.flight-results-layout {
+  max-width: 1240px;
+  margin: 1.5rem auto 4rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.5rem;
+}
+
+/* Sidebar */
+.flight-sidebar-promo-card {
+  background: linear-gradient(135deg, #1e3a8a, #0284c7);
+  border-radius: 6px;
+  padding: 1.25rem 1rem;
+  color: var(--white);
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.flight-sidebar-promo-card h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.promo-code-pill {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px dashed #fef08a;
+  color: #fef08a;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+.flight-trust-block {
+  background: #1e293b;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.85rem 0.5rem;
+  color: var(--white);
+  text-align: center;
+}
+
+.trust-item {
+  font-size: 0.68rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.trust-item i {
+  font-size: 1.1rem;
+  color: #38bdf8;
+}
+
+/* Flight Cards List Header */
+.flight-list-header {
+  display: grid;
+  grid-template-columns: 140px 80px 150px 80px 1fr;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 0.75rem;
+}
+
+/* Flight Item Card */
+.flight-result-item-card {
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem 1.25rem 0.65rem;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+}
+
+.flight-result-item-card:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.flight-card-main-row {
+  display: grid;
+  grid-template-columns: 140px 80px 150px 80px 1fr;
+  align-items: center;
+}
+
+.flight-airline-col {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.airline-badge-logo {
+  width: 34px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--white);
+}
+
+.airline-badge-logo.indigo {
+  background: #1e3a8a;
+}
+
+.airline-badge-logo.spicejet {
+  background: #dc2626;
+}
+
+.airline-badge-logo.airindia {
+  background: #b91c1c;
+}
+
+.airline-badge-logo.airindia-express {
+  background: #ea580c;
+}
+
+.airline-name-text {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.1;
+}
+
+.airline-code-text {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.flight-time-col {
+  text-align: left;
+}
+
+.flight-time-city {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.flight-time-val {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.flight-duration-col {
+  text-align: center;
+}
+
+.duration-line-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.duration-line {
+  height: 1px;
+  background: #cbd5e1;
+  width: 30px;
+}
+
+.duration-circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid #94a3b8;
+}
+
+.duration-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0d9488;
+}
+
+.duration-stop-type {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.flight-price-action-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+}
+
+.flight-price-text {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.btn-book-flight-teal {
+  background: #2dd4bf;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.45rem 1.1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-book-flight-teal:hover {
+  background: #14b8a6;
+}
+
+/* Flight Card Sub-Row (Routes & Details) */
+.flight-card-sub-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed #e2e8f0;
+  margin-top: 0.65rem;
+  padding-top: 0.45rem;
+  font-size: 0.75rem;
+}
+
+.flight-route-pill {
+  background: #ffe4e6;
+  color: #e11d48;
+  font-weight: 800;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.flight-free-meals-tag {
+  color: #475569;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.flight-details-toggle {
+  color: #64748b;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.flight-details-toggle:hover {
+  color: var(--primary);
+}
+
+/* Expandable Flight Details Drawer Inside Card */
+.flight-expandable-panel {
+  display: none;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #334155;
+}
+
+.flight-expandable-panel.active {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .flight-results-layout {
+    grid-template-columns: 1fr;
+  }
+  .flight-card-main-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .flight-price-action-col {
+    grid-column: span 2;
+    justify-content: space-between;
+  }
+}

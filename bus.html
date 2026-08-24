@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Booking - Luxury & Volvo Sleeper Buses | DPauls Holidays</title>
+  <meta name="description" content="Book online bus tickets for Volvo AC, Multi-axle Sleeper buses with DPauls Holidays. Instant seat confirmation and lowest price guarantee.">
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body class="booking-page-body">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="booking-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">DPauls Holidays</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;">Bus Tickets &bull; Delhi to Manali / Jaipur</span>
+    </div>
+  </div>
+
+  <!-- 3. Bus Results Layout -->
+  <main class="booking-main-layout">
+    
+    <!-- Filters Sidebar -->
+    <aside class="booking-sidebar-column" style="order: 1;">
+      <div class="booking-sidebar-widget">
+        <div class="widget-heading-divider">Filter Buses</div>
+        <div class="mb-3">
+          <div class="fnt-12 font-bold clr-3c mb-1">Bus Type</div>
+          <label class="filter-checkbox-label"><span><input type="checkbox" checked> AC Multi-Axle Volvo</span></label>
+          <label class="filter-checkbox-label"><span><input type="checkbox" checked> Bharat Benz Sleeper</span></label>
+          <label class="filter-checkbox-label"><span><input type="checkbox"> Mercedes Luxury Seater</span></label>
+        </div>
+        <div class="mb-3">
+          <div class="fnt-12 font-bold clr-3c mb-1">Departure Time</div>
+          <label class="filter-checkbox-label"><span><input type="checkbox" checked> Evening (18:00 - 23:59)</span></label>
+          <label class="filter-checkbox-label"><span><input type="checkbox"> Morning (06:00 - 12:00)</span></label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Bus Cards List -->
+    <div class="booking-content-column" style="order: 2;">
+      <div class="widget-heading-divider mb-3">Available Premium Buses (Delhi ➔ Manali / Shimla)</div>
+
+      <!-- Bus 1 -->
+      <div class="booking-card">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <div>
+            <span class="onward-pill" style="background: #ea580c;">VOLVO 9600 MULTI-AXLE</span>
+            <h2 class="font-bold fnt-18 clr-3c my-1">Zingbus Luxury Electric / Volvo AC Sleeper</h2>
+            <div class="fnt-12 clr-8f"><i class="fa-solid fa-location-dot clr-primary"></i> Pick-up: Majnu Ka Tila, Delhi (20:30) &bull; Drop: Private Bus Stand, Manali (08:30)</div>
+            <div class="d-flex gap-2 mt-2">
+              <span class="plp-inclusion-item"><i class="fa-solid fa-bed"></i> 2+1 Upper/Lower Sleeper</span>
+              <span class="plp-inclusion-item"><i class="fa-solid fa-plug"></i> Charging Point</span>
+              <span class="plp-inclusion-item"><i class="fa-solid fa-bottle-water"></i> Water Bottle</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="fnt-11 clr-8f">Starting from</div>
+            <div class="font-black fnt-24 clr-red">₹ 1,299</div>
+            <button type="button" class="btn btn-search fnt-13 mt-2" onclick="window.confirmBooking('Zingbus Volvo AC Sleeper (Delhi-Manali)', '1299', { type: 'bus', title: 'Zingbus Volvo AC Sleeper (Delhi ➔ Manali)', price: '1299', from: 'Delhi (Majnu Ka Tila)', to: 'Manali', depart: '20:30', arrive: '08:30', duration: '12 hr' })">
+              Select Seat
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bus 2 -->
+      <div class="booking-card">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <div>
+            <span class="onward-pill" style="background: #0284c7;">BHARAT BENZ AC SLEEPER</span>
+            <h2 class="font-bold fnt-18 clr-3c my-1">City Land Travels Volvo Multi-Axle</h2>
+            <div class="fnt-12 clr-8f"><i class="fa-solid fa-location-dot clr-primary"></i> Pick-up: Kashmere Gate ISBT, Delhi (21:15) &bull; Drop: Mall Road, Shimla (06:00)</div>
+            <div class="d-flex gap-2 mt-2">
+              <span class="plp-inclusion-item"><i class="fa-solid fa-wifi"></i> Live GPS Tracking</span>
+              <span class="plp-inclusion-item"><i class="fa-solid fa-fan"></i> Individual AC Vents</span>
+              <span class="plp-inclusion-item"><i class="fa-solid fa-shield-halved"></i> Emergency SOS</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="fnt-11 clr-8f">Starting from</div>
+            <div class="font-black fnt-24 clr-red">₹ 1,450</div>
+            <button type="button" class="btn btn-search fnt-13 mt-2" onclick="window.confirmBooking('City Land Travels Volvo (Delhi-Shimla)', '1450', { type: 'bus', title: 'City Land Travels Volvo (Delhi ➔ Shimla)', price: '1450', from: 'Delhi (Kashmere Gate)', to: 'Shimla', depart: '21:15', arrive: '06:00', duration: '8 hr 45 min' })">
+              Select Seat
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

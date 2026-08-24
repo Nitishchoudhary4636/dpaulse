@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Your Booking | DPauls Holidays</title>
+  <meta name="description" content="Review your travel booking, enter passenger details, apply promo codes and complete secure payment on DPauls.com.">
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body class="booking-page-body">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="booking-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">DPauls Holidays</a>
+      <span class="mx-2">/</span>
+      <a href="flights.html" id="breadcrumb-section-link">Flights</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;">Summary</span>
+    </div>
+  </div>
+
+  <!-- 3. Main Two-Column Layout -->
+  <main class="booking-main-layout">
+    
+    <!-- Left Column: Review Details & Forms -->
+    <div class="booking-content-column">
+      
+      <!-- Card 1: Review Your Booking -->
+      <section class="booking-card">
+        <div class="booking-card-header">
+          <h1 class="booking-card-title">
+            <i class="fa-solid fa-file-lines clr-primary"></i> Review Your Booking
+          </h1>
+          <div class="session-timer-badge">
+            <i class="fa-regular fa-clock clr-8f"></i>
+            <span>Session Expires in <b id="countdown-timer">09:50 min.</b></span>
+          </div>
+        </div>
+
+        <div class="booking-route-subrow">
+          <div class="booking-route-title">
+            <i class="fa-solid fa-plane-up clr-primary"></i>
+            <span id="booking-item-title">DEL ➔ BOM</span>
+            <span class="onward-pill" id="booking-badge-tag">ONWARD</span>
+          </div>
+          <div class="fare-rules-link" onclick="alert('Fare Rules:\n- Cancellation fee: ₹3,000 per passenger\n- Date change fee: ₹2,500 + fare difference\n- Baggage: 15 Kg Check-in + 7 Kg Cabin');">
+            <i class="fa-solid fa-circle-info"></i> Fare Rules
+          </div>
+        </div>
+
+        <div class="fnt-13 clr-8f mb-3" id="booking-travel-date">Monday, 24 Aug 2026</div>
+
+        <!-- Dynamic Item Detail Box -->
+        <div class="booking-flight-detail-grid" id="booking-item-detail-box">
+          
+          <!-- Flight Timeline (Origin & Dest) -->
+          <div class="flight-timeline-col">
+            <div class="timeline-point">
+              <span class="timeline-dot"></span>
+              <div class="timeline-point-city" id="timeline-origin-name">New Delhi (DEL)</div>
+              <div class="timeline-point-airport" id="timeline-origin-airport">Indira Gandhi International Airport, T-1</div>
+            </div>
+            <div class="timeline-point">
+              <span class="timeline-dot"></span>
+              <div class="timeline-point-city" id="timeline-dest-name">Mumbai (BOM)</div>
+              <div class="timeline-point-airport" id="timeline-dest-airport">Shivaji International Airport, T-2</div>
+            </div>
+          </div>
+
+          <!-- Duration & Timings -->
+          <div class="flight-duration-center-col">
+            <div class="flight-time-bold" id="timeline-depart-time">23:30</div>
+            <div class="flight-duration-cyan-pill" id="timeline-duration-badge">2hr 15mins</div>
+            <div class="flight-time-bold" id="timeline-arrive-time">01:45</div>
+          </div>
+
+          <!-- Airline & Baggage -->
+          <div class="airline-summary-col">
+            <div class="airline-summary-logo" id="timeline-airline-logo">IndiGo</div>
+            <div class="airline-summary-name" id="timeline-airline-name">IndiGo</div>
+            <div class="airline-summary-class" id="timeline-flight-code">6E-322 | Economy</div>
+            <div class="airline-baggage-note">
+              <i class="fa-solid fa-suitcase"></i>
+              <span id="timeline-baggage-text">Check In : 1Pc - 15Kgs<br>Cabin : 7Kgs</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Card 2: Contact Information -->
+      <section class="booking-card">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <h2 class="booking-card-title fnt-18">
+            <i class="fa-regular fa-circle-user clr-primary"></i>
+            <span>Contact Information <span style="font-weight: normal; font-size: 0.95rem; color: #64748b;">| <a href="javascript:void(0)" class="clr-primary modal-trigger-login">Sign in</a> to book faster and avail offers.</span></span>
+          </h2>
+        </div>
+        <div class="fnt-12 clr-8f mb-2">
+          <span class="font-bold clr-3c">Contact Details</span>
+          <i class="fa-solid fa-circle-info clr-primary ml-1 mr-1"></i>
+          Your booking details will be sent to this email ID & mobile number.
+        </div>
+
+        <div class="contact-inputs-row">
+          <div class="icon-input-box">
+            <span class="input-icon-prefix"><i class="fa-regular fa-envelope"></i></span>
+            <input type="email" id="contact-email" placeholder="Enter Email ID" value="shubham.travels@gmail.com" required>
+          </div>
+          <div class="icon-input-box">
+            <span class="input-icon-prefix"><i class="fa-solid fa-phone"></i></span>
+            <input type="tel" id="contact-mobile" placeholder="Enter Mobile No." value="9876543210" maxlength="10" required>
+          </div>
+          <div class="icon-input-box">
+            <span class="input-icon-prefix"><i class="fa-solid fa-location-dot"></i></span>
+            <select id="contact-state">
+              <option value="Delhi" selected>Delhi</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Goa">Goa</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 3: Traveller Details -->
+      <section class="booking-card">
+        <label class="filter-checkbox-label mb-2" style="font-weight: 700; color: #1e293b;">
+          <span><input type="checkbox" checked style="accent-color: #0d9488;"> I am an Indian National.</span>
+        </label>
+        <div class="fnt-13 mb-2">
+          <span class="font-bold clr-3c">Traveller Details</span>
+          <i class="fa-solid fa-circle-info clr-primary ml-1 mr-1"></i>
+          <span class="clr-8f fnt-12">Spellings of the Name(s) must match government-issued photo IDs.</span>
+        </div>
+
+        <div class="traveller-input-row">
+          <div class="font-bold fnt-14 clr-3c">
+            1 Adult <i class="fa-regular fa-user ml-1"></i>
+          </div>
+          <div>
+            <select class="traveller-input-box font-bold" id="traveller-title">
+              <option>Mr</option>
+              <option>Mrs</option>
+              <option>Ms</option>
+            </select>
+          </div>
+          <div>
+            <input type="text" class="traveller-input-box" id="traveller-fname" placeholder="FIRST NAME" value="SHUBHAM" required style="text-transform: uppercase;">
+          </div>
+          <div>
+            <input type="text" class="traveller-input-box" id="traveller-lname" placeholder="LAST NAME" value="SHARMA" required style="text-transform: uppercase;">
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 4: Choose add-ons -->
+      <section class="booking-card">
+        <div class="booking-card-header mb-3">
+          <h2 class="booking-card-title fnt-18">
+            <i class="fa-regular fa-square-plus clr-primary"></i>
+            <span>Choose add-ons <span style="font-weight: normal; font-size: 0.85rem; color: #64748b;" id="addons-summary-label">(No meal, additional check-in baggage selected)</span></span>
+          </h2>
+        </div>
+
+        <!-- Add-on 1: Meals -->
+        <div class="addon-item-card">
+          <div class="addon-item-left">
+            <div class="addon-icon"><i class="fa-solid fa-bowl-food"></i></div>
+            <div>
+              <div class="addon-title">Add Your Meals</div>
+              <div class="addon-sub">Meals are cheaper when pre-booked</div>
+            </div>
+          </div>
+          <button type="button" class="btn-addon-red" id="btn-add-meal" onclick="window.toggleAddon('meal')">
+            Add Meals
+          </button>
+        </div>
+
+        <!-- Add-on 2: Baggage -->
+        <div class="addon-item-card">
+          <div class="addon-item-left">
+            <div class="addon-icon"><i class="fa-solid fa-luggage-cart"></i></div>
+            <div>
+              <div class="addon-title">Add Additional Baggage</div>
+              <div class="addon-sub">Pre-booked baggage is 15% cheaper than on-board price</div>
+            </div>
+          </div>
+          <button type="button" class="btn-addon-red" id="btn-add-baggage" onclick="window.toggleAddon('baggage')">
+            Add Baggage
+          </button>
+        </div>
+      </section>
+
+      <!-- Card 5: GST Details -->
+      <section class="booking-card">
+        <div class="gst-accordion-title" onclick="document.getElementById('gst-input-fields').classList.toggle('d-none')">
+          [ + ] Add GST Details
+        </div>
+        <div class="gst-note-text">
+          <b>NOTE:</b> (1) GSTIN can't be updated once booking is completed. (2) Your Taxes may get updated post submitting GST details.
+        </div>
+        <div class="contact-inputs-row d-none mt-2" id="gst-input-fields">
+          <input type="text" class="traveller-input-box" placeholder="Company Name">
+          <input type="text" class="traveller-input-box" placeholder="GSTIN Registration No.">
+        </div>
+      </section>
+
+      <!-- Card 6: Terms and Conditions -->
+      <section class="booking-card">
+        <label class="terms-checkbox-label">
+          <input type="checkbox" id="terms-agree-checkbox" checked>
+          <span>I agree to the Terms and Conditions.</span>
+        </label>
+      </section>
+
+      <!-- Bottom Proceed Button -->
+      <div class="proceed-payment-bar">
+        <button type="button" class="btn-proceed-payment-blue" onclick="window.handleProceedPayment()">
+          Proceed to Payment
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Right Sidebar Column: Fare, Gift Card & Promo -->
+    <aside class="booking-sidebar-column">
+      
+      <!-- Widget 1: Fare Details -->
+      <div class="booking-sidebar-widget">
+        <div class="widget-heading-divider">Fare Details</div>
+        
+        <div class="fare-cyan-highlight-box">
+          <div class="fare-box-label">AMOUNT TO BE PAID</div>
+          <div class="fare-box-amount" id="sidebar-total-amount">₹ 6530 <small>(inclusive of all taxes.)</small></div>
+        </div>
+
+        <div class="fare-row-item">
+          <span id="fare-label-base">Adult x 1</span>
+          <b id="fare-val-base">₹ 5065</b>
+        </div>
+        <div class="fare-row-item">
+          <span>Total Taxes</span>
+          <b id="fare-val-taxes">₹ 1465</b>
+        </div>
+        <div class="fare-row-item" id="fare-row-addons" style="display: none;">
+          <span>Add-ons Selected</span>
+          <b id="fare-val-addons" class="clr-primary">+₹ 0</b>
+        </div>
+        <div class="fare-row-item">
+          <span>Gift Card Discount</span>
+          <b id="fare-val-giftcard">(-)₹ 0</b>
+        </div>
+      </div>
+
+      <!-- Widget 2: Gift Card -->
+      <div class="booking-sidebar-widget">
+        <div class="widget-heading-divider">Gift Card</div>
+        <div class="fnt-11 clr-8f mb-2">You can use only 1 card for this booking</div>
+        <input type="text" class="giftcard-input-box" id="sidebar-gc-num" placeholder="Card Number" maxlength="16">
+        <input type="password" class="giftcard-input-box" id="sidebar-gc-pin" placeholder="Pin Number" maxlength="6">
+        
+        <div class="d-flex justify-content-between align-items-center my-2">
+          <span class="fnt-13 font-bold clr-3c">Balance</span>
+          <span class="fnt-14 font-bold clr-primary" id="sidebar-gc-balance">₹0</span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <a href="javascript:void(0)" class="fnt-11 clr-primary font-bold modal-trigger-giftcard">How to Redeem</a>
+          <button type="button" class="btn-giftcard-apply" onclick="window.applySidebarGiftCard()">Apply</button>
+        </div>
+      </div>
+
+      <!-- Widget 3: Promo Code -->
+      <div class="booking-sidebar-widget">
+        <div class="widget-heading-divider">Promo Code</div>
+        <div class="promo-input-action-group">
+          <input type="text" class="promo-input-styled" id="sidebar-promo-input" value="NOFEES" readonly>
+          <button type="button" class="btn-promo-clear" onclick="window.clearPromoCode()">Clear</button>
+        </div>
+
+        <div class="promo-success-text" id="sidebar-promo-status">
+          Congratulations! Zero Convenience Fee Coupon applied successfully.
+        </div>
+
+        <div class="promo-radio-card">
+          <label style="cursor: pointer;">
+            <input type="radio" name="selected_promo" checked>
+            <b>NOFEES</b><br>
+            <span class="fnt-11">Use this promo and Save Rs.200 per passenger per sector as Convenience Fees. <a href="javascript:void(0)" class="clr-primary font-bold">T&C</a></span>
+          </label>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- Payment Gateway Simulation Modal -->
+  <div class="modal-backdrop-custom" id="payment-modal">
+    <div class="modal-card-dialog payment-gateway-modal">
+      <button class="modal-close-btn" id="close-payment-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="call-modal-body text-center">
+        <div class="fnt-12 clr-primary font-bold">DPAULS SECURE PAYMENT GATEWAY</div>
+        <h3 class="fnt-22 font-black clr-3c my-2">Complete Your Payment</h3>
+        <div class="fnt-28 font-black clr-red mb-3" id="modal-payment-total">₹ 6,530</div>
+
+        <div class="payment-options-grid">
+          <div class="payment-option-btn active" onclick="window.selectPaymentMode(this, 'upi')">
+            <i class="fa-solid fa-qrcode"></i>
+            <span class="font-bold fnt-12">UPI / QR</span>
+          </div>
+          <div class="payment-option-btn" onclick="window.selectPaymentMode(this, 'card')">
+            <i class="fa-regular fa-credit-card"></i>
+            <span class="font-bold fnt-12">Cards</span>
+          </div>
+          <div class="payment-option-btn" onclick="window.selectPaymentMode(this, 'netbanking')">
+            <i class="fa-solid fa-building-columns"></i>
+            <span class="font-bold fnt-12">Net Banking</span>
+          </div>
+        </div>
+
+        <div id="payment-view-upi" class="my-3">
+          <div style="background: var(--white); padding: 1rem; border: 2px dashed #0284c7; border-radius: 8px; display: inline-block;">
+            <img src="assets/images/scam-alert.5f15fca.png" alt="UPI QR Code" style="height: 120px; filter: grayscale(1);">
+            <div class="fnt-11 clr-8f mt-1">Scan with GPay / PhonePe / Paytm</div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-search w-100 font-bold fnt-16 py-3" onclick="window.finalizeBookingSuccess()">
+          PAY SECURELY NOW
+        </button>
+
+        <div class="fnt-11 clr-8f mt-3">
+          <i class="fa-solid fa-lock clr-primary mr-1"></i> 256-Bit SSL Encrypted & RBI / NPCI Verified
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Scroll To Top Button -->
+  <button class="scroll-top-btn visible" id="scroll-to-top-btn" aria-label="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="app.js"></script>
+  <script>
+    /* Dynamic Checkout Content Population based on URL Query */
+    let baseFare = 5065;
+    let taxAmount = 1465;
+    let addonTotal = 0;
+    let mealAdded = false;
+    let baggageAdded = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initBookingFromParams();
+      startSessionTimer();
+    });
+
+    function initBookingFromParams() {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get('type') || 'flight';
+      const title = params.get('title') || 'DEL ➔ BOM';
+      const price = parseInt(params.get('price'), 10) || 6530;
+      const airline = params.get('airline') || 'IndiGo';
+      const code = params.get('code') || '6E-322';
+      const from = params.get('from') || 'DEL';
+      const to = params.get('to') || 'BOM';
+      const depart = params.get('depart') || '23:30';
+      const arrive = params.get('arrive') || '01:45';
+      const duration = params.get('duration') || '2hr 15mins';
+
+      if (type === 'package') {
+        document.getElementById('breadcrumb-section-link').textContent = 'Holiday Packages';
+        document.getElementById('breadcrumb-section-link').href = 'packages.html';
+        document.getElementById('booking-item-title').textContent = title;
+        document.getElementById('booking-badge-tag').textContent = 'TOUR PACKAGE';
+        
+        // Custom Package Content
+        document.getElementById('timeline-origin-name').textContent = 'Delhi (DEL) / Excursion Departure';
+        document.getElementById('timeline-origin-airport').textContent = 'Includes Return Flights & 4-Star Hotel Stay';
+        document.getElementById('timeline-dest-name').textContent = title;
+        document.getElementById('timeline-dest-airport').textContent = 'Complete Sightseeing, Transfers & Breakfast Included';
+        document.getElementById('timeline-duration-badge').textContent = '6N / 7D';
+        document.getElementById('timeline-airline-logo').textContent = 'DPAULS';
+        document.getElementById('timeline-airline-name').textContent = 'DPauls Special';
+        document.getElementById('timeline-flight-code').textContent = 'Group Departure';
+        document.getElementById('timeline-baggage-text').innerHTML = 'Flights + 4★ Hotel<br>Transfers Included';
+
+        baseFare = Math.round(price * 0.85);
+        taxAmount = price - baseFare;
+      } else if (type === 'hotel') {
+        document.getElementById('breadcrumb-section-link').textContent = 'Hotels';
+        document.getElementById('breadcrumb-section-link').href = 'hotels.html';
+        document.getElementById('booking-item-title').textContent = title;
+        document.getElementById('booking-badge-tag').textContent = 'HOTEL STAY';
+        
+        document.getElementById('timeline-origin-name').textContent = 'Check-in: 30 Aug 2026 (14:00)';
+        document.getElementById('timeline-origin-airport').textContent = 'Deluxe Room / Swimming Pool Access';
+        document.getElementById('timeline-dest-name').textContent = 'Check-out: 02 Sep 2026 (11:00)';
+        document.getElementById('timeline-dest-airport').textContent = 'Free Breakfast & Wi-Fi Included';
+        document.getElementById('timeline-duration-badge').textContent = '3 Nights';
+        document.getElementById('timeline-airline-logo').textContent = 'HOTEL';
+        document.getElementById('timeline-airline-name').textContent = title;
+        document.getElementById('timeline-flight-code').textContent = '2 Guests | 1 Room';
+        document.getElementById('timeline-baggage-text').innerHTML = 'Free Cancellation<br>Couple Friendly';
+
+        baseFare = Math.round(price * 0.88);
+        taxAmount = price - baseFare;
+      } else {
+        // Flight defaults
+        document.getElementById('booking-item-title').textContent = `${from} ➔ ${to}`;
+        document.getElementById('timeline-origin-name').textContent = `New Delhi (${from})`;
+        document.getElementById('timeline-dest-name').textContent = `Mumbai (${to})`;
+        document.getElementById('timeline-depart-time').textContent = depart;
+        document.getElementById('timeline-arrive-time').textContent = arrive;
+        document.getElementById('timeline-duration-badge').textContent = duration;
+        document.getElementById('timeline-airline-logo').textContent = airline;
+        document.getElementById('timeline-airline-name').textContent = airline;
+        document.getElementById('timeline-flight-code').textContent = `${code} | Economy`;
+
+        baseFare = Math.round(price * 0.77);
+        taxAmount = price - baseFare;
+      }
+
+      recalculateCheckoutFare();
+    }
+
+    function recalculateCheckoutFare() {
+      const total = baseFare + taxAmount + addonTotal;
+      document.getElementById('sidebar-total-amount').innerHTML = `₹ ${total.toLocaleString('en-IN')} <small>(inclusive of all taxes.)</small>`;
+      document.getElementById('fare-val-base').textContent = `₹ ${baseFare.toLocaleString('en-IN')}`;
+      document.getElementById('fare-val-taxes').textContent = `₹ ${taxAmount.toLocaleString('en-IN')}`;
+      document.getElementById('modal-payment-total').textContent = `₹ ${total.toLocaleString('en-IN')}`;
+
+      const addonRow = document.getElementById('fare-row-addons');
+      if (addonTotal > 0) {
+        addonRow.style.display = 'flex';
+        document.getElementById('fare-val-addons').textContent = `+₹ ${addonTotal.toLocaleString('en-IN')}`;
+      } else {
+        addonRow.style.display = 'none';
+      }
+    }
+
+    window.toggleAddon = function(type) {
+      if (type === 'meal') {
+        mealAdded = !mealAdded;
+        const btn = document.getElementById('btn-add-meal');
+        if (mealAdded) {
+          btn.textContent = 'Meal Added (✓)';
+          btn.classList.add('added');
+          addonTotal += 350;
+        } else {
+          btn.textContent = 'Add Meals';
+          btn.classList.remove('added');
+          addonTotal -= 350;
+        }
+      } else if (type === 'baggage') {
+        baggageAdded = !baggageAdded;
+        const btn = document.getElementById('btn-add-baggage');
+        if (baggageAdded) {
+          btn.textContent = '10 Kg Added (✓)';
+          btn.classList.add('added');
+          addonTotal += 800;
+        } else {
+          btn.textContent = 'Add Baggage';
+          btn.classList.remove('added');
+          addonTotal -= 800;
+        }
+      }
+
+      // Update Summary Label
+      let summary = [];
+      if (mealAdded) summary.push('1 Meal added');
+      if (baggageAdded) summary.push('+10Kg Baggage added');
+      document.getElementById('addons-summary-label').textContent = summary.length > 0 ? `(${summary.join(', ')})` : '(No meal, additional check-in baggage selected)';
+
+      recalculateCheckoutFare();
+    };
+
+    window.applySidebarGiftCard = function() {
+      const num = document.getElementById('sidebar-gc-num').value.trim();
+      const pin = document.getElementById('sidebar-gc-pin').value.trim();
+      if (num.length < 16 || pin.length < 6) {
+        alert('Please enter a valid 16-digit Gift Card number and 6-digit PIN.');
+        return;
+      }
+      document.getElementById('sidebar-gc-balance').textContent = '₹ 1,000';
+      document.getElementById('fare-val-giftcard').textContent = '(-)₹ 1,000';
+      baseFare = Math.max(0, baseFare - 1000);
+      recalculateCheckoutFare();
+      alert('Gift Card of ₹1,000 applied successfully!');
+    };
+
+    window.clearPromoCode = function() {
+      document.getElementById('sidebar-promo-input').value = '';
+      document.getElementById('sidebar-promo-status').textContent = 'No promo code currently applied.';
+      document.getElementById('sidebar-promo-status').style.color = '#64748b';
+    };
+
+    function startSessionTimer() {
+      let seconds = 590; // 9 min 50 sec
+      const timerEl = document.getElementById('countdown-timer');
+      const interval = setInterval(() => {
+        if (seconds <= 0) {
+          clearInterval(interval);
+          alert('Your booking session has expired. Please search again.');
+          window.location.href = 'index.html';
+          return;
+        }
+        seconds--;
+        const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+        const s = (seconds % 60).toString().padStart(2, '0');
+        if (timerEl) timerEl.textContent = `${m}:${s} min.`;
+      }, 1000);
+    }
+
+    window.handleProceedPayment = function() {
+      const email = document.getElementById('contact-email').value.trim();
+      const mobile = document.getElementById('contact-mobile').value.trim();
+      const fname = document.getElementById('traveller-fname').value.trim();
+      const lname = document.getElementById('traveller-lname').value.trim();
+      const terms = document.getElementById('terms-agree-checkbox').checked;
+
+      if (!email || !mobile || !fname || !lname) {
+        alert('Please fill in all mandatory Contact & Traveller Name fields.');
+        return;
+      }
+
+      if (!terms) {
+        alert('Please accept the Terms and Conditions to proceed.');
+        return;
+      }
+
+      document.getElementById('payment-modal').classList.add('active');
+    };
+
+    const closePaymentBtn = document.getElementById('close-payment-modal-btn');
+    if (closePaymentBtn) {
+      closePaymentBtn.addEventListener('click', () => {
+        document.getElementById('payment-modal').classList.remove('active');
+      });
+    }
+
+    window.selectPaymentMode = function(btn, mode) {
+      document.querySelectorAll('.payment-option-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    };
+
+    window.finalizeBookingSuccess = function() {
+      const modal = document.getElementById('payment-modal');
+      modal.classList.remove('active');
+      const pnr = 'DP' + Math.floor(100000 + Math.random() * 900000);
+      alert(`🎉 PAYMENT SUCCESSFUL!\n\nBooking Reference: ${pnr}\nConfirmation voucher and e-tickets have been dispatched to ${document.getElementById('contact-email').value}.\n\nThank you for choosing DPauls Holidays!`);
+      window.location.href = 'index.html';
+    };
+  </script>
+</body>
+</html>

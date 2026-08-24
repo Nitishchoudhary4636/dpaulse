@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruise Holidays - Cordelia & Royal Caribbean | DPauls Holidays</title>
+  <meta name="description" content="Book Cordelia Cruises (Mumbai to Goa, Lakshadweep) & International Cruises with DPauls. All-inclusive luxury ocean liner packages.">
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body class="booking-page-body">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="booking-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">DPauls Holidays</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;">Cruise Vacations &bull; Cordelia Cruises</span>
+    </div>
+  </div>
+
+  <!-- 3. Cruise Results -->
+  <main class="booking-main-layout">
+    
+    <aside class="booking-sidebar-column" style="order: 1;">
+      <div class="booking-sidebar-widget">
+        <div class="widget-heading-divider">Filter Cruise Liners</div>
+        <div class="mb-3">
+          <div class="fnt-12 font-bold clr-3c mb-1">Cruise Line</div>
+          <label class="filter-checkbox-label"><span><input type="checkbox" checked> Cordelia Cruises (India)</span></label>
+          <label class="filter-checkbox-label"><span><input type="checkbox" checked> Royal Caribbean (Intl)</span></label>
+          <label class="filter-checkbox-label"><span><input type="checkbox"> Resorts World One (Singapore)</span></label>
+        </div>
+      </div>
+    </aside>
+
+    <div class="booking-content-column" style="order: 2;">
+      <div class="widget-heading-divider mb-3">Featured Luxury Ocean Cruise Packages</div>
+
+      <!-- Cruise 1 -->
+      <div class="booking-card">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <div>
+            <span class="onward-pill" style="background: #0d9488;">CORDELIA THE EMPRESS</span>
+            <h2 class="font-bold fnt-18 clr-3c my-1">Mumbai ➔ Goa ➔ Mumbai 3-Night Weekend Cruise</h2>
+            <div class="fnt-12 clr-8f"><i class="fa-solid fa-ship clr-primary"></i> Sailing from: Green Gate, Mumbai Port &bull; 3 Nights Ocean Liner</div>
+            <div class="d-flex gap-2 mt-2 flex-wrap">
+              <span class="plp-inclusion-item"><i class="fa-solid fa-utensils"></i> All Meals & Fine Dining</span>
+              <span class="plp-inclusion-item"><i class="fa-solid fa-masks-theater"></i> Broadway Shows & Casino</span>
+              <span class="plp-inclusion-item"><i class="fa-solid fa-water"></i> Swimming Pool & Rock Climbing</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="fnt-11 clr-8f">Ocean View Cabin from</div>
+            <div class="font-black fnt-24 clr-red">₹ 29,999</div>
+            <button type="button" class="btn btn-search fnt-13 mt-2" onclick="window.confirmBooking('Cordelia Mumbai-Goa Cruise', '29999', { type: 'cruise', title: 'Cordelia Mumbai ➔ Goa ➔ Mumbai Cruise (3N/4D)', price: '29999', from: 'Mumbai Port', to: 'Goa Coast', depart: '17:00 (Fri)', arrive: '09:00 (Mon)', duration: '3 Nights' })">
+              Book Cabin
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cruise 2 -->
+      <div class="booking-card">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <div>
+            <span class="onward-pill" style="background: #0284c7;">SINGAPORE & MALAYSIA CRUISE</span>
+            <h2 class="font-bold fnt-18 clr-3c my-1">Spectrum of the Seas Singapore-Penang-Phuket</h2>
+            <div class="fnt-12 clr-8f"><i class="fa-solid fa-anchor clr-primary"></i> Sailing from: Marina Bay Cruise Centre, Singapore &bull; 4 Nights</div>
+            <div class="d-flex gap-2 mt-2 flex-wrap">
+              <span class="plp-inclusion-item"><i class="fa-solid fa-gem"></i> Luxury Balcony Stateroom</span>
+              <span class="plp-inclusion-item"><i class="fa-solid fa-champagne-glasses"></i> Sky Pad & North Star Capsule</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="fnt-11 clr-8f">Balcony Stateroom from</div>
+            <div class="font-black fnt-24 clr-red">₹ 48,999</div>
+            <button type="button" class="btn btn-search fnt-13 mt-2" onclick="window.confirmBooking('Spectrum of the Seas Cruise', '48999', { type: 'cruise', title: 'Spectrum of the Seas (Singapore ➔ Phuket ➔ Penang)', price: '48999', from: 'Singapore Marina Bay', to: 'Phuket / Penang', depart: '16:30', arrive: '08:00', duration: '4 Nights' })">
+              Book Cabin
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

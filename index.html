@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Flight Tickets, Holiday Tour Packages, Sightseeing, Hotel Booking | DPauls Holidays</title>
+  <meta name="description" content="Book Holiday Packages, Flight Ticket, Sightseeing Tour, Hotels, Transfers & Bus at DPauls.com. Get the Best Deals on Flights Booking, Tour packages on India & International Travel.">
+  <meta name="keywords" content="Flight booking, Flight ticket, Tour Packages, Holiday Packages, Hotel Booking, Bus Booking, Transfers, Sightseeing Tour, Attractions">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:site_name" content="DPauls Holidays">
+  <meta property="og:title" content="Book Flight Tickets, Holiday Tour Packages, Sightseeing, Hotel Booking | DPauls Holidays">
+  <meta property="og:description" content="Book Holiday Packages, Flight Ticket, Sightseeing Tour, Hotels, Transfers & Bus at DPauls.com.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#199c90">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+
+  <!-- Icons & CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Top Navigation Bar
+       ========================================================================= -->
+  <nav class="topnav" id="main-topnav">
+    <div class="container">
+      <div class="topnav-content">
+        <div class="topnav-left">
+          <button class="menu-toggle-btn" id="open-drawer-btn" aria-label="Open Navigation Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a href="#" class="logo-link">
+            <img src="assets/images/logo-white.cef807a.png" alt="DPauls Holidays" title="DPauls - It's all about Holidays">
+          </a>
+        </div>
+
+        <div class="topnav-right">
+          <a href="index.html" class="nav-item-btn"><i class="fa-solid fa-house"></i> <span>Home</span></a>
+          <a href="flights.html" class="nav-item-btn"><i class="fa-solid fa-plane-departure"></i> <span>Flights</span></a>
+          <a href="packages.html" class="nav-item-btn"><i class="fa-solid fa-suitcase-rolling"></i> <span>Packages</span></a>
+          <a href="hotels.html" class="nav-item-btn"><i class="fa-solid fa-hotel"></i> <span>Hotels</span></a>
+          <a href="about.html" class="nav-item-btn"><i class="fa-solid fa-circle-info"></i> <span>About</span></a>
+          <a href="contact.html" class="nav-item-btn"><i class="fa-solid fa-phone"></i> <span>Contact</span></a>
+
+          <!-- My Account Dropdown -->
+          <div class="nav-dropdown-wrapper" id="account-dropdown-wrapper">
+            <button class="nav-item-btn" id="account-btn">
+              <i class="fa-regular fa-circle-user"></i>
+              <span>My Account</span>
+              <i class="fa-solid fa-chevron-down fnt-11"></i>
+            </button>
+            <div class="nav-dropdown-menu">
+              <div class="user-account-header">
+                <div class="user-avatar-circle">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                  <div class="font-bold fnt-14 clr-3c">Hello Guest!</div>
+                  <a href="javascript:void(0)" class="fnt-12 clr-primary modal-trigger-login">Login / Sign Up</a>
+                </div>
+              </div>
+              <a href="javascript:void(0)" class="dropdown-link-item modal-trigger-login">
+                <span>My Bookings</span>
+                <i class="fa-solid fa-chevron-right fnt-12"></i>
+              </a>
+              <div class="dropdown-btn-group">
+                <button class="btn-dropdown-login modal-trigger-login">LOG IN</button>
+                <button class="btn-dropdown-signup modal-trigger-signup">SIGN UP</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gift Card Dropdown -->
+          <div class="nav-dropdown-wrapper" id="giftcard-dropdown-wrapper">
+            <button class="nav-item-btn" id="giftcard-btn">
+              <img src="assets/images/gift-card-1.1c5268a.png" alt="Gift Card" style="height: 18px;">
+              <span>Gift Card</span>
+              <i class="fa-solid fa-chevron-down fnt-11"></i>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="javascript:void(0)" class="dropdown-link-item modal-trigger-giftcard">
+                <span>Buy Gift Card</span>
+                <i class="fa-solid fa-chevron-right fnt-12"></i>
+              </a>
+              <a href="javascript:void(0)" class="dropdown-link-item modal-trigger-giftcard">
+                <span>Recharge Gift Card</span>
+                <i class="fa-solid fa-chevron-right fnt-12"></i>
+              </a>
+              <a href="javascript:void(0)" class="dropdown-link-item modal-trigger-giftcard">
+                <span class="font-bold clr-primary">Check Card Balance</span>
+                <i class="fa-solid fa-chevron-right fnt-12"></i>
+              </a>
+              <a href="javascript:void(0)" class="dropdown-link-item modal-trigger-giftcard">
+                <span>How to Redeem</span>
+                <i class="fa-solid fa-chevron-right fnt-12"></i>
+              </a>
+              <a href="javascript:void(0)" class="dropdown-link-item modal-trigger-giftcard">
+                <span>Terms & Conditions</span>
+                <i class="fa-solid fa-chevron-right fnt-12"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Call Us Button -->
+          <button class="nav-item-btn" id="open-call-modal-btn">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>Call Us</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       Hero Section & Search Engine
+       ========================================================================= -->
+  <header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Book Flights Tickets, Tour Packages & Hotels</h1>
+
+      <!-- Main Search Engine Card -->
+      <div class="search-widget-card">
+        <!-- Tabs Header -->
+        <div class="search-tabs-bar" role="tablist">
+          <div class="search-tab-item active" data-tab="flights">
+            <i class="fa-solid fa-plane-departure"></i>
+            <span>Flights</span>
+          </div>
+          <div class="search-tab-item" data-tab="packages">
+            <i class="fa-solid fa-suitcase-rolling"></i>
+            <span>Packages</span>
+          </div>
+          <div class="search-tab-item" data-tab="forex">
+            <img src="assets/images/exchange.png" alt="Forex" style="height: 18px;">
+            <span>Forex</span>
+          </div>
+          <div class="search-tab-item" data-tab="esim">
+            <img src="assets/images/esim.png" alt="eSIM" style="height: 18px;">
+            <span>eSIM</span>
+            <span class="badge-tag">NEW</span>
+          </div>
+          <div class="search-tab-item" data-tab="deals">
+            <i class="fa-solid fa-tags"></i>
+            <span>Travel Deals</span>
+          </div>
+          <div class="search-tab-item" data-tab="hotels">
+            <i class="fa-solid fa-hotel"></i>
+            <span>Hotels</span>
+          </div>
+          <div class="search-tab-item" data-tab="bus">
+            <i class="fa-solid fa-bus"></i>
+            <span>Bus</span>
+          </div>
+          <div class="search-tab-item" data-tab="cruise">
+            <i class="fa-solid fa-ship"></i>
+            <span>Cruise</span>
+          </div>
+        </div>
+
+        <!-- 1. FLIGHTS TAB BODY -->
+        <div class="search-tab-body active" id="tab-body-flights">
+          <form id="flights-search-form" onsubmit="event.preventDefault(); window.handleFlightSearch();">
+            <div class="search-grid-layout">
+              <!-- Origin & Destination with Swap -->
+              <div class="dual-input-wrapper">
+                <div class="search-input-box">
+                  <label for="flight-origin">From</label>
+                  <input type="text" id="flight-origin" value="DEL - New Delhi" autocomplete="off" placeholder="Enter origin city">
+                  <div class="autosuggest-list" id="origin-autosuggest">
+                    <div class="autosuggest-item" data-val="DEL - New Delhi"><b>DEL</b> - New Delhi (Indira Gandhi Int)</div>
+                    <div class="autosuggest-item" data-val="BOM - Mumbai"><b>BOM</b> - Mumbai (Chhatrapati Shivaji)</div>
+                    <div class="autosuggest-item" data-val="BLR - Bengaluru"><b>BLR</b> - Bengaluru (Kempegowda Int)</div>
+                    <div class="autosuggest-item" data-val="GOI - Goa"><b>GOI</b> - Goa (Dabolim Airport)</div>
+                    <div class="autosuggest-item" data-val="DXB - Dubai"><b>DXB</b> - Dubai International</div>
+                    <div class="autosuggest-item" data-val="SIN - Singapore"><b>SIN</b> - Singapore Changi</div>
+                  </div>
+                </div>
+
+                <button type="button" class="swap-btn" id="swap-airports-btn" title="Swap Origin and Destination">
+                  <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </button>
+
+                <div class="search-input-box">
+                  <label for="flight-dest">To</label>
+                  <input type="text" id="flight-dest" value="BOM - Mumbai" autocomplete="off" placeholder="Enter destination">
+                  <div class="autosuggest-list" id="dest-autosuggest">
+                    <div class="autosuggest-item" data-val="BOM - Mumbai"><b>BOM</b> - Mumbai (Chhatrapati Shivaji)</div>
+                    <div class="autosuggest-item" data-val="DEL - New Delhi"><b>DEL</b> - New Delhi (Indira Gandhi Int)</div>
+                    <div class="autosuggest-item" data-val="GOI - Goa"><b>GOI</b> - Goa (Dabolim Airport)</div>
+                    <div class="autosuggest-item" data-val="BKK - Bangkok"><b>BKK</b> - Bangkok Suvarnabhumi</div>
+                    <div class="autosuggest-item" data-val="DXB - Dubai"><b>DXB</b> - Dubai International</div>
+                    <div class="autosuggest-item" data-val="LHR - London"><b>LHR</b> - London Heathrow</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Departure & Return Dates -->
+              <div class="dual-input-wrapper">
+                <div class="search-input-box">
+                  <label for="flight-depart-date">Departure</label>
+                  <input type="date" id="flight-depart-date" value="2026-08-30">
+                </div>
+                <span class="clr-8f"><i class="fa-solid fa-calendar-days"></i></span>
+                <div class="search-input-box">
+                  <label for="flight-return-date">Return (Optional)</label>
+                  <input type="date" id="flight-return-date" placeholder="Add Return">
+                </div>
+              </div>
+
+              <!-- Travellers & Class Selector -->
+              <div class="search-input-box pos-r" id="pax-dropdown-container">
+                <label>Travellers & Class</label>
+                <div class="passenger-selector-btn" id="pax-selector-trigger">
+                  <span class="passenger-summary-text" id="pax-summary-display">1 Traveller | Economy</span>
+                  <i class="fa-solid fa-chevron-down fnt-12 clr-primary"></i>
+                </div>
+
+                <!-- Passenger Popover -->
+                <div class="passenger-dropdown-panel" id="pax-dropdown-panel">
+                  <!-- Adults -->
+                  <div class="pax-counter-row">
+                    <div>
+                      <div class="pax-label-title">Adults</div>
+                      <div class="pax-label-sub">13+ yrs</div>
+                    </div>
+                    <div class="pax-control-buttons">
+                      <button type="button" class="pax-btn" id="adult-minus" disabled>-</button>
+                      <span class="font-bold" id="adult-count">1</span>
+                      <button type="button" class="pax-btn" id="adult-plus">+</button>
+                    </div>
+                  </div>
+                  <!-- Children -->
+                  <div class="pax-counter-row">
+                    <div>
+                      <div class="pax-label-title">Children</div>
+                      <div class="pax-label-sub">2-11 yrs</div>
+                    </div>
+                    <div class="pax-control-buttons">
+                      <button type="button" class="pax-btn" id="child-minus" disabled>-</button>
+                      <span class="font-bold" id="child-count">0</span>
+                      <button type="button" class="pax-btn" id="child-plus">+</button>
+                    </div>
+                  </div>
+                  <!-- Infants -->
+                  <div class="pax-counter-row">
+                    <div>
+                      <div class="pax-label-title">Infants</div>
+                      <div class="pax-label-sub">Below 2 yrs</div>
+                    </div>
+                    <div class="pax-control-buttons">
+                      <button type="button" class="pax-btn" id="infant-minus" disabled>-</button>
+                      <span class="font-bold" id="infant-count">0</span>
+                      <button type="button" class="pax-btn" id="infant-plus">+</button>
+                    </div>
+                  </div>
+
+                  <!-- Cabin Class Radios -->
+                  <div class="cabin-class-radios">
+                    <label class="radio-pill-label">
+                      <input type="radio" name="cabin_class" value="Economy" checked> Economy
+                    </label>
+                    <label class="radio-pill-label">
+                      <input type="radio" name="cabin_class" value="Premium Economy"> Premium
+                    </label>
+                    <label class="radio-pill-label">
+                      <input type="radio" name="cabin_class" value="Business"> Business
+                    </label>
+                    <label class="radio-pill-label">
+                      <input type="radio" name="cabin_class" value="First Class"> First Class
+                    </label>
+                  </div>
+
+                  <button type="button" class="btn-pax-done" id="pax-done-btn">Apply & Done</button>
+                </div>
+              </div>
+
+              <!-- Search Button -->
+              <div>
+                <button type="submit" class="btn btn-search w-100">
+                  <i class="fa-solid fa-magnifying-glass mr-1"></i> SEARCH
+                </button>
+              </div>
+            </div>
+
+            <!-- Extra options bar -->
+            <div class="search-extra-bar">
+              <div class="group-booking-badge">
+                <i class="fa-solid fa-users"></i>
+                <span>Special discount available for <b>Group Booking (9+ Passengers)</b></span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <input type="checkbox" id="direct-flights-only" style="cursor: pointer;">
+                <label for="direct-flights-only" class="fnt-13 clr-8f" style="cursor: pointer;">Direct Flights Only</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- 2. PACKAGES TAB BODY -->
+        <div class="search-tab-body" id="tab-body-packages">
+          <form onsubmit="event.preventDefault(); window.handlePackageSearch();">
+            <div class="search-grid-layout">
+              <div class="search-input-box">
+                <label>Destination / Theme</label>
+                <input type="text" id="package-dest" placeholder="e.g. Goa, Himachal, Europe, Dubai, Thailand" value="Europe">
+              </div>
+              <div class="search-input-box">
+                <label>Starting From</label>
+                <input type="text" id="package-origin" placeholder="Delhi, Mumbai, etc." value="New Delhi">
+              </div>
+              <div class="search-input-box">
+                <label>Travel Month & Budget</label>
+                <select id="package-month" style="font-weight: 700;">
+                  <option>September 2026</option>
+                  <option>October 2026 (Festive)</option>
+                  <option>November 2026</option>
+                  <option>December 2026 (New Year)</option>
+                </select>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-search w-100">
+                  <i class="fa-solid fa-magnifying-glass mr-1"></i> SEARCH PACKAGES
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- 3. FOREX TAB BODY -->
+        <div class="search-tab-body" id="tab-body-forex">
+          <div class="search-grid-layout">
+            <div class="search-input-box">
+              <label>Currency & Action</label>
+              <select id="forex-currency" style="font-weight: 700;">
+                <option value="USD">USD - US Dollar (₹84.20)</option>
+                <option value="EUR">EUR - Euro (₹91.50)</option>
+                <option value="GBP">GBP - British Pound (₹108.20)</option>
+                <option value="AED">AED - UAE Dirham (₹22.95)</option>
+                <option value="THB">THB - Thai Baht (₹2.45)</option>
+                <option value="SGD">SGD - Singapore Dollar (₹63.80)</option>
+                <option value="JPY">JPY - Japanese Yen (₹0.56)</option>
+              </select>
+            </div>
+            <div class="search-input-box">
+              <label>Foreign Currency Amount</label>
+              <input type="number" id="forex-amount" value="1000" placeholder="Enter amount">
+            </div>
+            <div class="search-input-box" style="background: #eef8f7;">
+              <label class="clr-primary">Estimated INR Required</label>
+              <div class="font-bold fnt-18 clr-primary" id="forex-inr-output">₹ 84,200 /-</div>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary w-100" onclick="alert('Forex Request Initiated! Our currency specialist will contact you with zero markup rate guarantee.');">
+                BUY FOREX NOW
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. eSIM TAB BODY -->
+        <div class="search-tab-body" id="tab-body-esim">
+          <div class="search-grid-layout">
+            <div class="search-input-box">
+              <label>Destination Country</label>
+              <select id="esim-country" style="font-weight: 700;">
+                <option>Thailand (Unlimited 5G Data - 10 Days)</option>
+                <option>Europe 33 Countries (10 GB - 30 Days)</option>
+                <option>USA & Canada (5 GB - 15 Days)</option>
+                <option>Singapore & Malaysia (8 GB - 15 Days)</option>
+                <option>United Arab Emirates (3 GB - 7 Days)</option>
+              </select>
+            </div>
+            <div class="search-input-box">
+              <label>Delivery Method</label>
+              <input type="text" value="Instant QR Code via Email / WhatsApp" readonly style="font-weight: 600;">
+            </div>
+            <div class="search-input-box" style="background: #fff5f5;">
+              <label class="clr-red">Price starting at</label>
+              <div class="font-bold fnt-18 clr-red">₹ 799 /-</div>
+            </div>
+            <div>
+              <button type="button" class="btn btn-search w-100" onclick="alert('Instant eSIM QR delivery selected! Check your registered email for setup instructions.');">
+                GET INSTANT eSIM
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. TRAVEL DEALS TAB BODY -->
+        <div class="search-tab-body" id="tab-body-deals">
+          <div class="search-grid-layout">
+            <div class="search-input-box">
+              <label>Select Category</label>
+              <select style="font-weight: 700;">
+                <option>Summer Flash Deals (Up to 40% OFF)</option>
+                <option>Long Weekend Getaways</option>
+                <option>Honeymoon Special Packages</option>
+                <option>International Group Departures</option>
+              </select>
+            </div>
+            <div class="search-input-box">
+              <label>Promo Code</label>
+              <input type="text" value="DPAULSFESTIVE" style="text-transform: uppercase; font-weight: 800; color: var(--primary);">
+            </div>
+            <div class="search-input-box">
+              <label>Max Budget</label>
+              <select style="font-weight: 700;">
+                <option>Under ₹25,000</option>
+                <option>₹25,000 - ₹50,000</option>
+                <option>₹50,000 - ₹1,50,000</option>
+                <option>Luxury (₹1.5 Lakh+)</option>
+              </select>
+            </div>
+            <div>
+              <button type="button" class="btn btn-search w-100" onclick="window.handlePackageSearch();">
+                EXPLORE DEALS
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. HOTELS TAB BODY -->
+        <div class="search-tab-body" id="tab-body-hotels">
+          <form onsubmit="event.preventDefault(); window.handleHotelSearch();">
+            <div class="search-grid-layout">
+              <div class="search-input-box">
+                <label>City or Hotel Name</label>
+                <input type="text" value="Goa, India" placeholder="Where do you want to stay?">
+              </div>
+              <div class="dual-input-wrapper">
+                <div class="search-input-box">
+                  <label>Check In</label>
+                  <input type="date" value="2026-08-30">
+                </div>
+                <div class="search-input-box">
+                  <label>Check Out</label>
+                  <input type="date" value="2026-09-02">
+                </div>
+              </div>
+              <div class="search-input-box">
+                <label>Rooms & Guests</label>
+                <input type="text" value="1 Room, 2 Guests" readonly>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-search w-100">
+                  <i class="fa-solid fa-magnifying-glass mr-1"></i> SEARCH HOTELS
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- 7. BUS TAB BODY -->
+        <div class="search-tab-body" id="tab-body-bus">
+          <form onsubmit="event.preventDefault(); window.handleBusSearch();">
+            <div class="search-grid-layout">
+              <div class="dual-input-wrapper">
+                <div class="search-input-box">
+                  <label>From City</label>
+                  <input type="text" value="Delhi" placeholder="Leaving from">
+                </div>
+                <span class="clr-primary"><i class="fa-solid fa-bus"></i></span>
+                <div class="search-input-box">
+                  <label>To City</label>
+                  <input type="text" value="Jaipur" placeholder="Going to">
+                </div>
+              </div>
+              <div class="search-input-box">
+                <label>Journey Date</label>
+                <input type="date" value="2026-08-30">
+              </div>
+              <div class="search-input-box">
+                <label>Bus Type</label>
+                <select style="font-weight: 700;">
+                  <option>All Types (AC Sleeper / Volvo / Multi-Axle)</option>
+                  <option>Volvo AC Multi-Axle</option>
+                  <option>AC Sleeper (2+1)</option>
+                  <option>Electric Luxury Bus</option>
+                </select>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-search w-100">
+                  <i class="fa-solid fa-magnifying-glass mr-1"></i> SEARCH BUSES
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- 8. CRUISE TAB BODY -->
+        <div class="search-tab-body" id="tab-body-cruise">
+          <form onsubmit="event.preventDefault(); window.handleCruiseSearch();">
+            <div class="search-grid-layout">
+              <div class="search-input-box">
+                <label>Cruise Line</label>
+                <select style="font-weight: 700;">
+                  <option>Disney Adventure Cruise Line (Singapore)</option>
+                  <option>Cordelia Cruises (Goa - Mumbai - Lakshadweep)</option>
+                  <option>Royal Caribbean (Mediterranean / Caribbean)</option>
+                  <option>Costa Cruises (Europe & Middle East)</option>
+                </select>
+              </div>
+              <div class="search-input-box">
+                <label>Sailing Destination</label>
+                <input type="text" value="Southeast Asia (Singapore - Malaysia)">
+              </div>
+              <div class="search-input-box">
+                <label>Departure Month</label>
+                <select style="font-weight: 700;">
+                  <option>November 2026</option>
+                  <option>December 2026 (Holiday Special)</option>
+                  <option>January 2027</option>
+                </select>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-search w-100">
+                  <i class="fa-solid fa-magnifying-glass mr-1"></i> SEARCH CRUISES
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Mid-Nav Quick Access Bar
+       ========================================================================= -->
+  <section class="mid-nav-section">
+    <div class="container">
+      <div class="mid-nav-grid">
+        <a href="#tab-body-flights" class="mid-nav-card" onclick="window.switchTab('flights')">
+          <img src="assets/images/flight.png" alt="Flights" class="mid-nav-icon">
+          <div>
+            <div class="fnt-11 clr-8f">BOOK DOMESTIC & INTL</div>
+            <div class="mid-nav-title">Flights</div>
+          </div>
+        </a>
+        <a href="#section1" class="mid-nav-card">
+          <img src="assets/images/holiday-packages.png" alt="Holiday Packages" class="mid-nav-icon">
+          <div>
+            <div class="fnt-11 clr-8f">HANDCRAFTED TOURS</div>
+            <div class="mid-nav-title">Holiday Packages</div>
+          </div>
+        </a>
+        <a href="#section3" class="mid-nav-card">
+          <img src="assets/images/travel-destination-guide.png" alt="Destination Guide" class="mid-nav-icon">
+          <div>
+            <div class="fnt-11 clr-8f">PLAN YOUR TRIP</div>
+            <div class="mid-nav-title">Travel Destination Guide</div>
+          </div>
+        </a>
+        <a href="#section3" class="mid-nav-card">
+          <img src="assets/images/things-to-do.png" alt="Things To Do" class="mid-nav-icon">
+          <div>
+            <div class="fnt-11 clr-8f">ACTIVITIES & PASSES</div>
+            <div class="mid-nav-title">Things To Do</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Trending Deals Carousel
+       ========================================================================= -->
+  <section class="deals-carousel-section">
+    <div class="container">
+      <div class="section-header d-flex justify-content-between align-items-center">
+        <h2 class="section-title">Exclusive Deals & Offers</h2>
+        <div class="d-flex gap-2">
+          <button class="carousel-arrow carousel-prev" id="deal-prev-btn" aria-label="Previous Deals"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="carousel-arrow carousel-next" id="deal-next-btn" aria-label="Next Deals"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-track" id="deals-carousel-track">
+          <!-- 1. Malaysia -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Malaysia Tourism Spectacular', '₹ 42,999/-')">
+              <img src="assets/images/MT26-web-banner.jpg" alt="Malaysia Tourism">
+            </a>
+          </div>
+          <!-- 2. Korea -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Korea Tourism Special', '₹ 1,29,999/-')">
+              <img src="assets/images/korea-web-banner-129999.jpg" alt="Korea Tourism">
+            </a>
+          </div>
+          <!-- 3. Disney Cruise & Disneyland -->
+          <div class="carousel-card">
+            <a href="disney.html">
+              <img src="assets/images/disney-adventure-cruise-web-banner.jpg" alt="Disney Adventure Cruise & Disneyland Tour Packages">
+            </a>
+          </div>
+          <!-- 4. Japan -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Amazing Japan Vacation', '₹ 2,18,999/-')">
+              <img src="assets/images/amazing-japan-218999.jpg" alt="Japan Package">
+            </a>
+          </div>
+          <!-- 5. Thailand -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Thailand Holiday Extravaganza', '₹ 40,999/-')">
+              <img src="assets/images/Thailand-40999.jpg" alt="Thailand Packages">
+            </a>
+          </div>
+          <!-- 6. Europe -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Grand Europe 6-Country Tour', '₹ 1,64,999/-')">
+              <img src="assets/images/Europe-164999.jpg" alt="Europe Packages">
+            </a>
+          </div>
+          <!-- 7. Goa -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Goa Resort & Beach Getaway', '₹ 15,999/-')">
+              <img src="assets/images/Goa-15999-package-image.jpg" alt="Goa Packages">
+            </a>
+          </div>
+          <!-- 8. Forex -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Best Forex Currency Exchange Rates', 'Best Price Guarantee')">
+              <img src="assets/images/send-money-abroad-banner.jpg" alt="Best Forex Rates">
+            </a>
+          </div>
+          <!-- 9. Zero Fee -->
+          <div class="carousel-card">
+            <a href="javascript:void(0)" onclick="window.previewDeal('Zero Convenience Fee Flight Booking', 'Save Extra on Flights')">
+              <img src="assets/images/zero-convenience-fee.jpg" alt="Flight Zero Convenience Fee">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 1: Domestic Packages (Dekho My India)
+       ========================================================================= -->
+  <section class="section-domestic" id="section1">
+    <div class="container">
+      <div class="section-header d-flex justify-content-between align-items-center">
+        <h2 class="section-title">India Tour Packages - Dekho My India</h2>
+        <a href="packages.html" class="btn-clear-filters fnt-14 font-bold">View All Packages <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      </div>
+
+      <div class="packages-grid-5">
+        <!-- 1. Himachal -->
+        <div class="package-card">
+          <div class="package-img-wrapper">
+            <img src="assets/images/shimla__2_.jpg" alt="Himachal Packages">
+            <div class="package-price-tag">₹ 8,499/-</div>
+          </div>
+          <div class="package-card-body">
+            <h3 class="package-name">Himachal Packages</h3>
+            <a href="packages.html?dest=Himachal" class="btn btn-primary btn-round fnt-13 d-inline-block text-center">
+              View Package
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Goa -->
+        <div class="package-card">
+          <div class="package-img-wrapper">
+            <img src="assets/images/goa.jpg" alt="Goa Packages">
+            <div class="package-price-tag">₹ 15,999/-</div>
+          </div>
+          <div class="package-card-body">
+            <h3 class="package-name">Goa Packages</h3>
+            <a href="packages.html?dest=Goa" class="btn btn-primary btn-round fnt-13 d-inline-block text-center">
+              View Package
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Rajasthan -->
+        <div class="package-card">
+          <div class="package-img-wrapper">
+            <img src="assets/images/rajasthan-jaipur-deal.jpg" alt="Rajasthan Packages">
+            <div class="package-price-tag">₹ 14,499/-</div>
+          </div>
+          <div class="package-card-body">
+            <h3 class="package-name">Rajasthan Packages</h3>
+            <a href="packages.html?dest=Rajasthan" class="btn btn-primary btn-round fnt-13 d-inline-block text-center">
+              View Package
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Kashmir -->
+        <div class="package-card">
+          <div class="package-img-wrapper">
+            <img src="assets/images/kashmir-package-srinagar.jpg" alt="Kashmir Packages">
+            <div class="package-price-tag">₹ 21,999/-</div>
+          </div>
+          <div class="package-card-body">
+            <h3 class="package-name">Kashmir Packages</h3>
+            <a href="packages.html?dest=Kashmir" class="btn btn-primary btn-round fnt-13 d-inline-block text-center">
+              View Package
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Kerala -->
+        <div class="package-card">
+          <div class="package-img-wrapper">
+            <img src="assets/images/kerala-package-alleppey.jpg" alt="Kerala Packages">
+            <div class="package-price-tag">₹ 19,499/-</div>
+          </div>
+          <div class="package-card-body">
+            <h3 class="package-name">Kerala Packages</h3>
+            <a href="packages.html?dest=Kerala" class="btn btn-primary btn-round fnt-13 d-inline-block text-center">
+              View Package
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 2: International Holiday Packages
+       ========================================================================= -->
+  <section class="section-international" id="section2">
+    <!-- Floating background decorative circles -->
+    <div class="floating-bg-circle circle-1"></div>
+    <div class="floating-bg-circle circle-2"></div>
+    <div class="floating-bg-circle circle-3"></div>
+
+    <div class="container pos-r">
+      <div class="section-header d-flex justify-content-between align-items-center">
+        <h2 class="section-title">International Holiday Packages</h2>
+        <a href="packages.html?cat=international" class="btn-clear-filters fnt-14 font-bold clr-white">Explore All <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      </div>
+
+      <div class="intl-grid">
+        <!-- 1. Thailand -->
+        <div class="intl-card">
+          <img src="assets/images/thailand1.jpg" alt="Thailand Packages">
+          <div class="intl-overlay">
+            <div class="intl-pkg-name">Thailand Packages</div>
+            <div class="intl-pkg-price">₹ 45,999/-</div>
+            <a href="packages.html?dest=Thailand" class="btn-book-intl d-inline-block text-center">
+              Explore Deals <i class="fa-solid fa-arrow-right fnt-11 ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Singapore -->
+        <div class="intl-card">
+          <img src="assets/images/singapore.jpg" alt="Singapore Packages">
+          <div class="intl-overlay">
+            <div class="intl-pkg-name">Singapore Packages</div>
+            <div class="intl-pkg-price">₹ 63,999/-</div>
+            <a href="packages.html?dest=Singapore" class="btn-book-intl d-inline-block text-center">
+              Explore Deals <i class="fa-solid fa-arrow-right fnt-11 ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Europe -->
+        <div class="intl-card">
+          <img src="assets/images/Europe3.jpg" alt="Europe Packages">
+          <div class="intl-overlay">
+            <div class="intl-pkg-name">Europe Packages</div>
+            <div class="intl-pkg-price">₹ 1,64,999/-</div>
+            <a href="packages.html?dest=Europe" class="btn-book-intl d-inline-block text-center">
+              Explore Deals <i class="fa-solid fa-arrow-right fnt-11 ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Dubai -->
+        <div class="intl-card">
+          <img src="assets/images/dubai.jpg" alt="Dubai Packages">
+          <div class="intl-overlay">
+            <div class="intl-pkg-name">Dubai Packages</div>
+            <div class="intl-pkg-price">₹ 49,999/-</div>
+            <a href="packages.html?dest=Dubai" class="btn-book-intl d-inline-block text-center">
+              Explore Deals <i class="fa-solid fa-arrow-right fnt-11 ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Japan -->
+        <div class="intl-card">
+          <img src="assets/images/japan-korea-holiday-package.jpg" alt="Japan Packages">
+          <div class="intl-overlay">
+            <div class="intl-pkg-name">Japan &amp; Korea Packages</div>
+            <div class="intl-pkg-price">₹ 2,53,999/-</div>
+            <a href="packages.html?dest=Japan" class="btn-book-intl d-inline-block text-center">
+              Explore Deals <i class="fa-solid fa-arrow-right fnt-11 ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 3: Dual Column (Destination Guides & Holiday Deals)
+       ========================================================================= -->
+  <section class="section-dual-explorer" id="section3">
+    <div class="container">
+      <div class="dual-grid">
+        <!-- Left: Destination Guides & Hotel/Bus Links -->
+        <div>
+          <h2 class="section-title">Explore Travel Destination Guide</h2>
+          
+          <div class="destination-grid-8">
+            <a href="disney.html" class="dest-mini-card">
+              <img src="assets/images/hong_kong.jpg" alt="Hong Kong Disneyland">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Hong Kong Disneyland</span>
+              </div>
+            </a>
+            <a href="packages.html?dest=Singapore" class="dest-mini-card">
+              <img src="assets/images/singapore.jpg" alt="Singapore">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Singapore</span>
+              </div>
+            </a>
+            <a href="packages.html?dest=Dubai" class="dest-mini-card">
+              <img src="assets/images/dubai.jpg" alt="Dubai">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Dubai</span>
+              </div>
+            </a>
+            <a href="packages.html?dest=Thailand" class="dest-mini-card">
+              <img src="assets/images/thailand.jpg" alt="Thailand">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Thailand</span>
+              </div>
+            </a>
+            <a href="packages.html?dest=Goa" class="dest-mini-card">
+              <img src="assets/images/Goa-explore-Travel-Destination-Guide.jpg" alt="Goa">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Goa</span>
+              </div>
+            </a>
+            <a href="packages.html?dest=Kerala" class="dest-mini-card">
+              <img src="assets/images/Kerala.jpg" alt="Kerala">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Kerala</span>
+              </div>
+            </a>
+            <a href="packages.html?dest=Himachal" class="dest-mini-card">
+              <img src="assets/images/shimla__2_.jpg" alt="Himachal & Manali">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Himachal &amp; Manali</span>
+              </div>
+            </a>
+            <a href="packages.html?dest=Rajasthan" class="dest-mini-card">
+              <img src="assets/images/rajasthan-jaipur-deal.jpg" alt="Rajasthan">
+              <div class="dest-mini-overlay">
+                <span class="dest-mini-name">Rajasthan</span>
+              </div>
+            </a>
+          </div>
+
+          <p class="fnt-14 clr-8f mt-3">
+            Not sure where to go on your next holiday? Our comprehensive Destination Guides give you vital insights to make an informed choice with customized itineraries.
+          </p>
+
+          <div class="dual-links-group">
+            <div>
+              <h4>Popular Hotel Destinations</h4>
+              <ul>
+                <li><a href="javascript:void(0)" onclick="alert('Viewing Hotels in Goa with lowest price promise');"><i class="fa-solid fa-hotel fnt-11 clr-primary"></i> Goa Hotels</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Viewing Hotels in Manali');"><i class="fa-solid fa-hotel fnt-11 clr-primary"></i> Manali Hotels</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Viewing Hotels in Srinagar');"><i class="fa-solid fa-hotel fnt-11 clr-primary"></i> Srinagar Hotels</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Viewing Hotels in Leh Ladakh');"><i class="fa-solid fa-hotel fnt-11 clr-primary"></i> Leh Ladakh Hotels</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Viewing Hotels in Udaipur');"><i class="fa-solid fa-hotel fnt-11 clr-primary"></i> Udaipur Hotels</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Viewing Hotels in Dubai');"><i class="fa-solid fa-hotel fnt-11 clr-primary"></i> Dubai Hotels</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Top Bus Booking Routes</h4>
+              <ul>
+                <li><a href="javascript:void(0)" onclick="alert('Searching Delhi to Jaipur Volvo Buses');"><i class="fa-solid fa-bus fnt-11 clr-primary"></i> Delhi to Jaipur Bus</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Searching Mumbai to Goa Sleeper Buses');"><i class="fa-solid fa-bus fnt-11 clr-primary"></i> Mumbai to Goa Bus</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Searching Pune to Mumbai Express Buses');"><i class="fa-solid fa-bus fnt-11 clr-primary"></i> Pune to Mumbai Bus</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Searching Delhi to Amritsar Buses');"><i class="fa-solid fa-bus fnt-11 clr-primary"></i> Delhi to Amritsar Bus</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Searching Bangalore to Chennai Buses');"><i class="fa-solid fa-bus fnt-11 clr-primary"></i> Bangalore to Chennai Bus</a></li>
+                <li><a href="javascript:void(0)" onclick="alert('Searching Delhi to Nainital Buses');"><i class="fa-solid fa-bus fnt-11 clr-primary"></i> Delhi to Nainital Bus</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Handpicked Holiday Deal Packages -->
+        <div id="unbeatable-deals-packages">
+          <h2 class="section-title">Holiday Deal Packages</h2>
+
+          <div class="holiday-deals-list">
+            <!-- 1. Aastha Escape Resort, Goa -->
+            <div class="horizontal-deal-card">
+              <div class="deal-card-img">
+                <img src="assets/images/goa1.jpg" alt="Aastha Escape Resort, Goa">
+              </div>
+              <div class="deal-card-content">
+                <h3 class="deal-name">Aastha Escape Resort, Goa</h3>
+                <div class="deal-bottom-row">
+                  <span class="deal-nights-badge">→ 3 Nights</span>
+                  <span class="deal-price-val">₹ 15,999/-</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Thailand Family Holiday -->
+            <div class="horizontal-deal-card">
+              <div class="deal-card-img">
+                <img src="assets/images/thailand-holiday-package.jpg" alt="Thailand Family Holiday">
+              </div>
+              <div class="deal-card-content">
+                <h3 class="deal-name">Thailand Family Holiday</h3>
+                <div class="deal-bottom-row">
+                  <span class="deal-nights-badge">→ 5 Nights</span>
+                  <span class="deal-price-val">₹ 45,999/-</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Best of Switzerland with France -->
+            <div class="horizontal-deal-card">
+              <div class="deal-card-img">
+                <img src="assets/images/europe-holdiay-deal.jpg" alt="Best of Switzerland with France">
+              </div>
+              <div class="deal-card-content">
+                <h3 class="deal-name">Best of Switzerland with France</h3>
+                <div class="deal-bottom-row">
+                  <span class="deal-nights-badge">→ 6 Nights</span>
+                  <span class="deal-price-val">₹ 1,64,999/-</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Discover South Korea & Japan -->
+            <div class="horizontal-deal-card">
+              <div class="deal-card-img">
+                <img src="assets/images/japan-holiday-deal-package.jpg" alt="Discover South Korea & Japan">
+              </div>
+              <div class="deal-card-content">
+                <h3 class="deal-name">Discover South Korea & Japan</h3>
+                <div class="deal-bottom-row">
+                  <span class="deal-nights-badge">→ 10 Nights</span>
+                  <span class="deal-price-val">₹ 2,53,999/-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 5: Complete Product Directory & SEO Footprint
+       ========================================================================= -->
+  <section class="section-directory" id="section5">
+    <div class="container">
+      <!-- 1. Product Offerings -->
+      <div class="directory-category-block">
+        <h4 class="directory-cat-title">Product Offering</h4>
+        <div class="directory-tags-flex">
+          <span class="directory-tag-item"><a href="#">Flights Booking</a></span>
+          <span class="directory-tag-item"><a href="#">Hotel Booking</a></span>
+          <span class="directory-tag-item"><a href="#">India Tour Packages</a></span>
+          <span class="directory-tag-item"><a href="#">International Tour Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Sightseeing Tours</a></span>
+          <span class="directory-tag-item"><a href="#">Bus Tickets</a></span>
+          <span class="directory-tag-item"><a href="#">Transfers Booking</a></span>
+          <span class="directory-tag-item"><a href="#">Forex Services</a></span>
+          <span class="directory-tag-item"><a href="#">Holiday Ideas</a></span>
+          <span class="directory-tag-item"><a href="#">Honeymoon Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Travel Deals</a></span>
+          <span class="directory-tag-item"><a href="#">Travel Blogs</a></span>
+          <span class="directory-tag-item"><a href="#">Destination Travel Guide</a></span>
+        </div>
+      </div>
+
+      <!-- 2. Holiday Packages -->
+      <div class="directory-category-block">
+        <h4 class="directory-cat-title">Holiday Packages</h4>
+        <div class="directory-tags-flex">
+          <span class="directory-tag-item"><a href="#">Goa Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Kashmir Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Darjeeling Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Gujarat Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Andaman Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Manali Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Udaipur Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Rajasthan Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Thailand Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Singapore Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Dubai Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Europe Packages</a></span>
+          <span class="directory-tag-item"><a href="#">Bali Packages</a></span>
+        </div>
+      </div>
+
+      <!-- 3. Hotels -->
+      <div class="directory-category-block">
+        <h4 class="directory-cat-title">Hotels</h4>
+        <div class="directory-tags-flex">
+          <span class="directory-tag-item"><a href="#">Hotels in Goa</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Udaipur</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Manali</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in McLeodganj</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Nainital</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Amritsar</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Madurai</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Shirdi</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Jaipur</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Mussoorie</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Shimla</a></span>
+          <span class="directory-tag-item"><a href="#">Hotels in Haridwar</a></span>
+        </div>
+      </div>
+
+      <!-- 4. Flight Routes -->
+      <div class="directory-category-block">
+        <h4 class="directory-cat-title">Popular Flight Routes</h4>
+        <div class="directory-tags-flex">
+          <span class="directory-tag-item"><a href="#">Delhi to Goa Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Delhi to Maldives Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Mumbai to Ahmedabad Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Hyderabad to Goa Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Delhi to Patna Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Delhi to Srinagar Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Mumbai to Delhi Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Bangalore to Indore Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Delhi to Amritsar Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Mumbai to Jamnagar Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Hyderabad to Chennai Flights</a></span>
+          <span class="directory-tag-item"><a href="#">Bangalore to Kolkata Flights</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Footer
+       ========================================================================= -->
+  <footer class="dpauls-footer">
+    <div class="container">
+      <!-- About DPauls Overview -->
+      <div class="footer-about-block">
+        <h3 class="footer-about-title">About DPauls.com</h3>
+        <p class="clr-8f">
+          Ever wished that there were an escape button on the keyboard of life? Well, since there isn’t, we are there for you. The universal truth is that every person in this universe needs a break at some point - A break from the mundane routines to recharge, rejuvenate, and create unforgettable memories with loved ones across stunning destinations worldwide.
+        </p>
+      </div>
+
+      <!-- Address & Contact Info Row -->
+      <div class="footer-cards-grid">
+        <div class="footer-contact-card">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="footer-contact-text">
+            B-40, Shivalik, Malviya Nagar<br>New Delhi - 110017
+          </div>
+        </div>
+
+        <div class="footer-contact-card">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="footer-contact-text">
+            <a href="tel:01168141111">011 68141111</a><br>
+            <a href="tel:01166777111">011 66777111</a>
+          </div>
+        </div>
+
+        <div class="footer-contact-card">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="footer-contact-text">
+            <a href="mailto:contactus@dpauls.com">contactus@dpauls.com</a>
+          </div>
+        </div>
+
+        <div class="footer-contact-card justify-content-center">
+          <div class="social-icons-row">
+            <a href="https://www.facebook.com/dpauls.travel" target="_blank" rel="noreferrer" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/dpaulstravel" target="_blank" rel="noreferrer" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/dpauls_travel" target="_blank" rel="noreferrer" class="social-btn" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/user/dpaulsonline" target="_blank" rel="noreferrer" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="footer-links-grid">
+        <!-- Telegram Box -->
+        <div>
+          <a href="https://t.me/dpauls" target="_blank" class="telegram-banner-box">
+            <img src="assets/images/telegram.b37d6df.png" alt="Telegram" style="height: 36px;">
+            <div>
+              <div class="font-bold fnt-16">Connect on Telegram</div>
+              <div class="fnt-12 opacity-80">Get instant travel flash deals & discounts</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Col 1 -->
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-menu">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">DPauls Offers</a></li>
+            <li><a href="#">Write a Review</a></li>
+            <li><a href="#">Picture Credits</a></li>
+            <li><a href="#">Affiliates Network</a></li>
+            <li><a href="#">Corporate Travel (MICE)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-menu">
+            <li><a href="#">Send Enquiry</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Travellers Reviews</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-menu">
+            <li><a href="#">Make Payment</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Important Announcements</a></li>
+            <li><a href="#">Bank Account Details</a></li>
+            <li><a href="#">Press Releases</a></li>
+            <li><a href="#">Visa Documents Required</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accreditation & Payment Logos -->
+      <div class="footer-partners-bar">
+        <div>
+          <img src="assets/images/iata-banner.c51591f.png" alt="IATA Accredited" style="max-height: 48px;">
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="text-right">
+            <div class="font-bold fnt-14 clr-white">Payment Options:</div>
+            <div class="fnt-12 clr-8f">100% Safe & Secure Payments</div>
+          </div>
+          <img src="assets/images/payment-options.86f8e3c.png" alt="Payment Partners" style="max-height: 38px;">
+        </div>
+      </div>
+
+      <!-- Legal Disclaimer Note -->
+      <div class="py-4">
+        <p class="fnt-12 clr-8f">
+          <b>Note:</b> All claims, disputes and litigation relating to online booking through this website anywhere from India or abroad shall be subject to jurisdiction of Courts of Delhi only. All Images shown here are for representation purpose only.
+        </p>
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-bottom-bar">
+      <div class="container text-center">
+        Copyright © 2026 DPauls.com. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Slide-out Side Navigation Drawer
+       ========================================================================= -->
+  <div class="modal-backdrop-custom" id="drawer-backdrop">
+    <div class="drawer-nav-menu" id="side-drawer">
+      <div class="drawer-header">
+        <div class="user-avatar-circle">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div>
+          <div class="font-bold fnt-16">Hello Guest!</div>
+          <a href="javascript:void(0)" class="fnt-13 clr-teal modal-trigger-login" style="color: var(--teal);">Login / Sign Up</a>
+        </div>
+        <button class="modal-close-btn" style="top: 14px; right: 14px;" id="close-drawer-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="drawer-content-list">
+        <a href="index.html" class="drawer-link-item"><i class="fa-solid fa-house clr-primary"></i> Home</a>
+        <a href="flights.html" class="drawer-link-item"><i class="fa-solid fa-plane-departure clr-primary"></i> Flights</a>
+        <a href="packages.html" class="drawer-link-item"><i class="fa-solid fa-suitcase-rolling clr-primary"></i> Holiday Packages</a>
+        <a href="hotels.html" class="drawer-link-item"><i class="fa-solid fa-hotel clr-primary"></i> Hotels</a>
+        <a href="about.html" class="drawer-link-item"><i class="fa-solid fa-circle-info clr-primary"></i> About Us</a>
+        <a href="contact.html" class="drawer-link-item"><i class="fa-solid fa-phone clr-primary"></i> Contact Us</a>
+        <a href="javascript:void(0)" class="drawer-link-item modal-trigger-giftcard"><i class="fa-solid fa-gift clr-primary"></i> Gift Card</a>
+        <a href="javascript:void(0)" class="drawer-link-item modal-trigger-login"><i class="fa-solid fa-receipt clr-primary"></i> My Bookings</a>
+        <a href="javascript:void(0)" class="drawer-link-item" onclick="alert('Redirecting to secure online payment portal...');"><i class="fa-solid fa-credit-card clr-primary"></i> Make Payment</a>
+        <a href="https://t.me/dpauls" target="_blank" class="drawer-link-item"><i class="fa-brands fa-telegram" style="color: #0088cc;"></i> Telegram Channel</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Login & Signup Modal
+       ========================================================================= -->
+  <div class="modal-backdrop-custom" id="auth-modal">
+    <div class="modal-card-dialog">
+      <button class="modal-close-btn" id="close-auth-modal-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center pt-4 pb-2">
+        <img src="assets/images/logo.0066e88.png" alt="DPauls Logo" style="height: 38px; margin: 0 auto;">
+      </div>
+
+      <div class="auth-tabs-bar">
+        <div class="auth-tab active" id="auth-tab-login">Log In</div>
+        <div class="auth-tab" id="auth-tab-signup">Sign Up</div>
+      </div>
+
+      <!-- Login Form Body -->
+      <div class="auth-form-body" id="auth-body-login">
+        <!-- OTP Login Section -->
+        <div class="form-group-field">
+          <label for="login-mobile">Login using Mobile No.</label>
+          <div class="pos-r">
+            <input type="tel" id="login-mobile" class="form-input-styled" placeholder="Enter 10-digit mobile number" maxlength="10">
+          </div>
+          <button type="button" class="btn btn-primary w-100 mt-2" id="send-otp-btn">
+            Send OTP
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: center; margin: 1.5rem 0;">
+          <div style="flex: 1; height: 1px; background: var(--border-color);"></div>
+          <span class="fnt-12 clr-8f px-3 font-bold">OR LOGIN USING EMAIL</span>
+          <div style="flex: 1; height: 1px; background: var(--border-color);"></div>
+        </div>
+
+        <!-- Email Password Login -->
+        <form onsubmit="event.preventDefault(); window.handleEmailLogin();">
+          <div class="form-group-field">
+            <label for="login-email">Email ID</label>
+            <input type="email" id="login-email" class="form-input-styled" placeholder="name@example.com">
+          </div>
+          <div class="form-group-field">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-input-styled" placeholder="Enter your password">
+          </div>
+          <button type="submit" class="btn btn-search w-100 mt-2">
+            Log In
+          </button>
+        </form>
+      </div>
+
+      <!-- Signup Form Body -->
+      <div class="auth-form-body" id="auth-body-signup" style="display: none;">
+        <form onsubmit="event.preventDefault(); window.handleSignup();">
+          <div class="form-group-field">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" class="form-input-styled" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group-field">
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" class="form-input-styled" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group-field">
+            <label for="signup-mobile">Mobile Number</label>
+            <input type="tel" id="signup-mobile" class="form-input-styled" placeholder="10-digit mobile number" maxlength="10" required>
+          </div>
+          <div class="form-group-field">
+            <label for="signup-password">Create Password</label>
+            <input type="password" id="signup-password" class="form-input-styled" placeholder="Create strong password" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mt-2">
+            Create DPauls Account
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Gift Card Balance Check Modal
+       ========================================================================= -->
+  <div class="modal-backdrop-custom" id="giftcard-modal">
+    <div class="modal-card-dialog" style="max-width: 650px;">
+      <button class="modal-close-btn" id="close-giftcard-modal-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="call-modal-body">
+        <h3 class="fnt-20 font-bold clr-3c text-center mb-1">Check Your Gift Card Balance</h3>
+        <p class="fnt-13 clr-8f text-center mb-4">
+          To view your available balance, enter the 16 digit card number and 6 digit security code PIN.
+        </p>
+
+        <div class="d-flex flex-wrap gap-4 align-items-center">
+          <div style="flex: 1; min-width: 250px;">
+            <div class="form-group-field">
+              <label for="gc-number">Enter Gift Card No.*</label>
+              <input type="text" id="gc-number" class="form-input-styled" placeholder="16-digit card number" maxlength="16">
+            </div>
+            <div class="form-group-field">
+              <label for="gc-pin">Enter PIN Number*</label>
+              <input type="password" id="gc-pin" class="form-input-styled" placeholder="6-digit security PIN" maxlength="6">
+            </div>
+            <div class="form-group-field">
+              <label for="gc-contact">Enter Mobile / Email</label>
+              <input type="text" id="gc-contact" class="form-input-styled" placeholder="Registered mobile or email">
+            </div>
+            <button type="button" class="btn btn-primary w-100" id="check-gc-btn">
+              Check Balance
+            </button>
+          </div>
+
+          <div style="width: 220px; margin: 0 auto; text-align: center;">
+            <img src="assets/images/giftcard-back.2042d4b.png" alt="Gift Card Back" style="border-radius: var(--radius-sm); box-shadow: var(--shadow-md);">
+          </div>
+        </div>
+
+        <div id="gc-result-box" style="display: none; margin-top: 1.5rem; padding: 1rem; background: #eef8f7; border-radius: var(--radius-sm); border: 1px solid var(--teal); text-align: center;">
+          <div class="fnt-13 clr-8f">Available Card Balance:</div>
+          <div class="font-bold fnt-24 clr-primary" id="gc-balance-val">₹ 15,000.00</div>
+          <div class="fnt-12 clr-3c mt-1">Status: Active & Valid till Dec 2027</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Call Us Telephone Directory Modal
+       ========================================================================= -->
+  <div class="modal-backdrop-custom" id="call-modal">
+    <div class="modal-card-dialog" style="max-width: 650px;">
+      <button class="modal-close-btn" id="close-call-modal-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="call-modal-body">
+        <div class="d-flex align-items-center justify-content-between flex-wrap">
+          <div>
+            <h3 class="fnt-22 font-bold clr-3c">We'd love to hear from you!</h3>
+            <p class="fnt-14 clr-8f">Call our dedicated travel assistance team</p>
+          </div>
+          <img src="assets/images/contact-us-pop.d0815f2.jpg" alt="Contact DPauls" style="height: 60px; border-radius: var(--radius-sm);">
+        </div>
+
+        <div style="background: var(--light-gray); padding: 1rem; border-radius: var(--radius-md); text-align: center; margin: 1.25rem 0;">
+          <div class="fnt-13 clr-8f font-bold">PRIMARY HELPLINE NUMBERS</div>
+          <div class="d-flex justify-content-center gap-4 mt-1 font-bold fnt-20">
+            <a href="tel:01166777111" class="clr-primary"><i class="fa-solid fa-phone"></i> 011 66777111</a>
+            <a href="tel:01168141111" class="clr-primary"><i class="fa-solid fa-phone"></i> 011 68141111</a>
+          </div>
+        </div>
+
+        <div class="dept-numbers-grid">
+          <div class="dept-num-item">
+            <div class="dept-title">Air Ticketing</div>
+            <a href="tel:01166777150" class="dept-phone-link">011 66777150</a>
+          </div>
+          <div class="dept-num-item">
+            <div class="dept-title">Visa Services</div>
+            <a href="tel:01166777250" class="dept-phone-link">011 66777250</a>
+          </div>
+          <div class="dept-num-item">
+            <div class="dept-title">Foreign Exchange</div>
+            <a href="tel:01166777350" class="dept-phone-link">011 66777350</a>
+          </div>
+          <div class="dept-num-item">
+            <div class="dept-title">Cruise Vacations</div>
+            <a href="tel:01166777200" class="dept-phone-link">011 66777200</a>
+          </div>
+          <div class="dept-num-item">
+            <div class="dept-title">B2B Agent Desk</div>
+            <a href="tel:01168141188" class="dept-phone-link">011 68141188</a>
+          </div>
+          <div class="dept-num-item">
+            <div class="dept-title">Grievance Cell</div>
+            <a href="tel:+919212647114" class="dept-phone-link">+91 9212647114</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Caution Notice / Scam Alert Modal
+       ========================================================================= -->
+  <div class="modal-backdrop-custom" id="caution-modal">
+    <div class="modal-card-dialog" style="max-width: 720px;">
+      <button class="modal-close-btn" id="close-caution-modal-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="call-modal-body">
+        <div class="text-center mb-3">
+          <div style="font-size: 2.2rem; color: var(--red-accent);"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h3 class="fnt-22 font-black" style="color: var(--red-accent);">CAUTION NOTICE & FRAUD ADVISORY</h3>
+        </div>
+
+        <div class="d-flex gap-3 align-items-start mb-3">
+          <div style="flex: 1;">
+            <p class="fnt-14 clr-3c mb-2">
+              It has come to our notice that our official phone numbers are being maliciously masked or displayed as caller ID on unauthorized gaming & payment platforms by unknown fraudulent parties.
+            </p>
+            <p class="fnt-14 clr-3c mb-2">
+              <b>Important:</b> DPauls Travel and Tours Ltd operates <b>solely through this official website (https://dpauls.com/)</b>. We strongly advise all customers never to make payments to any bank account other than the official verified DPauls corporate bank accounts.
+            </p>
+            <p class="fnt-14 clr-3c">
+              Official Police & Cyber Crime authorities have been formally alerted and legal action is actively being pursued.
+            </p>
+          </div>
+          <div style="width: 140px; text-align: center;">
+            <img src="assets/images/scam-alert.5f15fca.png" alt="Scam Alert" style="margin-bottom: 0.5rem;">
+            <img src="assets/images/alert-banner_image.f88d9f8.png" alt="Official Alert">
+          </div>
+        </div>
+
+        <div style="background: #fff5f5; border: 1px solid #fecaca; padding: 0.85rem; border-radius: var(--radius-sm); text-align: center;">
+          <a href="#" class="font-bold clr-red fnt-14"><i class="fa-solid fa-shield-halved mr-1"></i> Verify Official Bank Account Details on dpauls.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Interactive Search Results / Booking Flow Modal
+       ========================================================================= -->
+  <div class="modal-backdrop-custom" id="results-modal">
+    <div class="modal-card-dialog results-modal-dialog">
+      <button class="modal-close-btn" id="close-results-modal-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="call-modal-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <h3 class="fnt-22 font-bold clr-3c" id="results-modal-title">Flight Search Results</h3>
+            <div class="fnt-13 clr-8f" id="results-modal-sub">DEL (New Delhi) → BOM (Mumbai) | 30 Aug 2026 | 1 Traveller</div>
+          </div>
+          <span class="badge-tag" style="position: static; font-size: 0.85rem; padding: 4px 10px;">LIVE AVAILABILITY</span>
+        </div>
+
+        <div id="results-cards-container">
+          <!-- Dynamic cards populated via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Caution Alert Badge Trigger -->
+  <div class="caution-badge-btn" id="open-caution-badge-btn" title="Click to view Official Caution Notice">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <span>Caution Notice</span>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top-btn" id="scroll-to-top-btn" aria-label="Scroll to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best of Switzerland with France (6N/7D) | DPauls Holidays</title>
+  <meta name="description" content="Book 6 Nights / 7 Days Best of Switzerland with France holiday package at ₹1,64,999 on DPauls.com. Includes return flights, 4-star hotels, daily meals, Mt. Titlis and Eiffel Tower.">
+  <link rel="icon" type="image/png" href="assets/images/logo.0066e88.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flight-results.css">
+  <link rel="stylesheet" href="booking.css">
+  <style>
+    /* DPauls Authentic PDP Styling */
+    .pdp-main-gallery {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .pdp-main-gallery img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .pdp-gallery-counter {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: rgba(0, 0, 0, 0.65);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+    }
+    .pdp-code-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+    .pdp-inclusions-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      overflow-x: auto;
+    }
+    .pdp-inclusion-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #64748b;
+      cursor: pointer;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      text-transform: capitalize;
+    }
+    .pdp-inclusion-tab.active {
+      background: #0284c7;
+      color: var(--white);
+      border-color: #0284c7;
+    }
+    .pdp-inclusion-tab i {
+      font-size: 0.85rem;
+    }
+    .inclusion-panel-content {
+      background: #fafbfc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 1rem;
+    }
+    /* Calendar */
+    .pdp-cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .pdp-cal-day-header {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #64748b;
+      padding: 0.3rem 0;
+    }
+    .pdp-cal-cell {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 0.4rem 0.2rem;
+      font-size: 0.75rem;
+      background: var(--white);
+      cursor: pointer;
+    }
+    .pdp-cal-cell.disabled {
+      background: #f1f5f9;
+      color: #cbd5e1;
+      cursor: not-allowed;
+    }
+    .pdp-cal-cell.avail {
+      background: #f0fdf4;
+      border-color: #86efac;
+      color: #166534;
+      font-weight: 800;
+    }
+    .pdp-cal-cell.avail:hover, .pdp-cal-cell.selected {
+      background: #0d9488;
+      border-color: #0d9488;
+      color: var(--white);
+    }
+    .pdp-cal-cell.on-req {
+      color: #64748b;
+      font-size: 0.68rem;
+    }
+    /* Day-by-Day Accordion */
+    .itinerary-accordion-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      margin-bottom: 0.65rem;
+      background: var(--white);
+    }
+    .itinerary-accordion-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #1e293b;
+      cursor: pointer;
+      background: #f8fafc;
+    }
+    .itinerary-accordion-head.active {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+    .itinerary-accordion-body {
+      display: none;
+      padding: 1rem 1.1rem;
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.6;
+      border-top: 1px solid #e2e8f0;
+    }
+    .itinerary-accordion-body.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="booking-page-body">
+
+  <!-- 1. Top Header Bar -->
+  <header class="flight-top-header">
+    <div class="flight-header-container">
+      <div class="flight-header-left">
+        <button class="flight-menu-btn" id="open-drawer-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="flight-brand-logo">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls.com - it's all about holidays">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dark Breadcrumbs Bar -->
+  <div class="booking-breadcrumb-bar">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem;">
+      <a href="index.html">DPauls Holidays</a>
+      <span class="mx-2">/</span>
+      <a href="packages.html">Holiday Packages</a>
+      <span class="mx-2">/</span>
+      <span id="pdp-breadcrumb-category">International Tours</span>
+      <span class="mx-2">/</span>
+      <span style="color: var(--white); font-weight: 700;" id="pdp-breadcrumb-name">Best of Switzerland with France</span>
+    </div>
+  </div>
+
+  <!-- 3. Service Header Section (Title, Code, Rating, Price) -->
+  <div style="background: var(--white); border-bottom: 1px solid var(--border-color); padding: 1.25rem 0;">
+    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <h1 class="fnt-24 font-black clr-3c d-flex align-items-center gap-2 mb-1" id="pdp-title-display">
+          <span>Best of Switzerland with France</span>
+          <small class="fnt-13 clr-primary font-bold" id="pdp-duration-badge" style="background: #e0f2fe; padding: 2px 8px; border-radius: 4px;">6 Nights / 7 Days</small>
+        </h1>
+        <div class="fnt-13 clr-8f">
+          <span class="font-bold clr-3c">Package Category:</span> Group, Best Price &bull;
+          <span class="font-bold clr-3c ml-2">Destinations Covered:</span> <span id="pdp-destinations-text">2N Paris, 4N Zurich (Mt. Titlis & Lucerne)</span>
+        </div>
+        <div class="pdp-rating-stars fnt-12 mt-1">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          <span class="font-bold clr-3c ml-1">4.8 / 5</span> (142 Customer Reviews)
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <div class="text-right">
+          <div class="fnt-10 clr-8f font-bold">STARTING FROM</div>
+          <del class="fnt-13 clr-8f" id="pdp-original-price">₹1,99,999</del>
+          <div class="font-black fnt-24 clr-red" id="pdp-main-price">₹1,64,999</div>
+          <div class="fnt-10 clr-8f">PP on Twin Sharing</div>
+        </div>
+        <button type="button" class="btn btn-search fnt-14" onclick="window.triggerPdpBooking()">
+          Send Enquiry
+        </button>
+        <button type="button" class="btn btn-dropdown-signup fnt-13" onclick="alert('Downloading official DPauls Travel Itinerary & Brochure (PDF)...');">
+          <i class="fa-solid fa-file-pdf clr-red"></i> PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PDP Main Content & Sidebar Layout -->
+  <main class="booking-main-layout">
+    
+    <!-- Left Main Column -->
+    <div class="booking-content-column">
+      
+      <!-- Photo Carousel Gallery -->
+      <div class="pdp-main-gallery">
+        <span class="pdp-code-badge" id="pdp-code-display">CODE : DP205 • GROUP DEPARTURE</span>
+        <img id="pdp-active-gallery-img" src="assets/images/eiffel-tower.jpg" alt="Best of Switzerland with France">
+        <div class="pdp-gallery-counter">1 / 4 Photos</div>
+      </div>
+
+      <!-- Thumbs Row -->
+      <div class="pdp-thumbs-row mb-4">
+        <div class="pdp-thumb-item active" onclick="window.switchPdpImage(this, 'assets/images/eiffel-tower.jpg')">
+          <img src="assets/images/eiffel-tower.jpg" alt="Paris Eiffel Tower">
+        </div>
+        <div class="pdp-thumb-item" onclick="window.switchPdpImage(this, 'assets/images/swiss-alps.jpg')">
+          <img src="assets/images/swiss-alps.jpg" alt="Swiss Alps Mt Titlis">
+        </div>
+        <div class="pdp-thumb-item" onclick="window.switchPdpImage(this, 'assets/images/Europe3.jpg')">
+          <img src="assets/images/Europe3.jpg" alt="Europe Scenic Lake">
+        </div>
+        <div class="pdp-thumb-item" onclick="window.switchPdpImage(this, 'assets/images/europe-holdiay-deal.jpg')">
+          <img src="assets/images/europe-holdiay-deal.jpg" alt="Europe Holiday Highlights">
+        </div>
+      </div>
+
+      <!-- Package Inclusions Tabbed Card -->
+      <section class="booking-card">
+        <div class="widget-heading-divider">Package Includes</div>
+        
+        <div class="pdp-inclusions-nav">
+          <div class="pdp-inclusion-tab active" onclick="window.switchInclusionTab(this, 'flight-tab')">
+            <i class="fa-solid fa-plane"></i> Flights
+          </div>
+          <div class="pdp-inclusion-tab" onclick="window.switchInclusionTab(this, 'hotel-tab')">
+            <i class="fa-solid fa-hotel"></i> Hotels
+          </div>
+          <div class="pdp-inclusion-tab" onclick="window.switchInclusionTab(this, 'sightseeing-tab')">
+            <i class="fa-solid fa-mountain-sun"></i> Sightseeing
+          </div>
+          <div class="pdp-inclusion-tab" onclick="window.switchInclusionTab(this, 'transfers-tab')">
+            <i class="fa-solid fa-van-shuttle"></i> Transfers
+          </div>
+          <div class="pdp-inclusion-tab" onclick="window.switchInclusionTab(this, 'meals-tab')">
+            <i class="fa-solid fa-utensils"></i> Meals
+          </div>
+          <div class="pdp-inclusion-tab" onclick="window.switchInclusionTab(this, 'visa-tab')">
+            <i class="fa-solid fa-passport"></i> Visa
+          </div>
+          <div class="pdp-inclusion-tab" onclick="window.switchInclusionTab(this, 'taxes-tab')">
+            <i class="fa-solid fa-receipt"></i> Taxes
+          </div>
+        </div>
+
+        <!-- Inclusions Dynamic Child View -->
+        <div class="inclusion-panel-content">
+          <!-- Flight Panel -->
+          <div id="inc-flight-tab" class="inc-panel">
+            <div class="font-bold fnt-14 clr-3c mb-2"><i class="fa-solid fa-plane-departure clr-primary mr-1"></i> Included Round-trip Flight Tickets</div>
+            <div class="booking-flight-detail-grid mb-2">
+              <div>
+                <div class="fnt-11 clr-8f font-bold">ONWARD SECTOR</div>
+                <div class="font-bold fnt-14 clr-3c">Delhi (DEL) ➔ Paris (CDG)</div>
+                <div class="fnt-12 clr-8f">Air France / Emirates • Non Stop (8 hr 50 min)</div>
+              </div>
+              <div class="text-center">
+                <span class="onward-pill">CONFIRMED</span>
+              </div>
+              <div class="fnt-12 clr-47">25 Kg Baggage + 7 Kg Cabin</div>
+            </div>
+            <div class="booking-flight-detail-grid">
+              <div>
+                <div class="fnt-11 clr-8f font-bold">RETURN SECTOR</div>
+                <div class="font-bold fnt-14 clr-3c">Zurich (ZRH) ➔ Delhi (DEL)</div>
+                <div class="fnt-12 clr-8f">Swiss International / Air India • Non Stop (7 hr 45 min)</div>
+              </div>
+              <div class="text-center">
+                <span class="onward-pill">CONFIRMED</span>
+              </div>
+              <div class="fnt-12 clr-47">25 Kg Baggage + 7 Kg Cabin</div>
+            </div>
+          </div>
+
+          <!-- Hotel Panel -->
+          <div id="inc-hotel-tab" class="inc-panel d-none">
+            <div class="font-bold fnt-14 clr-3c mb-2"><i class="fa-solid fa-hotel clr-primary mr-1"></i> 4-Star Accommodations</div>
+            <p class="fnt-13 clr-47">
+              &bull; <b>Paris (2 Nights):</b> Mercure Paris Porte de Versailles / Novotel Paris Tour Eiffel (4★)<br>
+              &bull; <b>Zurich (4 Nights):</b> Dorint Airport-Hotel Zurich / Radisson Hotel Zurich Airport (4★)
+            </p>
+          </div>
+
+          <!-- Sightseeing Panel -->
+          <div id="inc-sightseeing-tab" class="inc-panel d-none">
+            <div class="font-bold fnt-14 clr-3c mb-2"><i class="fa-solid fa-ticket clr-primary mr-1"></i> Excursions & Entry Passes</div>
+            <p class="fnt-13 clr-47">
+              &bull; Eiffel Tower 2nd Level Entry Ticket + Seine River Cruise<br>
+              &bull; Mt. Titlis Cable Car with Rotair Revolving Gondola & Ice Flyer<br>
+              &bull; Excursion to Rhine Falls, Black Forest & Drubba Cuckoo Clock Village<br>
+              &bull; Orientation tours of Paris, Zurich, Lucerne & Interlaken
+            </p>
+          </div>
+
+          <!-- Transfers Panel -->
+          <div id="inc-transfers-tab" class="inc-panel d-none">
+            <div class="font-bold fnt-14 clr-3c mb-2"><i class="fa-solid fa-bus clr-primary mr-1"></i> Ground Transportation</div>
+            <p class="fnt-13 clr-47">
+              All airport transfers, intercity transfers (Paris to Zurich via scenic luxury coach), and guided sightseeing on shared AC deluxe coach with an experienced tour manager.
+            </p>
+          </div>
+
+          <!-- Meals Panel -->
+          <div id="inc-meals-tab" class="inc-panel d-none">
+            <div class="font-bold fnt-14 clr-3c mb-2"><i class="fa-solid fa-utensils clr-primary mr-1"></i> Daily Meals</div>
+            <p class="fnt-13 clr-47">
+              6 Continental Breakfasts at hotels + 6 Gourmet Indian Dinners (Veg / Non-Veg options) at top rated Indian restaurants across Paris and Zurich.
+            </p>
+          </div>
+
+          <!-- Visa Panel -->
+          <div id="inc-visa-tab" class="inc-panel d-none">
+            <div class="font-bold fnt-14 clr-3c mb-2"><i class="fa-solid fa-passport clr-primary mr-1"></i> Schengen Visa Assistance</div>
+            <p class="fnt-13 clr-47">
+              Complete VFS documentation, invitation letters, travel insurance assistance, and appointment scheduling support by DPauls certified visa team.
+            </p>
+          </div>
+
+          <!-- Taxes Panel -->
+          <div id="inc-taxes-tab" class="inc-panel d-none">
+            <div class="font-bold fnt-14 clr-3c mb-2"><i class="fa-solid fa-receipt clr-primary mr-1"></i> Taxes & Fees</div>
+            <p class="fnt-13 clr-47">
+              All currently applicable airline fuel surcharges, airport departure taxes, hotel city taxes, and GST included in the final package fare.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Select Your Departure Date Calendar Card -->
+      <section class="booking-card" id="DepartureDates">
+        <div class="widget-heading-divider">Select Your Departure Date</div>
+        <div class="d-flex align-items-center gap-3 mb-2">
+          <label style="font-weight: 700; font-size: 0.85rem; cursor: pointer;">
+            <input type="radio" name="dep_type" checked style="accent-color: #0d9488;"> Standard Group Tour
+          </label>
+          <label style="font-weight: 700; font-size: 0.85rem; color: #64748b; cursor: pointer;">
+            <input type="radio" name="dep_type" style="accent-color: #0d9488;"> Deluxe Private Tour
+          </label>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between my-2 font-bold fnt-14 clr-3c">
+          <span>September 2026</span>
+          <span class="fnt-12 clr-primary"><i class="fa-solid fa-circle-check"></i> 2 Guaranteed Departures</span>
+        </div>
+
+        <div class="pdp-cal-grid">
+          <div class="pdp-cal-day-header">Sun</div>
+          <div class="pdp-cal-day-header">Mon</div>
+          <div class="pdp-cal-day-header">Tue</div>
+          <div class="pdp-cal-day-header">Wed</div>
+          <div class="pdp-cal-day-header">Thu</div>
+          <div class="pdp-cal-day-header">Fri</div>
+          <div class="pdp-cal-day-header">Sat</div>
+
+          <div class="pdp-cal-cell disabled">30</div>
+          <div class="pdp-cal-cell disabled">31</div>
+          <div class="pdp-cal-cell on-req">01<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">02<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">03<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">04<br><small>Query</small></div>
+          <div class="pdp-cal-cell avail selected" onclick="window.selectDate(this, '05 Sep 2026')">05<br><small>₹1.64L</small></div>
+          
+          <div class="pdp-cal-cell on-req">06<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">07<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">08<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">09<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">10<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">11<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">12<br><small>Query</small></div>
+
+          <div class="pdp-cal-cell on-req">13<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">14<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">15<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">16<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">17<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">18<br><small>Query</small></div>
+          <div class="pdp-cal-cell avail" onclick="window.selectDate(this, '19 Sep 2026')">19<br><small>₹1.64L</small></div>
+
+          <div class="pdp-cal-cell on-req">20<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">21<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">22<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">23<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">24<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">25<br><small>Query</small></div>
+          <div class="pdp-cal-cell on-req">26<br><small>Query</small></div>
+        </div>
+      </section>
+
+      <!-- Overview Card -->
+      <section class="booking-card">
+        <div class="widget-heading-divider">Overview</div>
+        <p class="fnt-13 clr-47" style="line-height: 1.7;">
+          Paris & Zurich have always been at the top of a world traveller’s bucket list, especially for couples and families. Begin your vacation in glamorous Paris, exploring the romantic River Seine and taking pictures before the iconic Eiffel Tower. Then journey to Switzerland, spending four unforgettable nights by the Alpine forests and lakes of Zurich, ascending Mt. Titlis, and experiencing Rhine Falls & Black Forest in Germany.
+        </p>
+      </section>
+
+      <!-- Inclusions & Exclusions Comparison Grid -->
+      <section class="booking-card">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="widget-heading-divider"><span class="clr-teal">Inclusions</span></div>
+            <ul class="fnt-12 clr-47 pl-3" style="line-height: 1.8;">
+              <li>Round-trip Economy class Airfare (Delhi - Paris // Zurich - Delhi)</li>
+              <li>Airport taxes and airline fuel surcharges</li>
+              <li><b>2 Nights 4-Star Stay in Paris</b> with daily breakfast</li>
+              <li>Eiffel Tower 2nd Level Entry & Paris Guided City Tour</li>
+              <li><b>4 Nights 4-Star Stay in Zurich</b> with daily breakfast</li>
+              <li>Excursions to Rhine Falls, Black Forest, Mt. Titlis & Lucerne</li>
+              <li>6 Delicious Indian Gourmet Dinners</li>
+              <li>All intercity and airport transfers in luxury AC Coach</li>
+              <li>Services of experienced DPauls Tour Director</li>
+            </ul>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="widget-heading-divider"><span class="clr-red">Exclusions</span></div>
+            <ul class="fnt-12 clr-47 pl-3" style="line-height: 1.8;">
+              <li>2% TCS applicable as per Govt. norms (Claimable in ITR)</li>
+              <li>Schengen Visa consular fees payable at VFS counter</li>
+              <li>Mandatory overseas travel insurance policy</li>
+              <li>Personal expenses like telephone, laundry, minibar, porterage</li>
+              <li>Any optional tours or personal shopping</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Day-by-Day Itinerary Accordions -->
+      <section class="booking-card">
+        <div class="widget-heading-divider">Day-by-Day Detailed Itinerary</div>
+
+        <!-- Day 1 -->
+        <div class="itinerary-accordion-item">
+          <div class="itinerary-accordion-head active" onclick="window.toggleItineraryDay(this)">
+            <span><b>Day 1:</b> Welcome to Paris &amp; Hotel Check-in</span>
+            <i class="fa-solid fa-chevron-up fnt-12"></i>
+          </div>
+          <div class="itinerary-accordion-body active">
+            Welcome to the fashion and romance capital of the world—Paris! Upon landing at Charles de Gaulle Airport, meet our DPauls representative and transfer to your 4-star hotel. In the evening, enjoy a warm gourmet Indian dinner. Overnight stay in Paris.
+            <div class="fnt-11 clr-primary font-bold mt-2"><i class="fa-solid fa-utensils"></i> Meals Included: Dinner</div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="itinerary-accordion-item">
+          <div class="itinerary-accordion-head" onclick="window.toggleItineraryDay(this)">
+            <span><b>Day 2:</b> Eiffel Tower 2nd Level, Guided City Tour &amp; Seine Cruise</span>
+            <i class="fa-solid fa-chevron-down fnt-12"></i>
+          </div>
+          <div class="itinerary-accordion-body">
+            After breakfast, ascend to the 2nd level of the Eiffel Tower for spectacular 360-degree panoramic views of Paris. Continue on a guided city tour seeing Arc de Triomphe, Champs Élysées, Louvre Pyramid, and Notre-Dame. Enjoy a romantic 1-hour cruise along River Seine.
+            <div class="fnt-11 clr-primary font-bold mt-2"><i class="fa-solid fa-utensils"></i> Meals Included: Breakfast + Dinner</div>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="itinerary-accordion-item">
+          <div class="itinerary-accordion-head" onclick="window.toggleItineraryDay(this)">
+            <span><b>Day 3:</b> Scenic Drive from Paris to Zurich, Switzerland</span>
+            <i class="fa-solid fa-chevron-down fnt-12"></i>
+          </div>
+          <div class="itinerary-accordion-body">
+            Check out and board our luxury coach as we drive past the picturesque French countryside and Swiss Alpine borders into Zurich. Arrive in Zurich, check into your 4-star hotel and enjoy an Indian dinner.
+            <div class="fnt-11 clr-primary font-bold mt-2"><i class="fa-solid fa-utensils"></i> Meals Included: Breakfast + Dinner</div>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="itinerary-accordion-item">
+          <div class="itinerary-accordion-head" onclick="window.toggleItineraryDay(this)">
+            <span><b>Day 4:</b> Majestic Rhine Falls &amp; Black Forest Excursion</span>
+            <i class="fa-solid fa-chevron-down fnt-12"></i>
+          </div>
+          <div class="itinerary-accordion-body">
+            Visit Rhine Falls in Schaffhausen, Europe's largest waterfall, experiencing the roar of water. Cross into Germany's Black Forest to visit Drubba in the Titisee region to witness traditional Cuckoo clock craftsmanship.
+            <div class="fnt-11 clr-primary font-bold mt-2"><i class="fa-solid fa-utensils"></i> Meals Included: Breakfast + Dinner</div>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="itinerary-accordion-item">
+          <div class="itinerary-accordion-head" onclick="window.toggleItineraryDay(this)">
+            <span><b>Day 5:</b> Mt. Titlis Cable Car, Ice Flyer &amp; Lucerne Orientation</span>
+            <i class="fa-solid fa-chevron-down fnt-12"></i>
+          </div>
+          <div class="itinerary-accordion-body">
+            Ascend Mt. Titlis in the world's first revolving cable car 'Titlis Rotair' to 10,000 feet. Walk on the Titlis Cliff Bridge and ride the Ice Flyer chairlift over glaciers. In the afternoon, tour historic Lucerne, visiting the Lion Monument and Chapel Bridge.
+            <div class="fnt-11 clr-primary font-bold mt-2"><i class="fa-solid fa-utensils"></i> Meals Included: Breakfast + Dinner</div>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="itinerary-accordion-item">
+          <div class="itinerary-accordion-head" onclick="window.toggleItineraryDay(this)">
+            <span><b>Day 6:</b> Scenic Interlaken &amp; Grindelwald Alpine Village</span>
+            <i class="fa-solid fa-chevron-down fnt-12"></i>
+          </div>
+          <div class="itinerary-accordion-body">
+            Spend the day exploring Grindelwald village nestled under the North Face of the Eiger and Interlaken nestled between Lake Thun and Lake Brienz. Shop for authentic Swiss chocolates and watches before an Indian dinner.
+            <div class="fnt-11 clr-primary font-bold mt-2"><i class="fa-solid fa-utensils"></i> Meals Included: Breakfast + Dinner</div>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="itinerary-accordion-item">
+          <div class="itinerary-accordion-head" onclick="window.toggleItineraryDay(this)">
+            <span><b>Day 7:</b> Zurich Airport Departure &bull; Fly Back Home</span>
+            <i class="fa-solid fa-chevron-down fnt-12"></i>
+          </div>
+          <div class="itinerary-accordion-body">
+            Enjoy breakfast, check out from the hotel, and take your private transfer to Zurich Airport for your non-stop return flight to India with unforgettable memories!
+            <div class="fnt-11 clr-primary font-bold mt-2"><i class="fa-solid fa-utensils"></i> Meals Included: Breakfast</div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Right Sidebar Column: Sticky Price Calculator & Checkout Trigger -->
+    <aside class="booking-sidebar-column">
+      
+      <!-- Calculator Box -->
+      <div class="booking-sidebar-widget" style="position: sticky; top: 70px;">
+        <div class="widget-heading-divider">Instant Price Calculator</div>
+
+        <div class="fare-cyan-highlight-box">
+          <div class="fare-box-label">ESTIMATED TOTAL FARE</div>
+          <div class="fare-box-amount" id="calc-price-display">₹ 1,64,999</div>
+          <div class="fnt-11 clr-8f">Includes Flights, Hotels, Taxes & Tours</div>
+        </div>
+
+        <!-- Departure Date Picker -->
+        <div class="mb-3">
+          <label class="fnt-12 font-bold clr-3c mb-1 d-block">Selected Departure Date</label>
+          <input type="text" class="giftcard-input-box font-bold" id="calc-selected-date" value="05 Sep 2026" readonly>
+        </div>
+
+        <!-- Adults Counter -->
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div>
+            <div class="font-bold fnt-14 clr-3c">Adults (12+ Yrs)</div>
+            <div class="fnt-11 clr-8f">Base Fare per adult</div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn-addon-red" id="calc-adult-minus" style="padding: 2px 10px;">-</button>
+            <span class="font-bold fnt-16 mx-2" id="calc-adult-count">1</span>
+            <button type="button" class="btn-addon-red" id="calc-adult-plus" style="padding: 2px 10px;">+</button>
+          </div>
+        </div>
+
+        <!-- Children Counter -->
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div>
+            <div class="font-bold fnt-14 clr-3c">Children (2-11 Yrs)</div>
+            <div class="fnt-11 clr-8f">75% of adult fare</div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn-addon-red" id="calc-child-minus" style="padding: 2px 10px;">-</button>
+            <span class="font-bold fnt-16 mx-2" id="calc-child-count">0</span>
+            <button type="button" class="btn-addon-red" id="calc-child-plus" style="padding: 2px 10px;">+</button>
+          </div>
+        </div>
+
+        <!-- Travel Insurance Add-on -->
+        <div class="mb-3 p-2 border rounded" style="background: #fafbfc;">
+          <label style="cursor: pointer; font-size: 0.8rem; font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 0.4rem;">
+            <input type="checkbox" id="calc-addon-insurance" onchange="window.recalcPdpTotal()" style="accent-color: #0d9488;">
+            <span>Add Comprehensive Overseas Travel Insurance (+₹1,500/pax)</span>
+          </label>
+        </div>
+
+        <!-- Base Subtotal Row -->
+        <div class="fare-row-item">
+          <span>Base Package Subtotal:</span>
+          <b id="calc-base-subtotal">₹ 1,64,999</b>
+        </div>
+        <div class="fare-row-item">
+          <span>GST & Airline Taxes:</span>
+          <b class="clr-primary">INCLUDED</b>
+        </div>
+
+        <div class="border-top pt-3 mt-2 text-center">
+          <div class="font-bold fnt-14 clr-3c mb-1">Total Payable: <span class="clr-red fnt-18 font-black" id="calc-final-total">₹ 1,64,999</span></div>
+          <button type="button" class="btn btn-search w-100 font-bold fnt-16 py-3" onclick="window.triggerPdpBooking()">
+            PROCEED TO BOOK
+          </button>
+          <div class="fnt-11 clr-8f mt-2">
+            <i class="fa-solid fa-shield-halved clr-primary"></i> 100% Secure Checkout with Instant Voucher
+          </div>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- Floating Scroll To Top Button -->
+  <button class="scroll-top-btn visible" id="scroll-to-top-btn" aria-label="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Slide-out Side Navigation Drawer -->
+  <div class="modal-backdrop-custom" id="drawer-backdrop">
+    <div class="drawer-nav-menu" id="side-drawer">
+      <div class="drawer-header">
+        <div class="user-avatar-circle"><i class="fa-solid fa-user"></i></div>
+        <div>
+          <div class="font-bold fnt-16">Hello Guest!</div>
+          <a href="javascript:void(0)" class="fnt-13 clr-teal modal-trigger-login" style="color: var(--teal);">Login / Sign Up</a>
+        </div>
+        <button class="modal-close-btn" style="top: 14px; right: 14px;" id="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="drawer-content-list">
+        <a href="index.html" class="drawer-link-item"><i class="fa-solid fa-house clr-primary"></i> Home</a>
+        <a href="flights.html" class="drawer-link-item"><i class="fa-solid fa-plane-departure clr-primary"></i> Flights</a>
+        <a href="packages.html" class="drawer-link-item"><i class="fa-solid fa-suitcase-rolling clr-primary"></i> Holiday Packages</a>
+        <a href="hotels.html" class="drawer-link-item"><i class="fa-solid fa-hotel clr-primary"></i> Hotels</a>
+        <a href="about.html" class="drawer-link-item"><i class="fa-solid fa-circle-info clr-primary"></i> About Us</a>
+        <a href="contact.html" class="drawer-link-item"><i class="fa-solid fa-phone clr-primary"></i> Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Tab switcher for Package Inclusions
+    window.switchInclusionTab = function(tabEl, panelId) {
+      document.querySelectorAll('.pdp-inclusion-tab').forEach(t => t.classList.remove('active'));
+      tabEl.classList.add('active');
+
+      document.querySelectorAll('.inc-panel').forEach(p => p.classList.add('d-none'));
+      const target = document.getElementById('inc-' + panelId);
+      if (target) target.classList.remove('d-none');
+    };
+
+    // Accordion toggle for day-by-day itinerary
+    window.toggleItineraryDay = function(headEl) {
+      const body = headEl.nextElementSibling;
+      const icon = headEl.querySelector('i');
+      if (body.classList.contains('active')) {
+        body.classList.remove('active');
+        headEl.classList.remove('active');
+        icon.className = 'fa-solid fa-chevron-down fnt-12';
+      } else {
+        body.classList.add('active');
+        headEl.classList.add('active');
+        icon.className = 'fa-solid fa-chevron-up fnt-12';
+      }
+    };
+
+    // Route to Booking Checkout Page
+    window.triggerPdpBooking = function() {
+      const title = document.getElementById('pdp-title-display') ? document.getElementById('pdp-title-display').querySelector('span').textContent : 'Best of Switzerland with France';
+      const date = document.getElementById('calc-selected-date') ? document.getElementById('calc-selected-date').value : '05 Sep 2026';
+      const totalStr = document.getElementById('calc-final-total') ? document.getElementById('calc-final-total').textContent : '₹ 1,64,999';
+      const cleanPrice = totalStr.replace(/[^\d]/g, '') || '164999';
+
+      const query = new URLSearchParams({
+        type: 'package',
+        title: title,
+        price: cleanPrice,
+        date: date
+      });
+      window.location.href = `booking.html?${query.toString()}`;
+    };
+  </script>
+</body>
+</html>
