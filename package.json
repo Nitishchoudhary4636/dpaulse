@@ -1,0 +1,13 @@
+{
+  "name": "dpaulse",
+  "version": "1.0.0",
+  "description": "DPauls Holidays - Clone",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["travel", "holidays", "flights", "hotels"],
+  "author": "DPauls Clone",
+  "license": "ISC"
+}
