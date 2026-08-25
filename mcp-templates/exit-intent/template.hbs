@@ -1,0 +1,47 @@
+<!-- template.hbs -->
+<div id="evg-exit-intent-popup" 
+     data-evg-campaign-id="{{campaign}}"
+     data-evg-experience-id="{{experience}}" 
+     data-evg-user-group="{{userGroup}}"
+     role="dialog" aria-modal="true" aria-labelledby="evg-popup-header">
+
+  <div class="evg-overlay" data-evg-dismissal="true"></div>
+
+  <div class="evg-popup">
+    <!-- Left Hero Image Panel -->
+    <div class="evg-image-panel" style="background-image:url('{{imageUrl}}');">
+      <div class="evg-image-overlay">
+        <span class="evg-image-badge"><i class="fa-solid fa-plane"></i> LIMITED TIME DEAL</span>
+      </div>
+    </div>
+
+    <!-- Right Main Content Panel -->
+    <div class="evg-main-panel">
+      <div class="evg-badge-tag">
+        <i class="fa-solid fa-gift"></i> EXCLUSIVE OFFER
+      </div>
+
+      <h1 class="evg-header" id="evg-popup-header">{{header}}</h1>
+      <h2 class="evg-subheader">{{subheader}}</h2>
+
+      <div class="evg-code-box">
+        <div class="evg-code-content">
+          <span class="evg-code-label">PROMO CODE</span>
+          <span class="evg-code-text">{{couponCode}}</span>
+        </div>
+        <button class="evg-copy-btn" id="evg-copy-btn" type="button" aria-label="Copy Coupon Code">
+          <i class="fa-regular fa-copy"></i>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <p class="evg-coupon-note">Apply this code at checkout or call our travel experts to claim your savings.</p>
+
+      <button class="evg-cta" id="evg-continue-btn" type="button">{{ctaText}}</button>
+      <button class="evg-dismiss-text" id="evg-dismiss-text-btn" data-evg-dismissal="true" type="button">{{ctaDismissialText}}</button>
+    </div>
+
+    <!-- Top-Right Close Button -->
+    <button class="evg-btn-dismissal" id="evg-close-btn" data-evg-dismissal="true" type="button" aria-label="Close Popup">&times;</button>
+  </div>
+</div>

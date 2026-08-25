@@ -794,12 +794,15 @@ button {
 /* ==========================================================================
    Deals Carousel Section
    ========================================================================== */
-.deals-carousel-section {
+.deals-carousel-section,
+.hero-slider-section {
   padding: 2.5rem 0;
   background: var(--white);
 }
 
-.carousel-container {
+.carousel-container,
+.hero-slider-container,
+#hero-slider-viewport {
   position: relative;
   overflow: hidden;
   padding: 0.5rem 0;

@@ -125,13 +125,13 @@
   <!-- =========================================================================
        Hero Section & Search Engine
        ========================================================================= -->
-  <header class="hero-section">
+  <header class="hero-section" id="hero-section">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <h1 class="hero-title">Book Flights Tickets, Tour Packages & Hotels</h1>
 
       <!-- Main Search Engine Card -->
-      <div class="search-widget-card">
+      <div class="search-widget-card" id="search-tabs-container">
         <!-- Tabs Header -->
         <div class="search-tabs-bar" role="tablist">
           <div class="search-tab-item active" data-tab="flights">
@@ -288,7 +288,7 @@
 
               <!-- Search Button -->
               <div>
-                <button type="submit" class="btn btn-search w-100">
+                <button type="submit" class="btn btn-search w-100" id="btn-search-flights">
                   <i class="fa-solid fa-magnifying-glass mr-1"></i> SEARCH
                 </button>
               </div>
@@ -330,7 +330,7 @@
                 </select>
               </div>
               <div>
-                <button type="submit" class="btn btn-search w-100">
+                <button type="submit" class="btn btn-search w-100" id="btn-search-packages">
                   <i class="fa-solid fa-magnifying-glass mr-1"></i> SEARCH PACKAGES
                 </button>
               </div>
@@ -578,7 +578,7 @@
   <!-- =========================================================================
        Trending Deals Carousel
        ========================================================================= -->
-  <section class="deals-carousel-section">
+  <section class="deals-carousel-section hero-slider-section" id="hero-slider-section">
     <div class="container">
       <div class="section-header d-flex justify-content-between align-items-center">
         <h2 class="section-title">Exclusive Deals & Offers</h2>
@@ -588,7 +588,7 @@
         </div>
       </div>
 
-      <div class="carousel-container">
+      <div class="carousel-container hero-slider-container" id="hero-slider-viewport">
         <div class="carousel-track" id="deals-carousel-track">
           <!-- 1. Malaysia -->
           <div class="carousel-card">
