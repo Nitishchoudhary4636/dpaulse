@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initTopnavScroll();
+  initHeroBannerSlider();
   initSearchTabs();
   initAutosuggest();
   initPassengerSelector();
@@ -312,6 +313,132 @@ function initForexCalculator() {
 
   if (currencySelect) currencySelect.addEventListener('change', calculate);
   if (amountInput) amountInput.addEventListener('input', calculate);
+}
+
+/* ==========================================================================
+   5b. Hero Banner Slider (Home Top Dynamic Slider)
+   ========================================================================== */
+function initHeroBannerSlider() {
+  const bgTrack = document.getElementById('hero-bg-slider-track');
+  const textTrack = document.getElementById('hero-slider-text-track');
+  const prevBtn = document.getElementById('hero-slider-prev-btn');
+  const nextBtn = document.getElementById('hero-slider-next-btn');
+  const dotsContainer = document.getElementById('hero-slider-dots-container');
+
+  if (!bgTrack || !textTrack) return;
+
+  const bgSlides = bgTrack.querySelectorAll('.hero-bg-slide');
+  const textSlides = textTrack.querySelectorAll('.hero-text-slide');
+  const dots = dotsContainer ? dotsContainer.querySelectorAll('.hero-dot') : [];
+  const totalSlides = bgSlides.length;
+
+  if (totalSlides === 0) return;
+
+  let currentSlide = 0;
+  let autoplayTimer = null;
+  const slideInterval = 5000; // 5 seconds
+
+  function goToSlide(index) {
+    if (index < 0) {
+      currentSlide = totalSlides - 1;
+    } else if (index >= totalSlides) {
+      currentSlide = 0;
+    } else {
+      currentSlide = index;
+    }
+
+    // Update background slides
+    bgSlides.forEach((slide, i) => {
+      if (i === currentSlide) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    // Update text captions
+    textSlides.forEach((slide, i) => {
+      if (i === currentSlide) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    // Update dots
+    dots.forEach((dot, i) => {
+      if (i === currentSlide) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(nextSlide, slideInterval);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      startAutoplay();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startAutoplay();
+    });
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+      startAutoplay();
+    });
+  });
+
+  // Pause on hover
+  const heroSection = document.getElementById('hero-section');
+  if (heroSection) {
+    heroSection.addEventListener('mouseenter', stopAutoplay);
+    heroSection.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Keyboard navigation when search is not active
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'SELECT' || document.activeElement.tagName === 'TEXTAREA')) {
+      return;
+    }
+    if (e.key === 'ArrowLeft' && window.scrollY < 400) {
+      prevSlide();
+      startAutoplay();
+    } else if (e.key === 'ArrowRight' && window.scrollY < 400) {
+      nextSlide();
+      startAutoplay();
+    }
+  });
+
+  // Start auto-rotation
+  startAutoplay();
 }
 
 /* ==========================================================================

@@ -134,12 +134,57 @@
   </nav>
 
   <!-- =========================================================================
-       Hero Section & Search Engine
+       Hero Section & Search Engine with Dynamic Hero Banner Slider
        ========================================================================= -->
   <header class="hero-section" id="hero-section">
+    <!-- Dynamic Hero Background Slider -->
+    <div class="hero-slider-bg-track" id="hero-bg-slider-track">
+      <div class="hero-bg-slide active" style="background-image: linear-gradient(rgba(10, 24, 41, 0.45), rgba(10, 24, 41, 0.72)), url('assets/images/winter-holiday-1.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(10, 24, 41, 0.45), rgba(10, 24, 41, 0.72)), url('assets/images/disney-adventure-cruise-web-banner.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(10, 24, 41, 0.45), rgba(10, 24, 41, 0.72)), url('assets/images/dubai.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(10, 24, 41, 0.45), rgba(10, 24, 41, 0.72)), url('assets/images/kashmir-package-srinagar.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(10, 24, 41, 0.45), rgba(10, 24, 41, 0.72)), url('assets/images/Thailand-40999.jpg');"></div>
+    </div>
+
     <div class="hero-overlay"></div>
+
+    <!-- Hero Slider Prev/Next Controls -->
+    <button class="hero-nav-arrow hero-nav-prev" id="hero-slider-prev-btn" aria-label="Previous Hero Slide">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="hero-nav-arrow hero-nav-next" id="hero-slider-next-btn" aria-label="Next Hero Slide">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
     <div class="container hero-content">
-      <h1 class="hero-title">Book Flights Tickets, Tour Packages & Hotels</h1>
+      <!-- Dynamic Slide Headings & Badges -->
+      <div class="hero-slider-text-track" id="hero-slider-text-track">
+        <div class="hero-text-slide active" data-slide="0">
+          <div class="hero-slide-badge"><i class="fa-solid fa-sparkles"></i> BESTSELLER TOURS</div>
+          <h1 class="hero-title">Book Flights Tickets, Tour Packages &amp; Hotels</h1>
+          <p class="hero-subtitle">Explore 150+ Domestic &amp; International Destinations with DPauls Best Price Guarantee</p>
+        </div>
+        <div class="hero-text-slide" data-slide="1">
+          <div class="hero-slide-badge badge-disney"><i class="fa-solid fa-wand-magic-sparkles"></i> OFFICIAL DISNEY PARTNER</div>
+          <h1 class="hero-title">Hong Kong Disneyland &amp; Disney Adventure Cruise</h1>
+          <p class="hero-subtitle">Magical Disney Resorts, Unlimited Theme Park Passes &amp; Singapore Cruise Sailing</p>
+        </div>
+        <div class="hero-text-slide" data-slide="2">
+          <div class="hero-slide-badge badge-dubai"><i class="fa-solid fa-star"></i> LUXURY CITY &amp; DESERT</div>
+          <h1 class="hero-title">Dazzling Dubai, Desert Safari &amp; Marina Cruise</h1>
+          <p class="hero-subtitle">Burj Khalifa 124th Floor, 4x4 Dune Bashing with BBQ Dinner &amp; 4-Star Stays</p>
+        </div>
+        <div class="hero-text-slide" data-slide="3">
+          <div class="hero-slide-badge badge-india"><i class="fa-solid fa-mountain-sun"></i> DEKHO MY INDIA</div>
+          <h1 class="hero-title">Srinagar Dal Lake &amp; Gulmarg Snow Peaks</h1>
+          <p class="hero-subtitle">Deluxe Houseboats, Shikara Rides, Snow Valleys &amp; Gulmarg Gondola Cable Car</p>
+        </div>
+        <div class="hero-text-slide" data-slide="4">
+          <div class="hero-slide-badge badge-tropical"><i class="fa-solid fa-umbrella-beach"></i> TROPICAL ISLAND PARADISE</div>
+          <h1 class="hero-title">Thailand &amp; Phuket Island Spectacular</h1>
+          <p class="hero-subtitle">Bangkok Golden Temples, Coral Island Speedboat Tours &amp; Luxury Beach Resorts</p>
+        </div>
+      </div>
 
       <!-- Main Search Engine Card -->
       <div class="search-widget-card" id="search-tabs-container">
@@ -556,6 +601,15 @@
           </form>
         </div>
 
+      </div>
+
+      <!-- Hero Slider Indicator Dots -->
+      <div class="hero-slider-dots" id="hero-slider-dots-container">
+        <button class="hero-dot active" data-slide-to="0" aria-label="Go to Slide 1 - Europe Winter"></button>
+        <button class="hero-dot" data-slide-to="1" aria-label="Go to Slide 2 - Disney Adventure"></button>
+        <button class="hero-dot" data-slide-to="2" aria-label="Go to Slide 3 - Dazzling Dubai"></button>
+        <button class="hero-dot" data-slide-to="3" aria-label="Go to Slide 4 - Kashmir Dal Lake"></button>
+        <button class="hero-dot" data-slide-to="4" aria-label="Go to Slide 5 - Thailand Paradise"></button>
       </div>
     </div>
   </header>
