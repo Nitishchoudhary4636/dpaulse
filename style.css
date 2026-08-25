@@ -864,6 +864,35 @@ button {
 .carousel-next { right: -10px; }
 
 /* ==========================================================================
+   Personalized Recommendations Zone (Salesforce MCP / Einstein)
+   ========================================================================== */
+.section-recommendations,
+.mcp-rec-section {
+  padding: 0;
+  background: var(--white);
+  transition: all 0.3s ease;
+}
+
+.section-recommendations:has(.recommendations-container:empty),
+.mcp-rec-section:has(#home-recommendations-container:empty) {
+  padding: 0;
+}
+
+.section-recommendations:has(.recommendations-container:not(:empty)),
+.mcp-rec-section:has(#home-recommendations-container:not(:empty)) {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.recommendations-container,
+.mcp-recommendation-zone {
+  width: 100%;
+}
+
+.recommendations-container:not(:empty) {
+  display: block;
+}
+
+/* ==========================================================================
    Section 1: Domestic Packages (Dekho My India)
    ========================================================================== */
 .section-domestic {

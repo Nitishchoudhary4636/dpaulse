@@ -156,6 +156,7 @@ if (typeof SalesforceInteractions !== 'undefined') {
           interaction: { name: "Viewed Travel Home Page" },
           contentZones: [
             { name: "home_hero_offers_banner", selector: "#hero-slider-viewport, .hero-slider-container" },
+            { name: "home_personalized_recommendations", selector: "#home-recommendations-container, .mcp-recommendation-zone" },
             { name: "home_domestic_tours_recommendations", selector: ".packages-grid-5" },
             { name: "home_international_packages_recommendations", selector: ".intl-grid" },
             { name: "home_destination_guides", selector: ".destination-grid-8" }
