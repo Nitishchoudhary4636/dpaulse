@@ -373,17 +373,19 @@ button {
 }
 
 /* ==========================================================================
-   Hero Section & Search Engine Widget with Dynamic Hero Banner Slider
+   Hero Section & Dynamic Hero Banner Slider
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 600px;
-  padding-top: 95px;
-  padding-bottom: 50px;
+  min-height: 420px;
+  padding-top: 110px;
+  padding-bottom: 75px;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   background-color: #0a1829;
+  text-align: center;
 }
 
 /* Background Slider Track */
@@ -414,7 +416,7 @@ button {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(10, 24, 41, 0.25) 20%, rgba(10, 24, 41, 0.72) 100%);
+  background: radial-gradient(circle at center, rgba(10, 24, 41, 0.2) 20%, rgba(10, 24, 41, 0.72) 100%);
   z-index: 3;
   pointer-events: none;
 }
@@ -467,15 +469,22 @@ button {
   position: relative;
   z-index: 10;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hero Text & Badges Slider Track */
 .hero-slider-text-track {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   position: relative;
-  min-height: 105px;
+  min-height: 120px;
   z-index: 10;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-text-slide {
@@ -538,22 +547,22 @@ button {
 
 .hero-title {
   color: var(--white);
-  font-size: 2.15rem;
+  font-size: 2.35rem;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7);
   font-family: 'Josefin Sans', sans-serif;
 }
 
 .hero-subtitle {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 1.02rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.08rem;
   font-weight: 500;
-  max-width: 720px;
+  max-width: 740px;
   margin: 0 auto;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   line-height: 1.5;
 }
 
@@ -563,7 +572,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
   z-index: 15;
   position: relative;
 }
@@ -592,13 +601,30 @@ button {
   box-shadow: 0 0 14px rgba(25, 156, 144, 0.85);
 }
 
+/* ==========================================================================
+   Search Engine Section (Downside of Hero Banner)
+   ========================================================================== */
+.search-engine-section {
+  position: relative;
+  z-index: 30;
+  margin-top: -55px;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .search-engine-section {
+    margin-top: 0;
+    padding-top: 1.25rem;
+  }
+}
+
 /* Search Engine Card */
 .search-widget-card {
   background: var(--white);
   border-radius: var(--radius-lg);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 40px rgba(15, 36, 61, 0.12);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.85);
 }
 
 /* Tabs Bar */
