@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDealsCarousel();
   initModals();
   initScrollTop();
+  initWhatsAppLeadWidget();
 
   // Page Specific Inits
   if (document.getElementById('plp-packages-grid')) {
@@ -1906,3 +1907,234 @@ function initScrollTop() {
     });
   }
 }
+
+/* ==========================================================================
+   WhatsApp Floating Lead Capture Widget
+   ========================================================================== */
+function initWhatsAppLeadWidget() {
+  const widget = document.getElementById('wa-floating-widget');
+  const toggleBtn = document.getElementById('wa-toggle-btn');
+  const tooltip = document.getElementById('wa-tooltip');
+  const closeCardBtn = document.getElementById('wa-card-close-btn');
+  const leadCard = document.getElementById('wa-lead-card');
+  const leadForm = document.getElementById('wa-lead-form');
+  const errorMsg = document.getElementById('wa-error-msg');
+  const cardBody = document.getElementById('wa-card-body');
+  const successCard = document.getElementById('wa-card-success');
+  const directLink = document.getElementById('wa-direct-link');
+  const resetBtn = document.getElementById('wa-reset-btn');
+
+  if (!widget || !toggleBtn) return;
+
+  // Auto-prefill if user has logged in or is saved
+  try {
+    const savedUser = JSON.parse(
+      localStorage.getItem('dpauls_logged_user') || 
+      sessionStorage.getItem('dpauls_logged_user') || 
+      'null'
+    );
+    if (savedUser) {
+      const nameParts = (savedUser.name || '').trim().split(' ');
+      const firstNameInput = document.getElementById('wa-first-name');
+      const lastNameInput = document.getElementById('wa-last-name');
+      const emailInput = document.getElementById('wa-email');
+      const phoneInput = document.getElementById('wa-phone');
+
+      if (firstNameInput && !firstNameInput.value && nameParts[0]) {
+        firstNameInput.value = nameParts[0];
+      }
+      if (lastNameInput && !lastNameInput.value && nameParts.length > 1) {
+        lastNameInput.value = nameParts.slice(1).join(' ');
+      }
+      if (emailInput && !emailInput.value && savedUser.email) {
+        emailInput.value = savedUser.email;
+      }
+      if (phoneInput && !phoneInput.value && (savedUser.phone || savedUser.mobile)) {
+        const p = (savedUser.phone || savedUser.mobile).replace(/[^0-9]/g, '');
+        phoneInput.value = p.slice(-10);
+      }
+    }
+  } catch (e) {
+    console.warn('[WhatsApp Widget] User prefill notice:', e);
+  }
+
+  function toggleWidget(forceState) {
+    const shouldOpen = typeof forceState === 'boolean' ? forceState : !widget.classList.contains('active');
+    if (shouldOpen) {
+      widget.classList.add('active');
+      if (leadCard) leadCard.setAttribute('aria-hidden', 'false');
+      // Focus first name after entrance animation
+      setTimeout(() => {
+        const firstField = document.getElementById('wa-first-name');
+        if (firstField && !firstField.value) firstField.focus();
+      }, 250);
+    } else {
+      widget.classList.remove('active');
+      if (leadCard) leadCard.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleWidget();
+  });
+
+  if (tooltip) {
+    tooltip.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleWidget(true);
+    });
+  }
+
+  if (closeCardBtn) {
+    closeCardBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleWidget(false);
+    });
+  }
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (widget.classList.contains('active') && !widget.contains(e.target)) {
+      toggleWidget(false);
+    }
+  });
+
+  // Prevent closing when clicking inside card
+  if (leadCard) {
+    leadCard.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Handle Form Submission
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const firstName = (document.getElementById('wa-first-name')?.value || '').trim();
+      const lastName = (document.getElementById('wa-last-name')?.value || '').trim();
+      const email = (document.getElementById('wa-email')?.value || '').trim();
+      const rawPhone = (document.getElementById('wa-phone')?.value || '').trim();
+      const service = (document.getElementById('wa-service')?.value || 'General Travel Inquiry').trim();
+      const travelDetails = (document.getElementById('wa-travel-details')?.value || 'Not specified').trim();
+      const notes = (document.getElementById('wa-notes')?.value || 'Interested in booking / quotation').trim();
+
+      // Validation
+      if (!firstName) {
+        showError('Please enter your First Name.');
+        return;
+      }
+      if (!lastName) {
+        showError('Please enter your Last Name.');
+        return;
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+      const cleanPhone = rawPhone.replace(/[^0-9]/g, '');
+      if (!cleanPhone || cleanPhone.length < 10) {
+        showError('Please enter a valid 10-digit mobile number.');
+        return;
+      }
+
+      hideError();
+
+      const fullName = `${firstName} ${lastName}`.trim();
+      const leadData = {
+        id: 'LEAD-' + Date.now(),
+        source: 'WhatsApp Floating Lead Form',
+        firstName,
+        lastName,
+        name: fullName,
+        email,
+        phone: cleanPhone,
+        service: service || 'General Travel Inquiry',
+        travelDetails: travelDetails || '',
+        notes: notes || '',
+        timestamp: new Date().toISOString()
+      };
+
+      // 1. Store in localStorage
+      try {
+        const storedLeads = JSON.parse(localStorage.getItem('dpauls_leads') || '[]');
+        storedLeads.push(leadData);
+        localStorage.setItem('dpauls_leads', JSON.stringify(storedLeads));
+      } catch (err) {
+        console.warn('[WhatsApp Widget] localStorage error:', err);
+      }
+
+      // 2. Push to window.dataLayer / MCP
+      if (typeof window.pushToDataLayer === 'function') {
+        window.pushToDataLayer({
+          event: 'whatsapp_lead_submitted',
+          lead: leadData,
+          user: {
+            id: cleanPhone || email,
+            attributes: {
+              name: fullName,
+              email: email,
+              phone: cleanPhone
+            }
+          }
+        });
+      }
+
+      // 3. Format WhatsApp Message
+      const waNumber = '919212647114'; // DPauls Official WhatsApp Desk
+      const waMessage = 
+        `🌟 *NEW TRAVEL ENQUIRY - DPAULS HOLIDAYS* 🌟\n` +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 *Name:* ${fullName}\n` +
+        `📱 *Phone:* +91 ${cleanPhone}\n` +
+        `📧 *Email:* ${email}\n` +
+        `🏖️ *Interested In:* ${service}\n` +
+        (travelDetails && travelDetails !== 'Not specified' ? `📅 *Travel Details:* ${travelDetails}\n` : '') +
+        (notes && notes !== 'Interested in booking / quotation' ? `💬 *Requirements:* ${notes}\n` : '') +
+        `━━━━━━━━━━━━━━━━━━━━\n` +
+        `Sent via DPauls.com Website Lead Desk`;
+
+      const encodedMsg = encodeURIComponent(waMessage);
+      const waUrl = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodedMsg}`;
+
+      // 4. Update UI to Success State
+      if (cardBody) cardBody.style.display = 'none';
+      if (successCard) successCard.style.display = 'block';
+      if (directLink) directLink.href = waUrl;
+
+      // 5. Trigger Toast Notification
+      if (typeof window.showToast === 'function') {
+        window.showToast('Enquiry registered! Opening WhatsApp...', 'success');
+      }
+
+      // 6. Open WhatsApp in new tab
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  function showError(msg) {
+    if (errorMsg) {
+      errorMsg.textContent = msg;
+      errorMsg.style.display = 'block';
+    }
+  }
+
+  function hideError() {
+    if (errorMsg) {
+      errorMsg.textContent = '';
+      errorMsg.style.display = 'none';
+    }
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (leadForm) leadForm.reset();
+      hideError();
+      if (successCard) successCard.style.display = 'none';
+      if (cardBody) cardBody.style.display = 'block';
+    });
+  }
+}
+
