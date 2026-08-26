@@ -2062,21 +2062,56 @@ function initWhatsAppLeadWidget() {
         const storedLeads = JSON.parse(localStorage.getItem('dpauls_leads') || '[]');
         storedLeads.push(leadData);
         localStorage.setItem('dpauls_leads', JSON.stringify(storedLeads));
+        localStorage.setItem('dpauls_last_lead', JSON.stringify(leadData));
+        if (service) localStorage.setItem('dpauls_last_dest', service);
       } catch (err) {
         console.warn('[WhatsApp Widget] localStorage error:', err);
       }
 
-      // 2. Push to window.dataLayer / MCP
-      if (typeof window.pushToDataLayer === 'function') {
+      // 2. Push to window.dataLayer via MCP Helper
+      if (typeof window.mcpTrackWhatsAppLead === 'function') {
+        window.mcpTrackWhatsAppLead(leadData);
+      } else if (typeof window.pushToDataLayer === 'function') {
         window.pushToDataLayer({
           event: 'whatsapp_lead_submitted',
-          lead: leadData,
+          MCP: {
+            interaction: {
+              name: 'WhatsApp Lead Submitted'
+            },
+            user: {
+              id: cleanPhone || email,
+              attributes: {
+                firstname: firstName || undefined,
+                lastname: lastName || undefined,
+                emailAddress: email || undefined,
+                mobileNumber: cleanPhone || undefined,
+                Service: service || undefined,
+                TravelDate: travelDetails || undefined,
+                Message: notes || undefined
+              }
+            }
+          }
+        });
+      }
+
+      // 3. Send MCP Event to SalesforceInteractions if initialized
+      if (typeof window.sendMcpWhatsAppLeadEvent === 'function') {
+        window.sendMcpWhatsAppLeadEvent(leadData);
+      } else if (typeof SalesforceInteractions !== 'undefined' && SalesforceInteractions.sendEvent) {
+        SalesforceInteractions.sendEvent({
+          interaction: {
+            name: "WhatsApp Lead Submitted"
+          },
           user: {
             id: cleanPhone || email,
             attributes: {
-              name: fullName,
-              email: email,
-              phone: cleanPhone
+              firstname: firstName || undefined,
+              lastname: lastName || undefined,
+              emailAddress: email || undefined,
+              mobileNumber: cleanPhone || undefined,
+              Service: service || undefined,
+              TravelDate: travelDetails || undefined,
+              Message: notes || undefined
             }
           }
         });

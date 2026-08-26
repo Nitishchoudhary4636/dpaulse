@@ -152,6 +152,120 @@
     </div>
   </footer>
 
+  <!-- =========================================================================
+       Floating WhatsApp Widget & Lead Capture Form
+       ========================================================================= -->
+  <div class="wa-floating-widget" id="wa-floating-widget">
+    <div class="wa-trigger-wrapper">
+      <div class="wa-tooltip" id="wa-tooltip">
+        <span class="wa-tooltip-dot"></span>
+        <span>Need Help? <b>Chat with us</b></span>
+      </div>
+      <button class="wa-float-btn" id="wa-toggle-btn" aria-label="Open WhatsApp Lead Form" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp wa-icon-chat"></i>
+        <i class="fa-solid fa-xmark wa-icon-close"></i>
+        <span class="wa-online-badge" title="Online now"></span>
+      </button>
+    </div>
+
+    <div class="wa-lead-card" id="wa-lead-card" aria-hidden="true">
+      <div class="wa-card-header">
+        <div class="wa-header-avatar">
+          <img src="assets/images/logo.0066e88.png" alt="DPauls Expert" class="wa-avatar-img">
+          <span class="wa-avatar-status"></span>
+        </div>
+        <div class="wa-header-info">
+          <div class="wa-header-title">DPauls Travel Helpdesk</div>
+          <div class="wa-header-sub"><i class="fa-solid fa-circle wa-status-dot"></i> Typically replies in 2 mins</div>
+        </div>
+        <button type="button" class="wa-card-close-btn" id="wa-card-close-btn" aria-label="Close WhatsApp Inquiry">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="wa-card-body" id="wa-card-body">
+        <div class="wa-chat-bubble-intro">
+          👋 Have questions or want a quick quotation? Fill in your details to chat instantly on WhatsApp!
+        </div>
+
+        <form id="wa-lead-form" novalidate>
+          <div class="wa-form-row">
+            <div class="wa-form-group">
+              <label for="wa-first-name">First Name <span class="clr-red">*</span></label>
+              <input type="text" id="wa-first-name" name="first_name" class="wa-input" placeholder="e.g. Rahul" required>
+            </div>
+            <div class="wa-form-group">
+              <label for="wa-last-name">Last Name <span class="clr-red">*</span></label>
+              <input type="text" id="wa-last-name" name="last_name" class="wa-input" placeholder="e.g. Sharma" required>
+            </div>
+          </div>
+
+          <div class="wa-form-group">
+            <label for="wa-email">Email Address <span class="clr-red">*</span></label>
+            <input type="email" id="wa-email" name="email" class="wa-input" placeholder="name@example.com" required>
+          </div>
+
+          <div class="wa-form-group">
+            <label for="wa-phone">WhatsApp / Mobile Number <span class="clr-red">*</span></label>
+            <div class="wa-phone-input-wrap">
+              <span class="wa-country-code"><i class="fa-solid fa-phone fnt-11 mr-1"></i> +91</span>
+              <input type="tel" id="wa-phone" name="phone" class="wa-input wa-phone-input" placeholder="10-digit mobile number" maxlength="10" required>
+            </div>
+          </div>
+
+          <div class="wa-form-group">
+            <label for="wa-service">Interested Destination / Service</label>
+            <select id="wa-service" name="service" class="wa-input wa-select">
+              <option value="General Travel Enquiry">General Travel Enquiry</option>
+              <option value="International Holiday Packages">International Holiday Packages</option>
+              <option value="Domestic Holiday Packages">Domestic Holiday Packages</option>
+              <option value="Flight Tickets Booking">Flight Tickets Booking</option>
+              <option value="Hotel Reservations">Hotel Reservations</option>
+              <option value="Visa Assistance">Visa Assistance</option>
+              <option value="Forex Currency / Card">Forex Currency / Card</option>
+              <option value="International eSIM">International eSIM</option>
+            </select>
+          </div>
+
+          <div class="wa-form-group">
+            <label for="wa-travel-details">Travel Date & Number of Travellers</label>
+            <input type="text" id="wa-travel-details" name="travel_details" class="wa-input" placeholder="e.g. Oct 2026, 2 Adults, 1 Child">
+          </div>
+
+          <div class="wa-form-group">
+            <label for="wa-notes">Specific Requirements / Message</label>
+            <textarea id="wa-notes" name="notes" class="wa-input wa-textarea" rows="2" placeholder="Tell us your preferences or query..."></textarea>
+          </div>
+
+          <div class="wa-error-msg" id="wa-error-msg"></div>
+
+          <button type="submit" class="wa-submit-btn" id="wa-submit-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Start WhatsApp Chat</span>
+          </button>
+        </form>
+
+        <div class="wa-form-footer">
+          <i class="fa-solid fa-lock"></i> 100% Privacy Protected. Official DPauls Travel Desk.
+        </div>
+      </div>
+
+      <div class="wa-card-success" id="wa-card-success" style="display: none;">
+        <div class="wa-success-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h4 class="font-bold fnt-18 clr-3c mb-1">Connecting to WhatsApp!</h4>
+        <p class="fnt-13 clr-8f mb-3">Thank you! Your enquiry has been registered with DPauls. You are being redirected to our WhatsApp specialist.</p>
+        <a href="#" id="wa-direct-link" target="_blank" class="wa-submit-btn mb-2" style="text-decoration: none; justify-content: center;">
+          <i class="fa-brands fa-whatsapp"></i> Open WhatsApp Chat
+        </a>
+        <button type="button" class="wa-btn-secondary" id="wa-reset-btn">
+          Send Another Enquiry
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>

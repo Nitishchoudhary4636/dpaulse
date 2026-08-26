@@ -14,6 +14,7 @@
   // Helper to get active user details
   function getMcpUser() {
     let user = null;
+    let lastLead = null;
     try {
       const storage = typeof window !== 'undefined' && window.localStorage ? window.localStorage : null;
       const sStorage = typeof window !== 'undefined' && window.sessionStorage ? window.sessionStorage : null;
@@ -23,17 +24,25 @@
         (storage && storage.getItem('showoff_user')) ||
         'null'
       );
+      lastLead = JSON.parse((storage && storage.getItem('dpauls_last_lead')) || 'null');
     } catch(e) {}
 
-    if (user && (user.mobile || user.phone || user.email)) {
-      const phone = user.mobile || user.phone || '';
+    const phone = (lastLead && lastLead.phone) || (user && (user.mobile || user.phone)) || '';
+    const email = (lastLead && lastLead.email) || (user && user.email) || '';
+    const firstName = (lastLead && lastLead.firstName) || (user && user.name ? user.name.split(' ')[0] : '');
+    const lastName = (lastLead && lastLead.lastName) || (user && user.name && user.name.split(' ').length > 1 ? user.name.split(' ').slice(1).join(' ') : '');
+
+    if (phone || email) {
       return {
-        id: phone || user.email,
+        id: phone || email,
         attributes: {
-          phone: phone,
-          email: user.email || '',
-          name: user.name || '',
-          isLoggedIn: true
+          firstname: firstName || undefined,
+          lastname: lastName || undefined,
+          emailAddress: email || undefined,
+          mobileNumber: phone || undefined,
+          Service: (lastLead && lastLead.service) || undefined,
+          TravelDate: (lastLead && lastLead.travelDetails) || undefined,
+          Message: (lastLead && lastLead.notes) || undefined
         }
       };
     }
@@ -267,6 +276,38 @@
       MCP: {
         pageType: 'Contact',
         contactData: data
+      }
+    });
+  };
+
+  window.mcpTrackWhatsAppLead = function(leadData) {
+    const phone = leadData.phone || '';
+    const email = leadData.email || '';
+    const firstName = leadData.firstName || '';
+    const lastName = leadData.lastName || '';
+    const service = leadData.service || '';
+    const travelDate = leadData.travelDetails || '';
+    const message = leadData.notes || leadData.requirements || '';
+
+    window.pushToDataLayer({
+      event: 'whatsapp_lead_submitted',
+      MCP: {
+        interaction: {
+          name: 'WhatsApp Lead Submitted'
+        },
+        user: {
+          id: phone || email,
+          attributes: {
+            firstname: firstName || undefined,
+            lastname: lastName || undefined,
+            emailAddress: email || undefined,
+            mobileNumber: phone || undefined,
+            Service: service || undefined,
+            TravelDate: travelDate || undefined,
+            Message: message || undefined
+          }
+        },
+        leadDetails: leadData
       }
     });
   };
